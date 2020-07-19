@@ -1,0 +1,25 @@
+{
+  "name": "react-guitar-site",
+  "version": "0.2.3",
+  "private": true,
+  "scripts": {
+    "build": "run-s build:*",
+    "build:next": "next build && next export",
+    "build:storybook": "build-storybook -c ../react-guitar/.storybook -o out/storybook",
+    "start": "next dev"
+  },
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@types/lodash.range": "^3.2.6",
+    "@types/react-toggle": "^4.0.2",
+    "lodash.range": "^3.2.0",
+    "next": "9.4.4",
+    "next-seo": "^4.7.3",
+    "npm-run-all": "^4.1.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-guitar": "^0.2.3",
+    "react-switch": "^5.0.1",
+    "tailwindcss": "^1.5.1"
+  }
+}

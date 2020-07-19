@@ -1,0 +1,11 @@
+{
+  "packages": ["packages/*"],
+  "version": "0.2.3",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "graphType": "all"
+    }
+  }
+}

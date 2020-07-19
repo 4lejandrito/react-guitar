@@ -1,0 +1,41 @@
+@import '_variables';
+@import '_fretboard';
+@import '_strings';
+
+.guitar {
+  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  display: inline-flex;
+
+  &.lefty {
+    direction: rtl;
+    .nut {
+      box-shadow: -4px 0px 2px -3px #333;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .nut {
+    width: 7em;
+    position: relative;
+    background: #fffacd;
+    flex-shrink: 0;
+    z-index: 1;
+    border-top: solid 0.5em $guitar-fretboard-color;
+    border-bottom: solid 2em $guitar-fretboard-color;
+    box-shadow: 4px 0px 2px -3px #333;
+  }
+
+  ol,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}

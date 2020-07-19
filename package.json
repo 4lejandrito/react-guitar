@@ -1,0 +1,41 @@
+{
+  "name": "react-guitar-monorepo",
+  "private": true,
+  "author": "Alejandro Tardín <alejandro@tardin.com>",
+  "homepage": "https://4lejandrito.github.io/react-guitar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/4lejandrito/react-guitar.git"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "husky": ">=4",
+    "lerna": "^3.20.2",
+    "lint-staged": ">=10",
+    "prettier": "^1.15.3"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,md,json,html,css,scss,webmanifest}": "prettier --write"
+  },
+  "scripts": {
+    "build": "lerna run build",
+    "start": "lerna run --parallel start",
+    "test": "lerna run test",
+    "test:coverage": "lerna run test:coverage"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "resolutions": {
+    "@types/react": "^16.8.18"
+  }
+}
