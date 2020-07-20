@@ -45,6 +45,7 @@ export default function Home() {
           </a>
           <a
             href="storybook"
+            target="__blank"
             className="mx-2 border-2 hover:bg-blue-400 text-white font-bold py-1 px-2 rounded"
           >
             Storybook
