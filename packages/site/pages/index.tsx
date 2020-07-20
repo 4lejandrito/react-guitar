@@ -1,8 +1,9 @@
 import Head from 'next/head'
-import Demo from '../components/Demo'
 import { NextSeo } from 'next-seo'
+import dynamic from 'next/dynamic'
 import Button from '../components/Button'
 
+const Demo = dynamic(() => import('../components/Demo'), { ssr: false })
 const logo = `${process.env.NEXT_PUBLIC_URL}/logo.png`
 
 export default function Home() {
@@ -32,12 +33,12 @@ export default function Home() {
       />
 
       <header className="shadow-inner w-full text-center flex flex-col items-center bg-blue-500 text-white p-6 sm:p-8">
-        <h1 className="text-3xl sm:text-5xl font-bold flex items-center">
+        <h1 className="slide-up text-3xl sm:text-5xl font-bold flex items-center">
           <img className="h-6 w-6 sm:h-10 sm:w-10 mr-2 sm:mr-3" src={logo} />{' '}
           {title}
         </h1>
-        <p className="text-lg sm:text-xl mt-2">{description}</p>
-        <div className="flex items-center justify-center mt-4 sm:mt-6">
+        <p className="slide-up text-lg sm:text-xl mt-2">{description}</p>
+        <div className="slide-up flex items-center justify-center mt-4 sm:mt-6">
           <Button
             href="https://github.com/4lejandrito/react-guitar"
             label="View on GitHub"
@@ -46,7 +47,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="flex-grow w-full flex flex-col justify-center max-w-screen-md">
+      <main className="overflow-hidden flex-grow w-full flex flex-col justify-center max-w-screen-md">
         <Demo />
       </main>
 

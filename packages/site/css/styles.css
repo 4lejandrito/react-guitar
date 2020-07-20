@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slide-up {
+  animation: slide-up 600ms;
+  transition: opacity 600ms;
+  animation: slide-up 0.75s cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards;
+  animation-delay: 0.2;
+}
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
