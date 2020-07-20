@@ -51,7 +51,7 @@ export default function Home() {
         <Demo />
       </main>
 
-      <footer className="w-full text-center bg-gray-100 text-gray-600 p-8 border-t">
+      <footer className="w-full text-center bg-gray-100 text-gray-600 p-6 border-t">
         Made with ❤️ and 🎶 by{' '}
         <a
           className="hover:underline text-blue-500"
