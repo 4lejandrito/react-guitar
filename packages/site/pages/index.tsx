@@ -43,7 +43,7 @@ export default function Home() {
             href="https://github.com/4lejandrito/react-guitar"
             label="View on GitHub"
           />
-          <Button href="storybook" label="Storybook" />
+          <Button href="storybook" label="Storybook" target="_blank" />
         </div>
       </header>
 
