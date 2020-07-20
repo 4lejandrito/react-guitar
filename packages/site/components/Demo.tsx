@@ -1,4 +1,4 @@
-import Guitar, { useGuitar, tunings } from 'react-guitar'
+import Guitar, { useGuitar, tunings, getRenderFingerSpn } from 'react-guitar'
 import E2 from 'react-guitar/resources/E2.mp3'
 import D3 from 'react-guitar/resources/D3.mp3'
 import G3 from 'react-guitar/resources/G3.mp3'
@@ -61,6 +61,7 @@ export default function Demo() {
             frets={{ from: 0, amount: frets }}
             strings={strings}
             lefty={lefty}
+            renderFinger={getRenderFingerSpn(tunings.standard)}
             onChange={setStrings}
             onPlay={play}
           />
