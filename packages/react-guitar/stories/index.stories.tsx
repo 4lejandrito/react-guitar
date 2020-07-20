@@ -25,7 +25,7 @@ storiesOf('Guitar', module)
     )
     const root = select('Root', notes, notes['C'])
     const renderFingerFunctions = {
-      'Standard Pitch Notation': getRenderFingerSpn(tunings.standard, root),
+      'Scientific Pitch Notation': getRenderFingerSpn(tunings.standard, root),
       'Relative to Root': getRenderFingerRelative(tunings.standard, root)
     }
     const [strings, setStrings] = useState([0, 0, 0, 0, 0, 0])
@@ -42,8 +42,8 @@ storiesOf('Guitar', module)
           renderFingerFunctions[
             select<keyof typeof renderFingerFunctions>(
               'Notes',
-              ['Standard Pitch Notation', 'Relative to Root'],
-              'Standard Pitch Notation'
+              ['Scientific Pitch Notation', 'Relative to Root'],
+              'Scientific Pitch Notation'
             )
           ]
         }
