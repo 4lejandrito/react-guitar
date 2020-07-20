@@ -7,7 +7,7 @@ import Guitar, {
 } from '../src'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, number, boolean, select } from '@storybook/addon-knobs'
-import { name } from '../src/music/note'
+import { midiToNoteName } from '@tonaljs/midi'
 import { range } from 'lodash'
 import { useState } from '@storybook/addons'
 import E2 from '../resources/E2.mp3'
@@ -18,15 +18,20 @@ import E4 from '../resources/E4.mp3'
 storiesOf('Guitar', module)
   .addDecorator(withKnobs)
   .add('advanced', () => {
-    const notes = range(12).reduce(
-      (acc, note) => ({ ...acc, [name(note)]: note }),
-      {} as {
-        [K: string]: number
-      }
-    )
+    const notes = range(12)
+      .map(note => note + 12)
+      .reduce(
+        (acc, note) => ({
+          ...acc,
+          [midiToNoteName(note, { pitchClass: true, sharps: true })]: note
+        }),
+        {} as {
+          [K: string]: number
+        }
+      )
     const root = select('Root', notes, notes['C'])
     const renderFingerFunctions = {
-      'Scientific Pitch Notation': getRenderFingerSpn(tunings.standard, root),
+      'Scientific Pitch Notation': getRenderFingerSpn(tunings.standard),
       'Relative to Root': getRenderFingerRelative(tunings.standard, root)
     }
     const [strings, setStrings] = useState([0, 0, 0, 0, 0, 0])

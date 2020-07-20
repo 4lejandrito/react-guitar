@@ -1,31 +1,37 @@
 import useSound from './hooks/sound'
-import tunings from './music/tunings'
+import tunings from './util/tunings'
 import React, { useLayoutEffect, useRef } from 'react'
 import range from 'lodash.range'
 import { set } from './util/arrays'
 import classNames from 'classnames'
-import { toRelativeText } from './music/note'
-import { describe } from './music/note'
+import { get, fromMidiSharps } from '@tonaljs/note'
 import './css/guitar.scss'
 
 export { useSound, tunings }
 
-export function getRenderFingerSpn(tuning: number[], key?: number) {
+export function getRenderFingerSpn(tuning: number[]) {
   return (string: number, fret: number) => {
-    const { name, accidental, octave } = describe(tuning[string] + fret, key)
+    const { letter, acc, oct } = get(fromMidiSharps(tuning[string] + fret))
     return (
       <span>
-        {name}
-        {accidental}
-        <sub>{octave}</sub>
+        {letter}
+        {acc === '#' ? '♯' : acc === 'b' ? '♭' : ''}
+        <sub>{oct}</sub>
       </span>
     )
   }
 }
 
 export function getRenderFingerRelative(tuning: number[], root: number) {
+  const mod = (n: number, m: number) => (m + (n % m)) % m
   return (string: number, fret: number) => (
-    <>{toRelativeText(tuning[string] + fret, root)}</>
+    <>
+      {
+        ['1', '2m', '2', '3m', '3', '4', '5dim', '5', '5aug', '6', '7m', '7'][
+          mod(tuning[string] + fret - root, 12)
+        ]
+      }
+    </>
   )
 }
 

@@ -2,7 +2,7 @@ import { Frequency, Sampler, SamplerOptions } from 'tone'
 import { useEffect, useState } from 'react'
 import range from 'lodash.range'
 import { set } from '../util/arrays'
-import tunings from '../music/tunings'
+import tunings from '../util/tunings'
 
 export default function useSound(
   samples: SamplerOptions['urls'],

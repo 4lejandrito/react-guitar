@@ -3956,6 +3956,26 @@
     "@svgr/plugin-svgo" "^4.2.0"
     loader-utils "^1.2.3"
 
+"@tonaljs/core@^3.5.4":
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/@tonaljs/core/-/core-3.5.4.tgz#ceb6c13cac0413ef6b3bee2a59e03d3e460f74c6"
+  integrity sha512-Rhe7TKNmkOb9/Ilu1ByCI7jIEc0hztGbfHMtI7N5sIdAXVaVzz0WaZdEuPKnAYibS8IRsT5Jm3B/oAEy5CdQAQ==
+
+"@tonaljs/midi@^3.5.4":
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/@tonaljs/midi/-/midi-3.5.4.tgz#9bd5a68367069419377a338fe19eea64e230ba8d"
+  integrity sha512-Xtunz9cVWTI5hJ9OjGXYWwlbJwcrof/IsmshvYmZXQGOhtVY2PPhY3JSKfAVN+CLFOraEjVJ4/YEGoFutF+yJA==
+  dependencies:
+    "@tonaljs/core" "^3.5.4"
+
+"@tonaljs/note@^3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@tonaljs/note/-/note-3.6.0.tgz#a1dd02a7900a081abaed9bba8aab3f02c04c4c7c"
+  integrity sha512-riwAjPdQBa01uhCl0h+3vc0M3VW/NS982pg3k2ntKYiC8YsSRu0tR7yDtUbOWwMjaj8loAk68Snmm44mutiIdQ==
+  dependencies:
+    "@tonaljs/core" "^3.5.4"
+    "@tonaljs/midi" "^3.5.4"
+
 "@types/babel__core@^7.1.0":
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.0.tgz#710f2487dda4dcfd010ca6abb2b4dc7394365c51"
