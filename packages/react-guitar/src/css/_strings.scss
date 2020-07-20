@@ -38,6 +38,11 @@
     input:focus:not(:disabled) + .finger {
       opacity: 0.5;
     }
+    input:not(:disabled) {
+      height: 100%;
+      width: 100%;
+    }
+    input:not(:disabled),
     input:not(:disabled) + .finger {
       cursor: pointer;
     }
