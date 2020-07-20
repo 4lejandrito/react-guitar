@@ -21,17 +21,6 @@
     box-sizing: border-box;
   }
 
-  .nut {
-    width: 7em;
-    position: relative;
-    background: #fffacd;
-    flex-shrink: 0;
-    z-index: 1;
-    border-top: solid 0.5em $guitar-fretboard-color;
-    border-bottom: solid 2em $guitar-fretboard-color;
-    box-shadow: 4px 0px 2px -3px #333;
-  }
-
   ol,
   li {
     margin: 0;

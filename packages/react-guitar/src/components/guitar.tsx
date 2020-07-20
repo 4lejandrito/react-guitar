@@ -41,24 +41,13 @@ export default function Guitar(props: Props) {
   }, [fretsNodeRef, fretNodesRef, strings])
   return (
     <div className={classNames('guitar', { lefty }, props.className)}>
-      <div className="nut">
-        <Strings
-          disabled={!props.onChange}
-          fret={0}
-          strings={strings}
-          renderFinger={renderFinger}
-          onFretted={string =>
-            props.onChange?.(
-              set(strings, string, strings[string] === 0 ? -1 : 0)
-            )
-          }
-          onOption={string => props.onOptions?.(string, 0)}
-          onPlay={string => props.onPlay?.(string)}
-        />
-      </div>
       <ol className="frets" ref={fretsNodeRef}>
-        {range(frets.from + 1, frets.from + frets.amount + 1).map(fret => (
-          <li key={fret} ref={node => (fretNodesRef.current[fret] = node)}>
+        {range(frets.from, frets.from + frets.amount + 1).map(fret => (
+          <li
+            className={fret === 0 ? 'nut' : undefined}
+            key={fret}
+            ref={node => (fretNodesRef.current[fret] = node)}
+          >
             <Strings
               disabled={!props.onChange}
               fret={fret}
@@ -72,7 +61,7 @@ export default function Guitar(props: Props) {
               onOption={string => props.onOptions?.(string, fret)}
               onPlay={string => props.onPlay?.(string)}
             />
-            <span className="counter">{fret}</span>
+            {fret !== 0 && <span className="counter">{fret}</span>}
           </li>
         ))}
       </ol>
