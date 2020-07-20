@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Demo from '../components/Demo'
 import { NextSeo } from 'next-seo'
+import Button from '../components/Button'
 
 const logo = `${process.env.NEXT_PUBLIC_URL}/logo.png`
 
@@ -37,19 +38,11 @@ export default function Home() {
         </h1>
         <p className="text-lg sm:text-xl mt-2">{description}</p>
         <div className="flex items-center justify-center mt-4 sm:mt-6">
-          <a
+          <Button
             href="https://github.com/4lejandrito/react-guitar"
-            className="mx-2 border-2 hover:bg-blue-400 text-white font-bold py-1 px-2 rounded"
-          >
-            View on GitHub
-          </a>
-          <a
-            href="storybook"
-            target="__blank"
-            className="mx-2 border-2 hover:bg-blue-400 text-white font-bold py-1 px-2 rounded"
-          >
-            Storybook
-          </a>
+            label="View on GitHub"
+          />
+          <Button href="storybook" label="Storybook" />
         </div>
       </header>
 
