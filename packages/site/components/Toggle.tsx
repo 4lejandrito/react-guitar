@@ -14,6 +14,7 @@ export default function Toggle(props: {
         <Switch
           onColor="#48bb78"
           checkedIcon={false}
+          handleDiameter={16}
           uncheckedIcon={false}
           checked={props.value}
           onChange={props.onChange}
