@@ -5,6 +5,7 @@ import scroll from 'scroll'
 import Strings from './strings'
 import { Props } from '..'
 import { set } from '../util/arrays'
+import classNames from 'classnames'
 
 export default function Guitar(props: Props) {
   const {
@@ -39,7 +40,7 @@ export default function Guitar(props: Props) {
     }
   }, [fretsNodeRef, fretNodesRef, strings])
   return (
-    <div className={`${props.className} guitar` + (lefty ? ' lefty' : '')}>
+    <div className={classNames('guitar', { lefty }, props.className)}>
       <div className="nut">
         <Strings
           disabled={!props.onChange}
