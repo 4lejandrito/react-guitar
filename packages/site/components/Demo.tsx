@@ -21,7 +21,7 @@ export default function Demo() {
   )
 
   return (
-    <div className="slide-up flex-grow py-4">
+    <div className="slide-up w-full py-4">
       <div className="flex flex-wrap items-center justify-center px-4">
         <Number
           label="Number of strings"
