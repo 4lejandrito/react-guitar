@@ -55,7 +55,15 @@ export default function Guitar(props: Props) {
               renderFinger={renderFinger}
               onFretted={string =>
                 props.onChange?.(
-                  set(strings, string, strings[string] === fret ? 0 : fret)
+                  set(
+                    strings,
+                    string,
+                    fret === 0 && strings[string] === 0
+                      ? -1
+                      : strings[string] === fret
+                      ? 0
+                      : fret
+                  )
                 )
               }
               onOption={string => props.onOptions?.(string, fret)}
