@@ -2,7 +2,7 @@
 
 A beautiful and flexible guitar component for React.
 
-See react-guitar.com for a live demo.
+See https://react-guitar.com for a live demo.
 
 ![Screenshot of the rendered component with an A minor chord](packages/react-guitar/screenshot.png)
 

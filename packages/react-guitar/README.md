@@ -2,7 +2,7 @@
 
 A beautiful and flexible guitar component for React.
 
-See react-guitar.com for a live demo.
+See https://react-guitar.com for a live demo.
 
 **For the full documentation go to the [root README](https://github.com/4lejandrito/react-guitar).**
 
