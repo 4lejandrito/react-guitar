@@ -4,38 +4,27 @@ import D3 from 'react-guitar/resources/D3.mp3'
 import G3 from 'react-guitar/resources/G3.mp3'
 import E4 from 'react-guitar/resources/E4.mp3'
 import { useState } from 'react'
-import range from 'lodash.range'
 import Number from './Number'
 import Toggle from './Toggle'
+import Select from './Select'
 
 export default function Demo() {
   const [muted, setMuted] = useState(true)
   const [lefty, setLefty] = useState(false)
   const [frets, setFrets] = useState(22)
   const [strings, setStrings] = useState([0, 0, 0, 0, 0, 0])
-  const { play } = useGuitar(
-    { E2, D3, G3, E4 },
-    strings,
-    tunings.standard,
-    muted
-  )
+  const [tuningName, setTuningName] = useState<keyof typeof tunings>('standard')
+  const tuning = tunings[tuningName]
+  const { play } = useGuitar({ E2, D3, G3, E4 }, strings, tuning, muted)
 
   return (
     <div className="slide-up w-full py-4">
       <div className="flex flex-wrap items-center justify-center px-4">
-        <Number
-          label="Number of strings"
-          disabled={!muted}
-          value={strings.length}
-          min={0}
-          max={12}
-          onChange={n =>
-            setStrings(
-              n > strings.length
-                ? [...strings, ...range(n - strings.length).map(() => 0)]
-                : strings.filter((_, i) => i < n)
-            )
-          }
+        <Select
+          label="Tuning"
+          value={tuningName}
+          values={['standard', 'ukelele', 'rondeña', 'dadgad']}
+          onChange={setTuningName}
         />
         <Number
           label="Number of frets"
@@ -47,21 +36,16 @@ export default function Demo() {
         <Toggle
           label="Sound"
           value={!muted}
-          onChange={sound => {
-            if (sound && strings.length !== tunings.standard.length) {
-              setStrings([0, 0, 0, 0, 0, 0])
-            }
-            setMuted(!sound)
-          }}
+          onChange={sound => setMuted(!sound)}
         />
       </div>
       <div className="flex-grow mt-4 flex items-center justify-center">
         <div className="sm:rounded overflow-hidden shadow">
           <Guitar
             frets={{ from: 0, amount: frets }}
-            strings={strings}
+            strings={tuning.map((_, i) => strings[i] ?? 0)}
             lefty={lefty}
-            renderFinger={getRenderFingerSpn(tunings.standard)}
+            renderFinger={getRenderFingerSpn(tuning)}
             onChange={setStrings}
             onPlay={play}
           />
