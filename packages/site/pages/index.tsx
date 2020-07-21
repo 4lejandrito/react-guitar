@@ -47,7 +47,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="overflow-hidden flex-grow w-full flex flex-col items-center justify-center max-w-screen-md">
+      <main className="flex-grow w-full flex flex-col items-center justify-center max-w-screen-md">
         <Demo />
       </main>
 

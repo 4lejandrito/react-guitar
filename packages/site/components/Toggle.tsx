@@ -6,7 +6,7 @@ export default function Toggle(props: {
   onChange: (value: boolean) => void
 }) {
   return (
-    <label className="w-1/2 p-2 sm:w-auto flex flex-col">
+    <label className="p-2 flex flex-col">
       <small className="text-center font-bold text-gray-600 uppercase mb-2">
         {props.label}
       </small>

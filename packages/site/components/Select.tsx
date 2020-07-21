@@ -5,7 +5,7 @@ export default function Select<T extends string>(props: {
   onChange: (value: T) => void
 }) {
   return (
-    <label className="w-1/2 p-2 sm:w-40 text-center">
+    <label className="p-2 text-center">
       <small className="text-center block font-bold text-gray-600 uppercase mb-2">
         {props.label}
       </small>
