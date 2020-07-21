@@ -2,17 +2,17 @@
 
 A beautiful and flexible guitar component for React.
 
+**For the full documentation go to the [root README](https://github.com/4lejandrito/react-guitar).**
+
 ![Screenshot of the rendered component with an A minor chord](screenshot.png)
 
 [![Edit quizzical-dawn-0hzuq](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/interesting-breeze-ll7zh)
 
-## Installation
+## Usage
 
 ```
 npm i react-guitar
 ```
-
-## Usage
 
 ```jsx
 import React from 'react'
@@ -25,7 +25,7 @@ render(
 )
 ```
 
-Check out [the stories](stories/index.stories.tsx) for working examples.
+Check out [the storybook](https://react-guitar.com/storybook) for more advanced examples.
 
 ## Developing
 
