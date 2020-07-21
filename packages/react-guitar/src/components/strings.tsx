@@ -6,24 +6,12 @@ export default function Strings(props: {
   strings: number[]
   renderFinger?: (string: number, fret: number) => JSX.Element
   onFretted: (string: number) => void
-  onOption: (string: number) => void
   onPlay: (string: number) => void
 }) {
   return (
     <ol className="strings">
       {props.strings.map((fret, string) => (
-        <li
-          key={string}
-          onMouseEnter={() => fret >= 0 && props.onPlay(string)}
-          onContextMenu={
-            fret === props.fret
-              ? e => {
-                  e.preventDefault()
-                  props.onOption(string)
-                }
-              : undefined
-          }
-        >
+        <li key={string} onMouseEnter={() => fret >= 0 && props.onPlay(string)}>
           <label>
             <input
               disabled={props.disabled}

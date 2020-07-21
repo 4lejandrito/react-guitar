@@ -16,7 +16,6 @@ export type Props = {
   }
   lefty?: boolean
   onChange?: (strings: number[]) => void
-  onOptions?: (string: number, fret: number) => void
   onPlay?: (string: number) => void
   renderFinger?: (string: number, fret: number) => JSX.Element
 }

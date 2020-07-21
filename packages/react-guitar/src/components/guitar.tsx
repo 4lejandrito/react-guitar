@@ -66,7 +66,6 @@ export default function Guitar(props: Props) {
                   )
                 )
               }
-              onOption={string => props.onOptions?.(string, fret)}
               onPlay={string => props.onPlay?.(string)}
             />
             {fret !== 0 && <span className="counter">{fret}</span>}
