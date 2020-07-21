@@ -8,7 +8,6 @@ import Number from './Number'
 import Toggle from './Toggle'
 import Select from './Select'
 import Label from './Label'
-import classNames from 'classnames'
 
 export default function Demo() {
   const [playOnHover, setPlayOnHover] = useState(false)
@@ -40,9 +39,7 @@ export default function Demo() {
         </Label>
         <Label name="Strum">
           <button
-            className={classNames(
-              'border-2 hover:bg-gray-200 font-bold py-1 px-2 rounded'
-            )}
+            className="border-2 hover:bg-gray-200 font-bold py-1 px-2 rounded"
             onClick={() => strum()}
             title="Strum"
           >
