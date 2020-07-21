@@ -7,6 +7,7 @@ import { useState } from 'react'
 import Number from './Number'
 import Toggle from './Toggle'
 import Select from './Select'
+import Label from './Label'
 import classNames from 'classnames'
 
 export default function Demo() {
@@ -21,40 +22,33 @@ export default function Demo() {
   return (
     <div className="slide-up w-full py-4">
       <div className="flex flex-wrap items-stretch justify-center px-4">
-        <Select
-          label="Tuning"
-          value={tuningName}
-          values={['standard', 'ukelele', 'rondeña', 'dadgad']}
-          onChange={setTuningName}
-        />
-        <Number
-          label="Number of frets"
-          value={frets}
-          min={0}
-          onChange={setFrets}
-        />
-        <Toggle label="Left handed" value={lefty} onChange={setLefty} />
-        <Toggle
-          label="Play on hover"
-          value={playOnHover}
-          onChange={setPlayOnHover}
-        />
-        <label className="w-auto p-2 text-center flex flex-col">
-          <small className="flex-grow text-center block font-bold text-gray-600 uppercase mb-2">
-            Strum
-          </small>
-          <div className="h-10 flex items-center justify-center">
-            <button
-              className={classNames(
-                'border-2 hover:bg-gray-200 font-bold py-1 px-2 rounded'
-              )}
-              onClick={() => strum()}
-              title="Strum"
-            >
-              🎶 👇
-            </button>
-          </div>
-        </label>
+        <Label name="Tuning">
+          <Select
+            value={tuningName}
+            values={['standard', 'ukelele', 'rondeña', 'dadgad']}
+            onChange={setTuningName}
+          />
+        </Label>
+        <Label name="Number of frets">
+          <Number value={frets} min={0} onChange={setFrets} />
+        </Label>
+        <Label name="Left handed">
+          <Toggle value={lefty} onChange={setLefty} />
+        </Label>
+        <Label name="Play on hover">
+          <Toggle value={playOnHover} onChange={setPlayOnHover} />
+        </Label>
+        <Label name="Strum">
+          <button
+            className={classNames(
+              'border-2 hover:bg-gray-200 font-bold py-1 px-2 rounded'
+            )}
+            onClick={() => strum()}
+            title="Strum"
+          >
+            🎶 👇
+          </button>
+        </Label>
       </div>
       <div className="relative flex-grow mt-4 flex items-center justify-center">
         <div className="sm:rounded overflow-hidden shadow">
