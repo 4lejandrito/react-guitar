@@ -15,12 +15,14 @@ export default function useGuitar(
   const [playing, setPlaying] = useState(tuning.map(() => false))
 
   useEffect(() => {
-    const synth = new Sampler(samples, () => setLoaded(true)).toMaster()
-    setSynth(synth)
-    return () => {
-      synth.dispose()
+    if (!muted) {
+      const synth = new Sampler(samples, () => setLoaded(true)).toMaster()
+      setSynth(synth)
+      return () => {
+        synth.dispose()
+      }
     }
-  }, [])
+  }, [muted])
 
   const play = (string: number, when = '+0') => {
     if (loaded && !muted && synth && fretting[string] >= 0) {
