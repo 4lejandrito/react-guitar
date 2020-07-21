@@ -15,9 +15,9 @@ export type Props = {
     amount: number
   }
   lefty?: boolean
+  renderFinger?: (string: number, fret: number) => JSX.Element
   onChange?: (strings: number[]) => void
   onPlay?: (string: number) => void
-  renderFinger?: (string: number, fret: number) => JSX.Element
 }
 import './css/guitar.scss'
 export { useGuitar, tunings, getRenderFingerRelative, getRenderFingerSpn }
