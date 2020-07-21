@@ -1,9 +1,4 @@
-const path = require('path')
-
-const prod = process.env.NEXT_PUBLIC_URL.indexOf('localhost') === -1
-
 module.exports = {
-  assetPrefix: prod ? '/react-guitar/' : '',
   webpack(config, options) {
     const { isServer } = options
     config.module.rules.push({

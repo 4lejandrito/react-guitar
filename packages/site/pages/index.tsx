@@ -28,7 +28,7 @@ export default function Home() {
               alt: `${title} - ${description}`
             }
           ],
-          site_name: '4lejandrito.github.io/react-guitar'
+          site_name: 'react-guitar.com'
         }}
       />
 

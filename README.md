@@ -25,7 +25,7 @@ render(
 )
 ```
 
-Check out [the storybook](https://4lejandrito.github.io/react-guitar/storybook) for more advanced examples.
+Check out [the storybook](https://react-guitar.com/storybook) for more advanced examples.
 
 ### Props
 

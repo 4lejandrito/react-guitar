@@ -5,7 +5,7 @@
   "module": "dist/index.esm.js",
   "types": "dist/src/index.d.ts",
   "author": "Alejandro Tardín <alejandro@tardin.com>",
-  "homepage": "https://4lejandrito.github.io/react-guitar",
+  "homepage": "https://react-guitar.com",
   "license": "MIT",
   "repository": "https://github.com/4lejandrito/react-guitar/tree/master/packages/react-guitar",
   "funding": "https://github.com/4lejandrito/react-guitar?sponsor=1",
