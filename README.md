@@ -39,6 +39,41 @@ Check out [the storybook](https://react-guitar.com/storybook) for more advanced 
 | `onChange`     | A function `(strings: number[]) => void` that will be called when a string is press/unpressed. If not present the guitar will be read only.                                                                                               |
 | `onPlay`       | A function `(string: number) => void` that will be called each time the user plays a string (hovering with the mouse). This can be used to play the sound of the string.                                                                  |
 
+### Hooks
+
+#### useGuitar
+
+In order to enable sound playing `react-guitar` offers the [useGuitar](packages/react-guitar/src/hooks/guitar.ts) hook:
+
+```jsx
+import E2 from 'react-guitar/resources/E2.mp3'
+import D3 from 'react-guitar/resources/D3.mp3'
+import G3 from 'react-guitar/resources/G3.mp3'
+import E4 from 'react-guitar/resources/E4.mp3'
+
+...
+
+const { play, strum } = useGuitar({ E2, D3, G3, E4 }, strings, tuning)
+
+<Guitar strings={strings} onPlay={play}/>
+
+...
+```
+
+It receives:
+| Name | Description |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `samples` | A map from note names to mp3 files representing the samples. `react-guitar` offers 4 samples out of the box recorded from a Spanish guitar. |
+| `strings` | The same value passed as the `strings` prop to the `<Guitar />` component with the current fretting. |
+| `tuning` | An array of midi values for each string. `react-guitar` offers 4 tunings out of the box (`standard`, `ukelele`, `rondeña` and `dadgad`). |
+
+And will return an object containing:
+
+| Name    | Description                                                           |
+| ------- | --------------------------------------------------------------------- |
+| `play`  | A function that receives a string number and plays its current sound. |
+| `strum` | A function that will strum all the strings of the guitar.             |
+
 ## Developing
 
 - `yarn start` will spin up the storybook and the site.
