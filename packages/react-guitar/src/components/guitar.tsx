@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react'
 import min from 'lodash.min'
 import range from 'lodash.range'
 import scroll from 'scroll'
-import Strings from './strings'
 import { Props } from '..'
 import { set } from '../util/arrays'
 import classNames from 'classnames'
@@ -48,26 +47,40 @@ export default function Guitar(props: Props) {
             key={fret}
             ref={node => (fretNodesRef.current[fret] = node)}
           >
-            <Strings
-              disabled={!props.onChange}
-              fret={fret}
-              strings={strings}
-              renderFinger={renderFinger}
-              onFretted={string =>
-                props.onChange?.(
-                  set(
-                    strings,
-                    string,
-                    fret === 0 && strings[string] === 0
-                      ? -1
-                      : strings[string] === fret
-                      ? 0
-                      : fret
-                  )
-                )
-              }
-              onPlay={string => props.onPlay?.(string)}
-            />
+            <ol className="strings">
+              {strings.map((currentFret, string) => (
+                <li
+                  key={string}
+                  onMouseEnter={() =>
+                    currentFret >= 0 && props.onPlay?.(string)
+                  }
+                >
+                  <label>
+                    <input
+                      disabled={!props.onChange}
+                      type="checkbox"
+                      checked={currentFret === fret}
+                      onChange={() =>
+                        props.onChange?.(
+                          set(
+                            strings,
+                            string,
+                            fret === 0 && strings[string] === 0
+                              ? -1
+                              : strings[string] === fret
+                              ? 0
+                              : fret
+                          )
+                        )
+                      }
+                    />
+                    <span className="finger">
+                      {renderFinger?.(string, fret)}
+                    </span>
+                  </label>
+                </li>
+              ))}
+            </ol>
             {fret !== 0 && <span className="counter">{fret}</span>}
           </li>
         ))}
