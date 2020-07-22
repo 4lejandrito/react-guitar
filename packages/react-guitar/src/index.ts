@@ -4,7 +4,7 @@ import tunings from './music/tunings'
 import {
   getRenderFingerRelative,
   getRenderFingerSpn
-} from './components/fingers'
+} from './components/guitar'
 
 export type Props = {
   className?: string
