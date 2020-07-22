@@ -29,7 +29,7 @@ export default function Demo() {
           />
         </Label>
         <Label name="Number of frets">
-          <Number value={frets} min={0} onChange={setFrets} />
+          <Number value={frets} min={0} max={40} onChange={setFrets} />
         </Label>
         <Label name="Left handed">
           <Toggle value={lefty} onChange={setLefty} />
