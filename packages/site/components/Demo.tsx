@@ -1,4 +1,4 @@
-import Guitar, { useGuitar, tunings, getRenderFingerSpn } from 'react-guitar'
+import Guitar, { useSound, tunings, getRenderFingerSpn } from 'react-guitar'
 import E2 from 'react-guitar/resources/E2.mp3'
 import D3 from 'react-guitar/resources/D3.mp3'
 import G3 from 'react-guitar/resources/G3.mp3'
@@ -16,7 +16,7 @@ export default function Demo() {
   const [strings, setStrings] = useState([0, 0, 0, 0, 0, 0])
   const [tuningName, setTuningName] = useState<keyof typeof tunings>('standard')
   const tuning = tunings[tuningName]
-  const { play, strum } = useGuitar({ E2, D3, G3, E4 }, strings, tuning)
+  const { play, strum } = useSound({ E2, D3, G3, E4 }, strings, tuning)
 
   return (
     <div className="slide-up w-full py-4">

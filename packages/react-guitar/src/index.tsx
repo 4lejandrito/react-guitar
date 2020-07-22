@@ -1,4 +1,4 @@
-import useGuitar from './hooks/guitar'
+import useSound from './hooks/sound'
 import tunings from './music/tunings'
 import React, { useEffect, useRef } from 'react'
 import min from 'lodash.min'
@@ -10,7 +10,7 @@ import { toRelativeText } from './music/note'
 import { describe } from './music/note'
 import './css/guitar.scss'
 
-export { useGuitar, tunings }
+export { useSound, tunings }
 
 export function getRenderFingerSpn(tuning: number[], key?: number) {
   return (string: number, fret: number) => {

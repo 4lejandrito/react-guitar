@@ -4,7 +4,7 @@ import range from 'lodash.range'
 import { set } from '../util/arrays'
 import tunings from '../music/tunings'
 
-export default function useGuitar(
+export default function useSound(
   samples: SamplerOptions['urls'],
   fretting: number[],
   tuning: number[] = tunings.standard,

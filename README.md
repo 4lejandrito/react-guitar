@@ -41,9 +41,9 @@ Check out [the storybook](https://react-guitar.com/storybook) for more advanced 
 
 ### Hooks
 
-#### useGuitar
+#### useSound
 
-In order to enable sound playing `react-guitar` offers the [useGuitar](packages/react-guitar/src/hooks/guitar.ts) hook:
+In order to enable sound playing `react-guitar` offers the [useSound](packages/react-guitar/src/hooks/sound.ts) hook:
 
 ```jsx
 import E2 from 'react-guitar/resources/E2.mp3'
@@ -53,7 +53,7 @@ import E4 from 'react-guitar/resources/E4.mp3'
 
 ...
 
-const { play, strum } = useGuitar({ E2, D3, G3, E4 }, strings, tuning)
+const { play, strum } = useSound({ E2, D3, G3, E4 }, strings, tuning)
 
 <Guitar strings={strings} onPlay={play}/>
 

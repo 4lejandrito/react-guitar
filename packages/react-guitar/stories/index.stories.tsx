@@ -1,6 +1,6 @@
 import React from 'react'
 import Guitar, {
-  useGuitar,
+  useSound,
   tunings,
   getRenderFingerRelative,
   getRenderFingerSpn
@@ -30,7 +30,7 @@ storiesOf('Guitar', module)
       'Relative to Root': getRenderFingerRelative(tunings.standard, root)
     }
     const [strings, setStrings] = useState([0, 0, 0, 0, 0, 0])
-    const { play } = useGuitar({ E2, D3, G3, E4 }, strings)
+    const { play } = useSound({ E2, D3, G3, E4 }, strings)
     return (
       <Guitar
         lefty={boolean('Lefty', false)}
@@ -56,7 +56,7 @@ storiesOf('Guitar', module)
   .add('with fixed A minor', () => <Guitar strings={[0, 1, 2, 2, 0, -1]} />)
   .add('with fixed A minor and sound', () => {
     const fretting = [0, 1, 2, 2, 0, -1]
-    const { play } = useGuitar({ E2, D3, G3, E4 }, fretting)
+    const { play } = useSound({ E2, D3, G3, E4 }, fretting)
     return <Guitar strings={fretting} onPlay={play} />
   })
   .add('editable', () => {
@@ -66,7 +66,7 @@ storiesOf('Guitar', module)
   .add('without strings', () => <Guitar />)
   .add('ukelele', () => {
     const [strings, setStrings] = useState([0, 0, 0, 0])
-    const { play } = useGuitar({ E2, D3, G3, E4 }, strings, tunings.ukelele)
+    const { play } = useSound({ E2, D3, G3, E4 }, strings, tunings.ukelele)
     return (
       <Guitar
         strings={strings}
