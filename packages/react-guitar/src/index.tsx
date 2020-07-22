@@ -1,12 +1,16 @@
+import useGuitar from './hooks/guitar'
+import tunings from './music/tunings'
 import React, { useEffect, useRef } from 'react'
 import min from 'lodash.min'
 import range from 'lodash.range'
 import scroll from 'scroll'
-import { Props } from '..'
-import { set } from '../util/arrays'
+import { set } from './util/arrays'
 import classNames from 'classnames'
-import { toRelativeText } from '../music/note'
-import { describe } from '../music/note'
+import { toRelativeText } from './music/note'
+import { describe } from './music/note'
+import './css/guitar.scss'
+
+export { useGuitar, tunings }
 
 export function getRenderFingerSpn(tuning: number[], key?: number) {
   return (string: number, fret: number) => {
@@ -27,7 +31,19 @@ export function getRenderFingerRelative(tuning: number[], root: number) {
   )
 }
 
-export default function Guitar(props: Props) {
+export default function Guitar(props: {
+  className?: string
+  fitFretting?: boolean
+  strings?: number[]
+  frets?: {
+    from: number
+    amount: number
+  }
+  lefty?: boolean
+  renderFinger?: (string: number, fret: number) => JSX.Element
+  onChange?: (strings: number[]) => void
+  onPlay?: (string: number) => void
+}) {
   const {
     strings = [],
     fitFretting = false,

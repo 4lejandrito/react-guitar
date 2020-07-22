@@ -1,12 +1,13 @@
 import React from 'react'
-import Guitar, { useGuitar, tunings } from '../src'
+import Guitar, {
+  useGuitar,
+  tunings,
+  getRenderFingerRelative,
+  getRenderFingerSpn
+} from '../src'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, number, boolean, select } from '@storybook/addon-knobs'
 import { name } from '../src/music/note'
-import {
-  getRenderFingerRelative,
-  getRenderFingerSpn
-} from '../src/components/fingers'
 import { range } from 'lodash'
 import { useState } from '@storybook/addons'
 import E2 from '../resources/E2.mp3'
