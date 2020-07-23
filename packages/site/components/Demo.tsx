@@ -24,7 +24,7 @@ export default function Demo() {
         <Label name="Tuning">
           <Select
             value={tuningName}
-            values={['standard', 'ukelele', 'rondeña', 'dadgad']}
+            values={Object.keys(tunings) as (keyof typeof tunings)[]}
             onChange={setTuningName}
           />
         </Label>
