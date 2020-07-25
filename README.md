@@ -46,6 +46,7 @@ Check out [the storybook](https://react-guitar.com/storybook) for more advanced 
 In order to enable sound playing `react-guitar` offers the [useSound](packages/react-guitar/src/hooks/sound.ts) hook:
 
 ```jsx
+import Guitar, { useSound } from 'react-guitar'
 import E2 from 'react-guitar/resources/E2.mp3'
 import D3 from 'react-guitar/resources/D3.mp3'
 import G3 from 'react-guitar/resources/G3.mp3'
