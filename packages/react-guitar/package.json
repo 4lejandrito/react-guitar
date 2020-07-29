@@ -23,9 +23,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "lodash.min": "^4.0.1",
     "lodash.range": "^3.2.0",
-    "scroll": "^3.0.1",
     "tone": "^13.8.25"
   },
   "peerDependencies": {
@@ -43,7 +41,6 @@
     "@types/classnames": "^2.2.10",
     "@types/events": "^3.0.0",
     "@types/jest": "^24.0.15",
-    "@types/lodash.min": "^4.0.6",
     "@types/lodash.range": "^3.2.6",
     "@types/react": "^16.9.23",
     "@types/scroll": "^3.0.0",

@@ -54,6 +54,13 @@ storiesOf('Guitar', module)
     )
   })
   .add('with fixed A minor', () => <Guitar strings={[0, 1, 2, 2, 0, -1]} />)
+  .add('with fixed and centered A bar chord', () => (
+    <Guitar
+      strings={[4, 4, 5, 6, 6, 4]}
+      lefty={boolean('Lefty', false)}
+      center
+    />
+  ))
   .add('with fixed A minor and sound', () => {
     const fretting = [0, 1, 2, 2, 0, -1]
     const { play } = useSound({ E2, D3, G3, E4 }, fretting)
