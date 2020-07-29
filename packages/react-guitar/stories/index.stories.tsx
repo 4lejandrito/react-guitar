@@ -61,7 +61,7 @@ storiesOf('Guitar', module)
   .add('with fixed A minor', () => <Guitar strings={[0, 1, 2, 2, 0, -1]} />)
   .add('with fixed and centered A bar chord', () => (
     <Guitar
-      strings={[4, 4, 5, 6, 6, 4]}
+      strings={[5, 5, 6, 7, 7, 5]}
       lefty={boolean('Lefty', false)}
       center
     />
