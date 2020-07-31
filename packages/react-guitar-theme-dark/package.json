@@ -22,7 +22,8 @@
   },
   "peerDependencies": {
     "react": "^16.8",
-    "react-dom": "^16.8"
+    "react-dom": "^16.8",
+    "react-guitar": "^0.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
@@ -30,7 +31,6 @@
     "babel-loader": "^8.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-guitar": "^0.3.0",
     "rollup": "^2.21.0",
     "rollup-plugin-typescript2": "^0.27.1",
     "ts-loader": "^8.0.0",
