@@ -52,7 +52,7 @@
         opacity: 1 !important;
       }
       &:focus:not(:disabled) + .finger {
-        box-shadow: 0 0 0 0.2em blue;
+        box-shadow: 0 0 0 0.2em rgba(66, 153, 225, 0.5);
       }
     }
     .finger {
