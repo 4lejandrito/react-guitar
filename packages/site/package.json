@@ -19,6 +19,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-guitar": "^0.3.0",
+    "react-guitar-theme-coco": "^0.3.0",
     "react-switch": "^5.0.1",
     "tailwindcss": "^1.5.1"
   }

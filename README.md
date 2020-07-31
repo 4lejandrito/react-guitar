@@ -100,6 +100,8 @@ By default the guitar is styled as a Spanish guitar but a dark theme is also pro
 
 ![Screenshot of the rendered component with an A minor chord](packages/react-guitar/screenshot-dark.png)
 
+There is a theme for the guitar from the [Coco](<https://en.wikipedia.org/wiki/Coco_(2017_film)>) film. Check it out at [react-guitar-theme-coco](packages/react-guitar-theme-coco).
+
 ## Developing
 
 - `yarn start` will spin up the storybook and the site.

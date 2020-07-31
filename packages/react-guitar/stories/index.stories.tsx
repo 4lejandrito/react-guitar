@@ -15,6 +15,7 @@ import E2 from '../resources/E2.mp3'
 import D3 from '../resources/D3.mp3'
 import G3 from '../resources/G3.mp3'
 import E4 from '../resources/E4.mp3'
+import coco from 'react-guitar-theme-coco'
 
 storiesOf('Guitar', module)
   .addDecorator(withKnobs)
@@ -93,3 +94,4 @@ storiesOf('Guitar', module)
   .add('dark', () => (
     <Guitar theme={themes.dark} strings={[0, 0, 0, 0, 0, 0]} />
   ))
+  .add('coco', () => <Guitar theme={coco} strings={[0, 0, 0, 0, 0, 0]} />)
