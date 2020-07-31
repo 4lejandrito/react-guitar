@@ -1,4 +1,9 @@
-import Guitar, { useSound, tunings, getRenderFingerSpn } from 'react-guitar'
+import Guitar, {
+  useSound,
+  tunings,
+  getRenderFingerSpn,
+  themes
+} from 'react-guitar'
 import E2 from 'react-guitar/resources/E2.mp3'
 import D3 from 'react-guitar/resources/D3.mp3'
 import G3 from 'react-guitar/resources/G3.mp3'
@@ -15,6 +20,7 @@ export default function Demo() {
   const [frets, setFrets] = useState(22)
   const [strings, setStrings] = useState([0, 0, 0, 0, 0, 0])
   const [tuningName, setTuningName] = useState<keyof typeof tunings>('standard')
+  const [themeName, setThemeName] = useState<keyof typeof themes>('spanish')
   const tuning = tunings[tuningName]
   const { play, strum } = useSound({ E2, D3, G3, E4 }, strings, tuning)
 
@@ -26,6 +32,13 @@ export default function Demo() {
             value={tuningName}
             values={Object.keys(tunings) as (keyof typeof tunings)[]}
             onChange={setTuningName}
+          />
+        </Label>
+        <Label name="Theme">
+          <Select
+            value={themeName}
+            values={Object.keys(themes) as (keyof typeof themes)[]}
+            onChange={setThemeName}
           />
         </Label>
         <Label name="Number of frets">
@@ -54,6 +67,7 @@ export default function Demo() {
             strings={tuning.map((_, i) => strings[i] ?? 0)}
             lefty={lefty}
             renderFinger={getRenderFingerSpn(tuning)}
+            theme={themes[themeName]}
             onChange={setStrings}
             onPlay={string => playOnHover && play(string)}
           />
