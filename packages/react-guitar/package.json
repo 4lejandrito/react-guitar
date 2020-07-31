@@ -22,6 +22,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
     "@tonaljs/note": "^3.6.0",
     "classnames": "^2.2.6",
     "lodash.range": "^3.2.0",
