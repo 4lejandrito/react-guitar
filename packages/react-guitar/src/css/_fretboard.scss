@@ -21,9 +21,13 @@
       border-top: solid 0.5em $guitar-fretboard-color;
       border-bottom: solid 2em $guitar-fretboard-color;
       .lefty & {
-        box-shadow: -4px 0px 2px -3px #333;
+        .strings {
+          box-shadow: -4px 0px 2px -3px #333;
+        }
       }
-      box-shadow: 4px 0px 2px -3px #333;
+      .strings {
+        box-shadow: 4px 0px 2px -3px #333;
+      }
     }
 
     &:not(.nut)::before {
