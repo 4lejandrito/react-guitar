@@ -37,6 +37,7 @@ Check out [the storybook](https://react-guitar.com/storybook) for more advanced 
 | `lefty`        | A boolean to configure the guitar for left handed people like me.                                                                                                                                                                         |
 | `center`       | A boolean to indicate if the current fretting should be centered. If set to `true` the guitar horizontal scroll will be set so that the middle fret is centered.                                                                          |
 | `renderFinger` | A function `(string: number, fret: number) => JSX.Element` that will be used to render the content of the white bubble used for the fingers. This can be used to render the note name.                                                    |
+| `theme`        | A theme object to customise the guitar look and feel. See [Theming](#theming).                                                                                                                                                            |
 | `onChange`     | A function `(strings: number[]) => void` that will be called when a string is press/unpressed. If not present the guitar will be read only.                                                                                               |
 | `onPlay`       | A function `(string: number) => void` that will be called each time the user plays a string (hovering with the mouse). This can be used to play the sound of the string.                                                                  |
 
@@ -75,6 +76,29 @@ And will return an object containing:
 | ------- | --------------------------------------------------------------------- |
 | `play`  | A function that receives a string number and plays its current sound. |
 | `strum` | A function that will strum all the strings of the guitar.             |
+
+### Theming
+
+`react-guitar` look and feel can be customised by passing the `theme` prop. A theme is an object describing the customisable properties of the guitar:
+
+```tsx
+{
+  color: string
+  nut: { color: string }
+  fret: {
+    color: string
+    separator: { color: string }
+    marker?: (fret: number) => JSX.Element | null
+    counter: { color: string }
+  }
+  string: { color: (string: number) => string }
+  finger: { color: string }
+}
+```
+
+By default the guitar is styled as a Spanish guitar but a dark theme is also provided. See [the code](packages/react-guitar/src/util/themes.tsx).
+
+![Screenshot of the rendered component with an A minor chord](packages/react-guitar/screenshot-dark.png)
 
 ## Developing
 

@@ -5,21 +5,19 @@
 
   > li {
     width: 10em;
-    background: $guitar-fret-color;
     display: inline-flex;
     flex-direction: row-reverse;
     position: relative;
-    border-top: solid 0.5em $guitar-fretboard-color;
-    border-bottom: solid 2em $guitar-fretboard-color;
+    border-top-width: 0.5em;
+    border-bottom-width: 2em;
+    border-top-style: solid;
+    border-bottom-style: solid;
     vertical-align: top;
 
     &.nut {
       width: 7em;
-      background: #fffacd;
       flex-shrink: 0;
       z-index: 1;
-      border-top: solid 0.5em $guitar-fretboard-color;
-      border-bottom: solid 2em $guitar-fretboard-color;
       .lefty & {
         .strings {
           box-shadow: -4px 0px 2px -3px #333;
@@ -32,13 +30,23 @@
 
     &:not(.nut)::before {
       content: '';
-      background: #daa520;
       box-shadow: 0px 0px 7px -1px #333;
       position: absolute;
       top: 0;
       bottom: 0;
       width: 0.3em;
       display: inline-block;
+    }
+
+    .marker {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .counter {
@@ -48,7 +56,6 @@
       bottom: -1.5em;
       font-weight: bold;
       text-align: center;
-      color: $guitar-text-color;
     }
   }
 }

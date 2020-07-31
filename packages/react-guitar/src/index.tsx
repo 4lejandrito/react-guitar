@@ -1,13 +1,16 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import useSound from './hooks/sound'
 import tunings from './util/tunings'
-import React, { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef, Fragment } from 'react'
 import range from 'lodash.range'
 import { set } from './util/arrays'
 import classNames from 'classnames'
 import { get, fromMidiSharps } from '@tonaljs/note'
+import themes, { Theme } from './util/themes'
 import './css/guitar.scss'
 
-export { useSound, tunings }
+export { useSound, tunings, themes, Theme }
 
 export function getRenderFingerSpn(tuning: number[]) {
   return (string: number, fret: number) => {
@@ -25,13 +28,13 @@ export function getRenderFingerSpn(tuning: number[]) {
 export function getRenderFingerRelative(tuning: number[], root: number) {
   const mod = (n: number, m: number) => (m + (n % m)) % m
   return (string: number, fret: number) => (
-    <>
+    <Fragment>
       {
         ['1', '2m', '2', '3m', '3', '4', '5dim', '5', '5aug', '6', '7m', '7'][
           mod(tuning[string] + fret - root, 12)
         ]
       }
-    </>
+    </Fragment>
   )
 }
 
@@ -45,6 +48,7 @@ export default function Guitar(props: {
   lefty?: boolean
   center?: boolean
   renderFinger?: (string: number, fret: number) => JSX.Element
+  theme?: Theme
   onChange?: (strings: number[]) => void
   onPlay?: (string: number) => void
 }) {
@@ -53,7 +57,8 @@ export default function Guitar(props: {
     frets = { from: 0, amount: 22 },
     lefty = false,
     center = false,
-    renderFinger
+    renderFinger,
+    theme = themes.spanish
   } = props
   const fretsNodeRef = useRef(null as HTMLOListElement | null)
   const fretNodesRef = useRef({} as { [K: number]: HTMLLIElement | null })
@@ -80,12 +85,27 @@ export default function Guitar(props: {
           <li
             className={fret === 0 ? 'nut' : undefined}
             key={fret}
+            css={{
+              backgroundColor: fret === 0 ? theme.nut.color : theme.fret.color,
+              borderColor: theme.color,
+              '&:before': {
+                backgroundColor: theme.fret.separator.color
+              }
+            }}
             ref={node => (fretNodesRef.current[fret] = node)}
           >
+            {theme.fret.marker && (
+              <div className="marker">{theme.fret.marker(fret)}</div>
+            )}
             <ol className="strings">
               {strings.map((currentFret, string) => (
                 <li
                   key={string}
+                  css={{
+                    '&:after': {
+                      backgroundColor: theme.string.color(string)
+                    }
+                  }}
                   onMouseEnter={() =>
                     currentFret >= 0 && props.onPlay?.(string)
                   }
@@ -109,14 +129,24 @@ export default function Guitar(props: {
                         )
                       }
                     />
-                    <span className="finger">
+                    <span
+                      className="finger"
+                      css={{ color: theme.finger.color }}
+                    >
                       {renderFinger?.(string, fret)}
                     </span>
                   </label>
                 </li>
               ))}
             </ol>
-            {fret !== 0 && <span className="counter">{fret}</span>}
+            {fret !== 0 && (
+              <span
+                className="counter"
+                css={{ color: theme.fret.counter.color }}
+              >
+                {fret}
+              </span>
+            )}
           </li>
         ))}
       </ol>

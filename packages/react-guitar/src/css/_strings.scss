@@ -14,7 +14,6 @@
 
     &::after {
       content: '';
-      background-color: lighten(silver, 20%);
       width: 100%;
       height: 0.6em;
       position: absolute;
@@ -53,7 +52,7 @@
         opacity: 1 !important;
       }
       &:focus:not(:disabled) + .finger {
-        box-shadow: 0 0 0 0.2em $guitar-fretboard-color;
+        box-shadow: 0 0 0 0.2em blue;
       }
     }
     .finger {
@@ -69,7 +68,6 @@
       text-align: center;
       font-weight: bold;
       opacity: 0;
-      color: $guitar-text-color;
     }
   }
 }

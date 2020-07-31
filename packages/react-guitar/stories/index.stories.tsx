@@ -3,7 +3,8 @@ import Guitar, {
   useSound,
   tunings,
   getRenderFingerRelative,
-  getRenderFingerSpn
+  getRenderFingerSpn,
+  themes
 } from '../src'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, number, boolean, select } from '@storybook/addon-knobs'
@@ -53,6 +54,7 @@ storiesOf('Guitar', module)
             )
           ]
         }
+        theme={(themes as any)[select('Theme', Object.keys(themes), 'spanish')]}
         onChange={setStrings}
         onPlay={play}
       />
@@ -88,3 +90,6 @@ storiesOf('Guitar', module)
       />
     )
   })
+  .add('dark', () => (
+    <Guitar theme={themes.dark} strings={[0, 0, 0, 0, 0, 0]} />
+  ))
