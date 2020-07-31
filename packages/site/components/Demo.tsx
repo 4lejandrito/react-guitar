@@ -2,7 +2,7 @@ import Guitar, {
   useSound,
   tunings,
   getRenderFingerSpn,
-  themes as guitarThemes
+  spanishTheme
 } from 'react-guitar'
 import E2 from 'react-guitar/resources/E2.mp3'
 import D3 from 'react-guitar/resources/D3.mp3'
@@ -14,6 +14,7 @@ import Toggle from './Toggle'
 import Select from './Select'
 import Label from './Label'
 import coco from 'react-guitar-theme-coco'
+import dark from 'react-guitar-theme-dark'
 
 export default function Demo() {
   const [playOnHover, setPlayOnHover] = useState(false)
@@ -21,7 +22,7 @@ export default function Demo() {
   const [frets, setFrets] = useState(22)
   const [strings, setStrings] = useState([0, 0, 0, 0, 0, 0])
   const [tuningName, setTuningName] = useState<keyof typeof tunings>('standard')
-  const themes = { ...guitarThemes, coco }
+  const themes = { spanish: spanishTheme, dark, coco }
   const [themeName, setThemeName] = useState<keyof typeof themes>('spanish')
   const tuning = tunings[tuningName]
   const { play, strum } = useSound({ E2, D3, G3, E4 }, strings, tuning)

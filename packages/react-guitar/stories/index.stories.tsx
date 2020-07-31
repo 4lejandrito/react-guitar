@@ -4,7 +4,7 @@ import Guitar, {
   tunings,
   getRenderFingerRelative,
   getRenderFingerSpn,
-  themes
+  spanishTheme
 } from '../src'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, number, boolean, select } from '@storybook/addon-knobs'
@@ -16,6 +16,9 @@ import D3 from '../resources/D3.mp3'
 import G3 from '../resources/G3.mp3'
 import E4 from '../resources/E4.mp3'
 import coco from 'react-guitar-theme-coco'
+import dark from 'react-guitar-theme-dark'
+
+const themes = { spanish: spanishTheme, dark, coco }
 
 storiesOf('Guitar', module)
   .addDecorator(withKnobs)
@@ -94,4 +97,6 @@ storiesOf('Guitar', module)
   .add('dark', () => (
     <Guitar theme={themes.dark} strings={[0, 0, 0, 0, 0, 0]} />
   ))
-  .add('coco', () => <Guitar theme={coco} strings={[0, 0, 0, 0, 0, 0]} />)
+  .add('coco', () => (
+    <Guitar theme={themes.coco} strings={[0, 0, 0, 0, 0, 0]} />
+  ))

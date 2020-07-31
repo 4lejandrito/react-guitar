@@ -7,10 +7,10 @@ import range from 'lodash.range'
 import { set } from './util/arrays'
 import classNames from 'classnames'
 import { get, fromMidiSharps } from '@tonaljs/note'
-import themes, { Theme } from './util/themes'
+import spanishTheme, { Theme } from './util/theme'
 import './css/guitar.scss'
 
-export { useSound, tunings, themes, Theme }
+export { useSound, tunings, spanishTheme, Theme }
 
 export function getRenderFingerSpn(tuning: number[]) {
   return (string: number, fret: number) => {
@@ -58,7 +58,7 @@ export default function Guitar(props: {
     lefty = false,
     center = false,
     renderFinger,
-    theme = themes.spanish
+    theme = spanishTheme
   } = props
   const fretsNodeRef = useRef(null as HTMLOListElement | null)
   const fretNodesRef = useRef({} as { [K: number]: HTMLLIElement | null })

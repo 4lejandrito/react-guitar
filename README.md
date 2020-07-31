@@ -96,11 +96,10 @@ And will return an object containing:
 }
 ```
 
-By default the guitar is styled as a Spanish guitar but a dark theme is also provided. See [the code](packages/react-guitar/src/util/themes.tsx).
+By default the guitar is styled as a Spanish guitar but some other themes are available:
 
-![Screenshot of the rendered component with an A minor chord](packages/react-guitar/screenshot-dark.png)
-
-There is a theme for the guitar from the [Coco](<https://en.wikipedia.org/wiki/Coco_(2017_film)>) film. Check it out at [react-guitar-theme-coco](packages/react-guitar-theme-coco).
+- [react-guitar-theme-dark](packages/react-guitar-theme-dark): A dark theme.
+- [react-guitar-theme-coco](packages/react-guitar-theme-coco): A theme for the guitar from the [Coco](<https://en.wikipedia.org/wiki/Coco_(2017_film)>) film.
 
 ## Developing
 
