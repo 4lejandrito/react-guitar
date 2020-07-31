@@ -18,19 +18,10 @@
       width: 7em;
       flex-shrink: 0;
       z-index: 1;
-      .lefty & {
-        .strings {
-          box-shadow: -4px 0px 2px -3px #333;
-        }
-      }
-      .strings {
-        box-shadow: 4px 0px 2px -3px #333;
-      }
     }
 
     &:not(.nut)::before {
       content: '';
-      box-shadow: 0px 0px 7px -1px #333;
       position: absolute;
       top: 0;
       bottom: 0;
