@@ -8,7 +8,7 @@ import { set } from './util/arrays'
 import classNames from 'classnames'
 import { get, fromMidiSharps } from '@tonaljs/note'
 import spanishTheme, { Theme } from './util/theme'
-import './css/guitar.scss'
+import styles from './styles'
 
 export { useSound, tunings, spanishTheme, Theme }
 
@@ -79,8 +79,11 @@ export default function Guitar(props: {
     }
   }, [fretsNodeRef, fretNodesRef, strings, center, lefty])
   return (
-    <div className={classNames('guitar', { lefty }, props.className)}>
-      <ol className="frets" ref={fretsNodeRef}>
+    <div
+      className={classNames('guitar', { lefty }, props.className)}
+      css={styles.guitar}
+    >
+      <ol className="frets" css={styles.frets} ref={fretsNodeRef}>
         {range(frets.from, frets.from + frets.amount + 1).map(fret => (
           <li
             className={fret === 0 ? 'nut' : undefined}
@@ -97,7 +100,7 @@ export default function Guitar(props: {
             {theme.fret.marker && (
               <div className="marker">{theme.fret.marker(fret)}</div>
             )}
-            <ol className="strings">
+            <ol className="strings" css={styles.strings}>
               {strings.map((currentFret, string) => (
                 <li
                   key={string}
