@@ -28,7 +28,7 @@ export default function Demo() {
   const { play, strum } = useSound({ E2, D3, G3, E4 }, strings, tuning)
 
   return (
-    <div className="slide-up w-full py-4">
+    <div className="slide-up animation-delay w-full py-4">
       <div className="flex flex-wrap items-stretch justify-center px-4">
         <Label name="Tuning">
           <Select

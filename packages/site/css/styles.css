@@ -3,10 +3,13 @@
 @tailwind utilities;
 
 .slide-up {
+  opacity: 0;
   animation: slide-up 600ms;
   transition: opacity 600ms;
   animation: slide-up 0.75s cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards;
-  animation-delay: 0.2;
+}
+.animation-delay {
+  animation-delay: 0.35s;
 }
 @keyframes slide-up {
   0% {
