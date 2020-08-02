@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import { NextSeo } from 'next-seo'
-import dynamic from 'next/dynamic'
 import Button from '../components/Button'
+import Demo from '../components/Demo'
 
-const Demo = dynamic(() => import('../components/Demo'), { ssr: false })
 const logo = `${process.env.NEXT_PUBLIC_URL}/logo.png`
 
 export default function Home() {
