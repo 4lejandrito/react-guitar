@@ -1,13 +1,17 @@
 import { css } from '@emotion/core'
+import { Theme } from '..'
 
-const height = `${3.5 / 1.5}em`
-
-export default css({
+export const strings = css({
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
-  height: '20em',
-  '> li': {
+  height: '20em'
+})
+
+const height = `${3.5 / 1.5}em`
+
+export const string = (string: number, theme: Theme) =>
+  css({
     zIndex: 1,
     margin: '0',
     position: 'relative',
@@ -22,8 +26,10 @@ export default css({
       height: '0.6em',
       position: 'absolute',
       left: '0',
-      borderBottom: 'solid 0.1em #555'
+      borderBottom: 'solid 0.1em #555',
+      backgroundColor: theme.string.color(string)
     },
+
     label: {
       fontSize: '1em',
       position: 'absolute',
@@ -37,16 +43,20 @@ export default css({
       zIndex: 2,
       margin: 0
     },
+
     '&:hover input:not(:disabled):not(:checked) ~ .finger,input:focus:not(:disabled):not(:checked) ~ .finger': {
       opacity: 0.5
     },
+
     'input:not(:disabled)': {
       height: '100%',
       width: '100%'
     },
+
     'input:not(:disabled),input:not(:disabled) ~ .finger': {
       cursor: 'pointer'
     },
+
     input: {
       position: 'absolute',
       opacity: 0,
@@ -56,19 +66,21 @@ export default css({
       '&:focus:not(:disabled) ~ .finger': {
         boxShadow: '0 0 0 0.2em rgba(66, 153, 225, 0.5)'
       }
-    },
-    '.finger': {
-      transition: 'opacity ease-in-out 0.1s',
-      background: 'white',
-      width: '5em',
-      padding: '0',
-      height: height,
-      borderRadius: '100px',
-      boxShadow: '0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)',
-      lineHeight: height,
-      textAlign: 'center',
-      fontWeight: 'bold',
-      opacity: 0
     }
-  }
-})
+  })
+
+export const finger = (theme: Theme) =>
+  css({
+    color: theme.finger.color,
+    transition: 'opacity ease-in-out 0.1s',
+    background: 'white',
+    width: '5em',
+    padding: '0',
+    height: height,
+    borderRadius: '100px',
+    boxShadow: '0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)',
+    lineHeight: height,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    opacity: 0
+  })

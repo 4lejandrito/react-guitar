@@ -89,13 +89,7 @@ export default function Guitar(props: {
           <li
             className={fret === 0 ? 'nut' : undefined}
             key={fret}
-            css={{
-              backgroundColor: fret === 0 ? theme.nut.color : theme.fret.color,
-              borderColor: theme.color,
-              '&:before': {
-                backgroundColor: theme.fret.separator.color
-              }
-            }}
+            css={styles.fret(fret, theme)}
             ref={node => (fretNodesRef.current[fret] = node)}
           >
             {theme.fret.marker && (
@@ -105,11 +99,7 @@ export default function Guitar(props: {
               {strings.map((currentFret, string) => (
                 <li
                   key={string}
-                  css={{
-                    '&:after': {
-                      backgroundColor: theme.string.color(string)
-                    }
-                  }}
+                  css={styles.string(string, theme)}
                   onMouseEnter={() =>
                     currentFret >= 0 && props.onPlay?.(string)
                   }
@@ -133,10 +123,7 @@ export default function Guitar(props: {
                         )
                       }
                     />
-                    <span
-                      className="finger"
-                      css={{ color: theme.finger.color }}
-                    >
+                    <span className="finger" css={styles.finger(theme)}>
                       {renderFinger?.(string, fret)}
                     </span>
                   </label>
@@ -144,10 +131,7 @@ export default function Guitar(props: {
               ))}
             </ol>
             {fret !== 0 && (
-              <span
-                className="counter"
-                css={{ color: theme.fret.counter.color }}
-              >
+              <span className="counter" css={styles.counter(theme)}>
                 {fret}
               </span>
             )}

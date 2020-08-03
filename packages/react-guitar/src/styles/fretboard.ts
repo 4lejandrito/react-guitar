@@ -1,11 +1,14 @@
 import { css } from '@emotion/core'
+import { Theme } from '..'
 
-export default css({
+export const frets = css({
   position: 'relative',
   whiteSpace: 'nowrap',
-  overflowY: 'auto',
+  overflowY: 'auto'
+})
 
-  '> li': {
+export const fret = (fret: number, theme: Theme) =>
+  css({
     width: '10em',
     display: 'inline-flex',
     flexDirection: 'row-reverse',
@@ -15,6 +18,8 @@ export default css({
     borderTopStyle: 'solid',
     borderBottomStyle: 'solid',
     verticalAlign: 'top',
+    backgroundColor: fret === 0 ? theme.nut.color : theme.fret.color,
+    borderColor: theme.color,
 
     '&.nut': {
       width: '7em',
@@ -28,6 +33,7 @@ export default css({
       top: '0',
       bottom: '0',
       width: '0.3em',
+      backgroundColor: theme.fret.separator.color,
       display: 'inline-block'
     },
 
@@ -44,15 +50,16 @@ export default css({
       '.lefty &': {
         transform: 'scale(-1, 1)'
       }
-    },
-
-    '.counter': {
-      width: '100%',
-      height: '6%',
-      position: 'absolute',
-      bottom: '-1.5em',
-      fontWeight: 'bold',
-      textAlign: 'center'
     }
-  }
-})
+  })
+
+export const counter = (theme: Theme) =>
+  css({
+    width: '100%',
+    height: '6%',
+    position: 'absolute',
+    bottom: '-1.5em',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: theme.fret.counter.color
+  })

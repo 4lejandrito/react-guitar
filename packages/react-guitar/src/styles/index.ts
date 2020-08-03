@@ -1,5 +1,5 @@
 import guitar from './guitar'
-import frets from './fretboard'
-import strings from './strings'
+import { frets, fret, counter } from './fretboard'
+import { strings, string, finger } from './strings'
 
-export default { guitar, frets, strings }
+export default { guitar, frets, fret, strings, string, finger, counter }
