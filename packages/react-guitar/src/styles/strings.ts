@@ -26,7 +26,7 @@ export const string = (string: number, theme: Theme) =>
       height: '0.6em',
       position: 'absolute',
       left: '0',
-      borderBottom: 'solid 0.1em #555',
+      borderBottom: 'solid 0.2em #919090',
       backgroundColor: theme.string.color(string)
     },
 
