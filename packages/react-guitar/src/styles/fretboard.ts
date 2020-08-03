@@ -8,7 +8,7 @@ export default css({
   '> li': {
     width: '10em',
     display: 'inline-flex',
-    'flex-direction': 'row-reverse',
+    flexDirection: 'row-reverse',
     position: 'relative',
     borderTopWidth: '0.5em',
     borderBottomWidth: '2em',
