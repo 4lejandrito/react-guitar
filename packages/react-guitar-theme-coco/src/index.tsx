@@ -6,8 +6,8 @@ const coco: Theme = {
   color: '#333333',
   nut: { color: '#FEB756' },
   fret: {
-    color: 'white',
-    separator: { color: '#FEB756' },
+    color: '#fefaf2',
+    separator: { color: '#FEB756', radius: true, shadow: true, width: 'md' },
     counter: { color: '#606c76' },
     marker: fret =>
       fret === 3 ? (
@@ -33,7 +33,7 @@ const coco: Theme = {
         />
       ) : null
   },
-  string: { color: () => '#f3f3f3' },
+  string: { color: () => '#c6c6c6' },
   finger: { color: '#606c76' }
 }
 
