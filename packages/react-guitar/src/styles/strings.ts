@@ -37,7 +37,7 @@ export default css({
       zIndex: 2,
       margin: 0
     },
-    '&:hover input:not(:disabled):not(:checked) + .finger,input:focus:not(:disabled):not(:checked) + .finger': {
+    '&:hover input:not(:disabled):not(:checked) ~ .finger,input:focus:not(:disabled):not(:checked) ~ .finger': {
       opacity: 0.5
     },
     'input:not(:disabled)': {
