@@ -9,8 +9,6 @@ export const strings = css({
   height: '20em'
 })
 
-const height = `${3.5 / 1.5}em`
-
 export const string = (string: number, theme: Theme) =>
   css({
     zIndex: 1,
@@ -72,18 +70,24 @@ export const string = (string: number, theme: Theme) =>
     }
   })
 
+const height = `${3.5 / 1.5}em`
+
 export const finger = (theme: Theme) =>
   css({
-    color: theme.finger.color,
+    color: theme.finger.text.color,
     transition: 'opacity ease-in-out 0.1s',
-    background: 'white',
+    background: theme.finger.color,
     width: '5em',
     padding: '0',
     height: height,
-    borderRadius: '100px',
-    boxShadow: '0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)',
+    borderRadius: '20px',
+    borderBottom: `solid 0.2em ${color(theme.finger.color).darken(0.35)}`,
+    boxShadow: '0 1px 2px rgba(0, 0, 0, 0.16), 0 1px 2px rgba(0, 0, 0, 0.23)',
     lineHeight: height,
     textAlign: 'center',
     fontWeight: 'bold',
-    opacity: 0
+    opacity: 0,
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   })

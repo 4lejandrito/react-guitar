@@ -13,7 +13,7 @@ export type Theme = {
     counter: { color: string }
   }
   string: { color: (string: number) => string }
-  finger: { color: string }
+  finger: { text: { color: string }; color: string }
 }
 const makeTheme = (theme: Theme) => theme
 
@@ -26,5 +26,5 @@ export default makeTheme({
     counter: { color: '#606c76' }
   },
   string: { color: () => '#eeeeee' },
-  finger: { color: '#606c76' }
+  finger: { text: { color: '#606c76' }, color: 'white' }
 })

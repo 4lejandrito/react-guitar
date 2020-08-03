@@ -34,7 +34,7 @@ const coco: Theme = {
       ) : null
   },
   string: { color: () => '#f3f3f3' },
-  finger: { color: '#606c76' }
+  finger: { color: 'white', text: { color: '#606c76' } }
 }
 
 export default coco
