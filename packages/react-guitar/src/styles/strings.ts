@@ -1,5 +1,6 @@
 import { css } from '@emotion/core'
 import { Theme } from '..'
+import color from 'color'
 
 export const strings = css({
   width: '100%',
@@ -26,7 +27,9 @@ export const string = (string: number, theme: Theme) =>
       height: '0.6em',
       position: 'absolute',
       left: '0',
-      borderBottom: 'solid 0.2em #919090',
+      borderBottom: `solid 0.2em ${color(theme.string.color(string)).darken(
+        0.4
+      )}`,
       backgroundColor: theme.string.color(string)
     },
 
