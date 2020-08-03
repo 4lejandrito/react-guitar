@@ -22,9 +22,9 @@ export default makeTheme({
   nut: { color: '#fffacd' },
   fret: {
     color: '#9e6429',
-    separator: { color: '#daa520' },
+    separator: { color: '#daa520', shadow: true },
     counter: { color: '#606c76' }
   },
-  string: { color: () => '#f3f3f3' },
+  string: { color: () => '#eeeeee' },
   finger: { color: '#606c76' }
 })

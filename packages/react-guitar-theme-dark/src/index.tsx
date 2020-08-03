@@ -6,7 +6,7 @@ const dark: Theme = {
   nut: { color: '#222831' },
   fret: {
     color: '#393e46',
-    separator: { color: '#eeeeee' },
+    separator: { color: '#eeeeee', shadow: true },
     marker: fret =>
       [3, 5, 7, 9, 12, 15, 17, 19, 21].includes(fret) ? (
         <span

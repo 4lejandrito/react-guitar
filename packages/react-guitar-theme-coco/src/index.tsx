@@ -33,7 +33,7 @@ const coco: Theme = {
         />
       ) : null
   },
-  string: { color: () => '#c6c6c6' },
+  string: { color: () => '#f3f3f3' },
   finger: { color: '#606c76' }
 }
 

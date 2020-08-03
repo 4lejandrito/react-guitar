@@ -24,11 +24,11 @@ export const string = (string: number, theme: Theme) =>
     '&::after': {
       content: '""',
       width: '100%',
-      height: '0.6em',
+      height: '0.65em',
       position: 'absolute',
       left: '0',
       borderBottom: `solid 0.2em ${color(theme.string.color(string)).darken(
-        0.4
+        0.35
       )}`,
       backgroundColor: theme.string.color(string)
     },
