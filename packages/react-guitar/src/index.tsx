@@ -2,7 +2,8 @@
 import { jsx } from '@emotion/core'
 import useSound from './hooks/sound'
 import tunings from './util/tunings'
-import { useEffect, useRef, Fragment } from 'react'
+import { useRef, Fragment } from 'react'
+import useLayoutEffect from './hooks/layoutEffect'
 import range from 'lodash.range'
 import { set } from './util/arrays'
 import classNames from 'classnames'
@@ -62,7 +63,7 @@ export default function Guitar(props: {
   } = props
   const fretsNodeRef = useRef(null as HTMLOListElement | null)
   const fretNodesRef = useRef({} as { [K: number]: HTMLLIElement | null })
-  useEffect(() => {
+  useLayoutEffect(() => {
     const fretsNode = fretsNodeRef.current
     if (center && fretsNode) {
       const pressedFrets = strings.filter(fret => fret > 0)
