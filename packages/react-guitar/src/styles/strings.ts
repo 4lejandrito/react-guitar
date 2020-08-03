@@ -44,16 +44,16 @@ export default css({
       height: '100%',
       width: '100%'
     },
-    'input:not(:disabled),input:not(:disabled) + .finger': {
+    'input:not(:disabled),input:not(:disabled) ~ .finger': {
       cursor: 'pointer'
     },
     input: {
       position: 'absolute',
       opacity: 0,
-      '&:checked + .finger': {
+      '&:checked ~ .finger': {
         opacity: 1
       },
-      '&:focus:not(:disabled) + .finger': {
+      '&:focus:not(:disabled) ~ .finger': {
         boxShadow: '0 0 0 0.2em rgba(66, 153, 225, 0.5)'
       }
     },
