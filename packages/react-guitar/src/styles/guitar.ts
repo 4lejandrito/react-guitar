@@ -11,7 +11,7 @@ export default css({
     direction: 'rtl'
   },
 
-  '*': {
+  '*, *::before, *::after': {
     boxSizing: 'border-box'
   },
 
