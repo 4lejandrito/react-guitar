@@ -1,11 +1,14 @@
 import { css } from '@emotion/core'
 import { Theme } from '..'
+import color from 'color'
 
 export const frets = css({
   position: 'relative',
   whiteSpace: 'nowrap',
   overflowY: 'auto'
 })
+
+const sw = (theme: Theme) => (theme.fret.separator.width === 'md' ? 0.7 : 0.3)
 
 export const fret = (fret: number, theme: Theme) =>
   css({
@@ -32,8 +35,14 @@ export const fret = (fret: number, theme: Theme) =>
       position: 'absolute',
       top: '0',
       bottom: '0',
-      width: '0.3em',
+      width: `${sw(theme)}em`,
       backgroundColor: theme.fret.separator.color,
+      borderRight: theme.fret.separator.shadow
+        ? `solid ${sw(theme) / 2}em ${color(theme.fret.separator.color).darken(
+            0.1
+          )}`
+        : 0,
+      borderRadius: theme.fret.separator.radius ? '3px' : 0,
       display: 'inline-block'
     },
 

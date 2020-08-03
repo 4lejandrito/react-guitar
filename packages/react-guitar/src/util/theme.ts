@@ -3,7 +3,12 @@ export type Theme = {
   nut: { color: string }
   fret: {
     color: string
-    separator: { color: string }
+    separator: {
+      color: string
+      radius?: boolean
+      shadow?: boolean
+      width?: 'sm' | 'md'
+    }
     marker?: (fret: number) => JSX.Element | null
     counter: { color: string }
   }
