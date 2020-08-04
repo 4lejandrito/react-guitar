@@ -29,6 +29,10 @@ export default function Home() {
           ],
           site_name: 'react-guitar.com'
         }}
+        twitter={{
+          handle: '@4lejandrito',
+          cardType: 'summary_large_image'
+        }}
       />
 
       <header className="shadow-inner w-full text-center flex flex-col items-center bg-blue-500 text-white p-6 sm:p-8">
