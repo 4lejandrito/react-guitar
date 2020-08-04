@@ -87,12 +87,17 @@ And will return an object containing:
   nut: { color: string }
   fret: {
     color: string
-    separator: { color: string }
+    separator: {
+      color: string
+      radius?: boolean
+      shadow?: boolean
+      width?: 'sm' | 'md'
+    }
     marker?: (fret: number) => JSX.Element | null
     counter: { color: string }
   }
   string: { color: (string: number) => string }
-  finger: { color: string }
+  finger: { text: { color: string }; color: string }
 }
 ```
 
