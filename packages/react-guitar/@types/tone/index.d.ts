@@ -13,7 +13,3 @@ declare module 'tone' {
     urls: { [K: string]: string }
   }
 }
-declare module '*.mp3' {
-  const value: any
-  export = value
-}

@@ -5,16 +5,16 @@ import Guitar, {
   getRenderFingerRelative,
   getRenderFingerSpn,
   spanishTheme
-} from '../src'
+} from 'react-guitar'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, number, boolean, select } from '@storybook/addon-knobs'
 import { midiToNoteName } from '@tonaljs/midi'
 import { range } from 'lodash'
 import { useState } from '@storybook/addons'
-import E2 from '../resources/E2.mp3'
-import D3 from '../resources/D3.mp3'
-import G3 from '../resources/G3.mp3'
-import E4 from '../resources/E4.mp3'
+import E2 from 'react-guitar/resources/E2.mp3'
+import D3 from 'react-guitar/resources/D3.mp3'
+import G3 from 'react-guitar/resources/G3.mp3'
+import E4 from 'react-guitar/resources/E4.mp3'
 import coco from 'react-guitar-theme-coco'
 import dark from 'react-guitar-theme-dark'
 
