@@ -101,6 +101,8 @@ And will return an object containing:
 }
 ```
 
+See https://react-guitar.com/storybook/?path=/story/guitar--theming for an in teractive example.
+
 By default the guitar is styled as a Spanish guitar but some other themes are available:
 
 - [react-guitar-theme-dark](packages/react-guitar-theme-dark): A dark theme.

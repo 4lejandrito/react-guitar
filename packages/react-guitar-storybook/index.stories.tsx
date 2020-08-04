@@ -7,7 +7,13 @@ import Guitar, {
   spanishTheme
 } from 'react-guitar'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, number, boolean, select } from '@storybook/addon-knobs'
+import {
+  withKnobs,
+  number,
+  boolean,
+  select,
+  color
+} from '@storybook/addon-knobs'
 import { midiToNoteName } from '@tonaljs/midi'
 import { range } from 'lodash'
 import { useState } from '@storybook/addons'
@@ -99,4 +105,39 @@ storiesOf('Guitar', module)
   ))
   .add('coco', () => (
     <Guitar theme={themes.coco} strings={[0, 0, 0, 0, 0, 0]} />
+  ))
+  .add('theming', () => (
+    <Guitar
+      theme={{
+        color: color('color', spanishTheme.color),
+        nut: { color: color('Nut color', spanishTheme.nut.color) },
+        fret: {
+          color: color('Fret color', spanishTheme.fret.color),
+          separator: {
+            color: color(
+              'Fret separator color',
+              spanishTheme.fret.separator.color
+            ),
+            radius: boolean('Fret separator radius', false),
+            shadow: boolean('Fret separator shadow', true),
+            width: select('Fret separator width', ['sm', 'md'], 'sm')
+          },
+          counter: {
+            color: color('Counter color', spanishTheme.fret.counter.color)
+          }
+        },
+        string: {
+          color: string =>
+            color(`String color ${string}`, spanishTheme.string.color(string))
+        },
+        finger: {
+          text: {
+            color: color('Finger text color', spanishTheme.finger.text.color)
+          },
+          color: color('Finger color', spanishTheme.finger.color)
+        }
+      }}
+      renderFinger={getRenderFingerSpn(tunings.standard)}
+      strings={[0, 0, 0, 0, 0, 0]}
+    />
   ))
