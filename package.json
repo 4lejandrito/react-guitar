@@ -22,6 +22,7 @@
   },
   "scripts": {
     "build": "lerna run build",
+    "shoot": "lerna run shoot",
     "start": "lerna run --parallel start",
     "test": "lerna run test",
     "test:coverage": "lerna run test:coverage"
