@@ -3,10 +3,13 @@
   "version": "0.4.7",
   "private": true,
   "devDependencies": {
-    "jest": "^26.2.2",
+    "jest": "^24.9.0",
     "puppeteer": "^5.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-screenshot-test": "^2.1.1",
-    "ts-jest": "^26.1.4"
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.9.6"
   },
   "scripts": {
     "shoot": "rm -rf __screenshots__ && SCREENSHOT_MODE=local jest && mv __screenshots__/Guitar/\"Desktop - coco-snap.png\" ../react-guitar-theme-coco/screenshot.png && mv __screenshots__/Guitar/\"Desktop - dark-snap.png\" ../react-guitar-theme-dark/screenshot.png && mv __screenshots__/Guitar/\"Desktop - default-snap.png\" ../react-guitar/screenshot.png"

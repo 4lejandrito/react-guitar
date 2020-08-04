@@ -13,7 +13,7 @@
   ],
   "devDependencies": {
     "husky": ">=4",
-    "lerna": "^3.20.2",
+    "lerna": "^3.22.1",
     "lint-staged": ">=10",
     "prettier": "^1.15.3"
   },
@@ -35,8 +35,5 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "resolutions": {
-    "@types/react": "^16.8.18"
   }
 }
