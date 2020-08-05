@@ -6,6 +6,7 @@ export default function Toggle(props: {
 }) {
   return (
     <Switch
+      aria-checked={props.value}
       onColor="#48bb78"
       checkedIcon={false}
       handleDiameter={16}
