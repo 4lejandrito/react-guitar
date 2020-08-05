@@ -37,7 +37,11 @@ export default function Home() {
 
       <header className="shadow-inner w-full text-center flex flex-col items-center bg-blue-500 text-white p-6 sm:p-8">
         <h1 className="slide-up text-3xl sm:text-5xl font-bold flex items-center">
-          <img className="h-6 w-6 sm:h-10 sm:w-10 mr-2 sm:mr-3" src={logo} />{' '}
+          <img
+            className="h-6 w-6 sm:h-10 sm:w-10 mr-2 sm:mr-3"
+            alt="React Guitar logo"
+            src={logo}
+          />{' '}
           {title}
         </h1>
         <p className="slide-up text-lg sm:text-xl mt-2">{description}</p>
