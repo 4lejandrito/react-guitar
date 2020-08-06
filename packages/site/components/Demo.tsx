@@ -15,27 +15,23 @@ import Select from './Select'
 import Label from './Label'
 import coco from 'react-guitar-theme-coco'
 import dark from 'react-guitar-theme-dark'
+import TuningSelector from './TuningSelector'
 
 export default function Demo() {
   const [playOnHover, setPlayOnHover] = useState(false)
   const [lefty, setLefty] = useState(false)
   const [frets, setFrets] = useState(22)
   const [strings, setStrings] = useState([0, 0, 0, 0, 0, 0])
-  const [tuningName, setTuningName] = useState<keyof typeof tunings>('standard')
+  const [tuning, setTuning] = useState(tunings.standard)
   const themes = { spanish: spanishTheme, dark, coco }
   const [themeName, setThemeName] = useState<keyof typeof themes>('spanish')
-  const tuning = tunings[tuningName]
   const { play, strum } = useSound({ E2, D3, G3, E4 }, strings, tuning)
 
   return (
     <div className="slide-up animation-delay w-full py-4">
       <div className="flex flex-wrap items-stretch justify-center px-4">
         <Label name="Tuning">
-          <Select
-            value={tuningName}
-            values={Object.keys(tunings) as (keyof typeof tunings)[]}
-            onChange={setTuningName}
-          />
+          <TuningSelector tuning={tuning} onChange={setTuning} />
         </Label>
         <Label name="Theme">
           <Select
