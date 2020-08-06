@@ -25,11 +25,12 @@ export default function useSound(
   }, [muted])
 
   const play = (string: number, when = '+0') => {
-    if (loaded && !muted && synth && fretting[string] >= 0) {
+    const fret = fretting[string] ?? 0
+    if (loaded && !muted && synth && fret >= 0) {
       setPlaying(playing => set(playing, string, true))
       setTimeout(() => setPlaying(playing => set(playing, string, false)), 3000)
       synth.triggerAttackRelease(
-        Frequency(tuning[string] + fretting[string], 'midi').toFrequency(),
+        Frequency(tuning[string] + fret, 'midi').toFrequency(),
         4,
         when
       )
