@@ -24,6 +24,7 @@
     "react-guitar-theme-dark": "^0.5.1",
     "react-select": "^3.1.0",
     "react-switch": "^5.0.1",
+    "react-use": "^15.3.2",
     "tailwindcss": "^1.5.1"
   }
 }

@@ -2,7 +2,8 @@ import Guitar, {
   useSound,
   tunings,
   getRenderFingerSpn,
-  spanishTheme
+  spanishTheme,
+  Theme
 } from 'react-guitar'
 import E2 from 'react-guitar/resources/E2.mp3'
 import D3 from 'react-guitar/resources/D3.mp3'
@@ -16,17 +17,29 @@ import Label from './Label'
 import coco from 'react-guitar-theme-coco'
 import dark from 'react-guitar-theme-dark'
 import TuningSelector from './TuningSelector'
+import QueryProvider, {
+  boolean,
+  number,
+  numbers,
+  string,
+  useQuery,
+  useURL
+} from './Query'
+import { useCopyToClipboard } from 'react-use'
 
-export default function Demo() {
-  const [playOnHover, setPlayOnHover] = useState(false)
-  const [lefty, setLefty] = useState(false)
-  const [frets, setFrets] = useState(22)
-  const [strings, setStrings] = useState([0, 0, 0, 0, 0, 0])
-  const [tuning, setTuning] = useState(tunings.standard)
-  const themes = { spanish: spanishTheme, dark, coco }
-  const [themeName, setThemeName] = useState<keyof typeof themes>('spanish')
+function Demo() {
+  const [playOnHover, setPlayOnHover] = useQuery('playOnHover', false, boolean)
+  const [lefty, setLefty] = useQuery('lefty', false, boolean)
+  const [frets, setFrets] = useQuery('frets', 22, number)
+  const [strings, setStrings] = useQuery('strings', [0, 0, 0, 0, 0, 0], numbers)
+  const [tuning, setTuning] = useQuery('tuning', tunings.standard, numbers)
+  const themes: { [K: string]: Theme } = { spanish: spanishTheme, dark, coco }
+  const [themeName, setThemeName] = useQuery('theme', 'spanish', string)
   const { play, strum } = useSound({ E2, D3, G3, E4 }, strings, tuning)
-
+  const [_, copy] = useCopyToClipboard()
+  const [copied, setCopied] = useState(false)
+  const [center, setCenter] = useState(true)
+  const url = useURL()
   return (
     <div className="slide-up animation-delay w-full py-4">
       <div className="flex flex-wrap items-stretch justify-center px-4">
@@ -36,11 +49,11 @@ export default function Demo() {
         <Label name="Theme">
           <Select
             value={themeName}
-            values={Object.keys(themes) as (keyof typeof themes)[]}
+            values={Object.keys(themes)}
             onChange={setThemeName}
           />
         </Label>
-        <Label name="Number of frets">
+        <Label name="Frets">
           <Number value={frets} min={0} max={40} onChange={setFrets} />
         </Label>
         <Label name="Left handed">
@@ -58,6 +71,21 @@ export default function Demo() {
             🎶 👆
           </button>
         </Label>
+        <div className="w-24">
+          <Label name={copied ? 'Copied!' : 'Copy Link'}>
+            <button
+              className="border-2 hover:bg-gray-200 font-bold py-1 px-2 rounded"
+              onClick={() => {
+                copy(url)
+                setCopied(true)
+                setTimeout(() => setCopied(false), 1000)
+              }}
+              title={`Copy link to current state: ${url}`}
+            >
+              🎸🔗
+            </button>
+          </Label>
+        </div>
       </div>
       <div className="relative flex-grow mt-4 flex items-center justify-center">
         <div className="sm:rounded overflow-hidden shadow">
@@ -65,9 +93,13 @@ export default function Demo() {
             frets={{ from: 0, amount: frets }}
             strings={tuning.map((_, i) => strings[i] ?? 0)}
             lefty={lefty}
+            center={center}
             renderFinger={getRenderFingerSpn(tuning)}
-            theme={themes[themeName]}
-            onChange={setStrings}
+            theme={themes[themeName] || themes.spanish}
+            onChange={strings => {
+              setStrings(strings)
+              setCenter(false)
+            }}
             onPlay={string => playOnHover && play(string)}
           />
         </div>
@@ -75,3 +107,9 @@ export default function Demo() {
     </div>
   )
 }
+
+export default () => (
+  <QueryProvider>
+    <Demo />
+  </QueryProvider>
+)
