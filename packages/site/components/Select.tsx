@@ -5,7 +5,7 @@ export default function Select<T extends string>(props: {
 }) {
   return (
     <select
-      className="w-full appearance-none placeholder-gray-500 placeholder-opacity-100 border rounded h-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      className="appearance-none placeholder-gray-500 placeholder-opacity-100 border rounded h-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       value={props.value}
       onChange={e => {
         const value = props.values.find(value => value === e.target.value)
