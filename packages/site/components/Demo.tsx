@@ -71,21 +71,19 @@ function Demo() {
             🎶 👆
           </button>
         </Label>
-        <div className="w-24">
-          <Label name={copied ? 'Copied!' : 'Copy Link'}>
-            <button
-              className="border-2 hover:bg-gray-200 font-bold py-1 px-2 rounded"
-              onClick={() => {
-                copy(url)
-                setCopied(true)
-                setTimeout(() => setCopied(false), 1000)
-              }}
-              title={`Copy link to current state: ${url}`}
-            >
-              🎸🔗
-            </button>
-          </Label>
-        </div>
+        <Label className="w-24" name={copied ? 'Copied!' : 'Copy Link'}>
+          <button
+            className="border-2 hover:bg-gray-200 font-bold py-1 px-2 rounded"
+            onClick={() => {
+              copy(url)
+              setCopied(true)
+              setTimeout(() => setCopied(false), 1000)
+            }}
+            title={`Copy link to current state: ${url}`}
+          >
+            🎸🔗
+          </button>
+        </Label>
       </div>
       <div className="relative flex-grow mt-4 flex items-center justify-center">
         <div className="sm:rounded overflow-hidden shadow">
