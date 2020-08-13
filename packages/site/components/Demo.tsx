@@ -27,12 +27,14 @@ import QueryProvider, {
 } from './Query'
 import { useCopyToClipboard } from 'react-use'
 
+const zero = () => 0
+
 function Demo() {
   const [playOnHover, setPlayOnHover] = useQuery('playOnHover', false, boolean)
   const [lefty, setLefty] = useQuery('lefty', false, boolean)
   const [frets, setFrets] = useQuery('frets', 22, number)
-  const [strings, setStrings] = useQuery('strings', [0, 0, 0, 0, 0, 0], numbers)
   const [tuning, setTuning] = useQuery('tuning', tunings.standard, numbers)
+  const [strings, setStrings] = useQuery('strings', tuning.map(zero), numbers)
   const themes: { [K: string]: Theme } = { spanish: spanishTheme, dark, coco }
   const [themeName, setThemeName] = useQuery('theme', 'spanish', string)
   const { play, strum } = useSound({ E2, D3, G3, E4 }, strings, tuning)
