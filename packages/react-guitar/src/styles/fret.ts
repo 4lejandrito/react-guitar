@@ -2,15 +2,9 @@ import { css } from '@emotion/core'
 import { Theme } from '..'
 import color from 'color'
 
-export const frets = css({
-  position: 'relative',
-  whiteSpace: 'nowrap',
-  overflowY: 'auto'
-})
-
 const sw = (theme: Theme) => (theme.fret.separator.width === 'md' ? 0.7 : 0.3)
 
-export const fret = (fret: number, theme: Theme) =>
+export default (fret: number, theme: Theme) =>
   css({
     width: '10em',
     display: 'inline-flex',

@@ -5,7 +5,11 @@ export default css({
   position: 'relative',
   boxSizing: 'border-box',
   maxWidth: '100%',
-  display: 'inline-flex',
+  overflowY: 'auto',
+  whiteSpace: 'nowrap',
+  margin: 0,
+  padding: 0,
+  listStyle: 'none',
 
   '&.lefty': {
     direction: 'rtl'

@@ -80,64 +80,61 @@ export default function Guitar(props: {
     }
   }, [fretsNodeRef, fretNodesRef, strings, center, lefty])
   return (
-    <div
+    <ol
       className={classNames('guitar', { lefty }, props.className)}
       css={styles.guitar}
+      ref={fretsNodeRef}
     >
-      <ol className="frets" css={styles.frets} ref={fretsNodeRef}>
-        {range(frets.from, frets.from + frets.amount + 1).map(fret => (
-          <li
-            className={fret === 0 ? 'nut' : undefined}
-            key={fret}
-            css={styles.fret(fret, theme)}
-            ref={node => (fretNodesRef.current[fret] = node)}
-          >
-            {theme.fret.marker && (
-              <div className="marker">{theme.fret.marker(fret)}</div>
-            )}
-            <ol className="strings" css={styles.strings}>
-              {strings.map((currentFret, string) => (
-                <li
-                  key={string}
-                  css={styles.string(string, theme)}
-                  onMouseEnter={() =>
-                    currentFret >= 0 && props.onPlay?.(string)
-                  }
-                >
-                  <label>
-                    <input
-                      disabled={!props.onChange}
-                      type="checkbox"
-                      checked={currentFret === fret}
-                      onChange={() =>
-                        props.onChange?.(
-                          set(
-                            strings,
-                            string,
-                            fret === 0 && strings[string] === 0
-                              ? -1
-                              : strings[string] === fret
-                              ? 0
-                              : fret
-                          )
+      {range(frets.from, frets.from + frets.amount + 1).map(fret => (
+        <li
+          className={fret === 0 ? 'nut' : undefined}
+          key={fret}
+          css={styles.fret(fret, theme)}
+          ref={node => (fretNodesRef.current[fret] = node)}
+        >
+          {theme.fret.marker && (
+            <div className="marker">{theme.fret.marker(fret)}</div>
+          )}
+          <ol className="strings" css={styles.strings}>
+            {strings.map((currentFret, string) => (
+              <li
+                key={string}
+                css={styles.string(string, theme)}
+                onMouseEnter={() => currentFret >= 0 && props.onPlay?.(string)}
+              >
+                <label>
+                  <input
+                    disabled={!props.onChange}
+                    type="checkbox"
+                    checked={currentFret === fret}
+                    onChange={() =>
+                      props.onChange?.(
+                        set(
+                          strings,
+                          string,
+                          fret === 0 && strings[string] === 0
+                            ? -1
+                            : strings[string] === fret
+                            ? 0
+                            : fret
                         )
-                      }
-                    />
-                    <span className="finger" css={styles.finger(theme)}>
-                      {renderFinger?.(string, fret)}
-                    </span>
-                  </label>
-                </li>
-              ))}
-            </ol>
-            {fret !== 0 && (
-              <span className="counter" css={styles.counter(theme)}>
-                {fret}
-              </span>
-            )}
-          </li>
-        ))}
-      </ol>
-    </div>
+                      )
+                    }
+                  />
+                  <span className="finger" css={styles.finger(theme)}>
+                    {renderFinger?.(string, fret)}
+                  </span>
+                </label>
+              </li>
+            ))}
+          </ol>
+          {fret !== 0 && (
+            <span className="counter" css={styles.counter(theme)}>
+              {fret}
+            </span>
+          )}
+        </li>
+      ))}
+    </ol>
   )
 }
