@@ -8,7 +8,7 @@ import shoot from './shoot'
 const SampleGuitar = (props: { theme?: Theme }) => (
   <Guitar
     strings={[0, 1, 2, 2, 0, -1]}
-    frets={{ from: 0, amount: 8 }}
+    frets={{ from: 0, amount: 5 }}
     renderFinger={getRenderFingerSpn(tunings.standard)}
     theme={props.theme}
   />
@@ -40,11 +40,7 @@ shoot(
           '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)'
       }}
     >
-      <Guitar
-        strings={[0, 1, 2, 2, 0, -1]}
-        frets={{ from: 0, amount: 5 }}
-        renderFinger={getRenderFingerSpn(tunings.standard)}
-      />
+      <SampleGuitar />
     </div>
   </div>
 )
