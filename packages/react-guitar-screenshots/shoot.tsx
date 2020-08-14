@@ -15,7 +15,8 @@ export default async function shoot(path: string, element: ReactElement) {
   await page.setViewport(
     await page.evaluate(() => ({
       width: document.querySelector('body > :not(style)')?.scrollWidth ?? 0,
-      height: document.querySelector('body > :not(style)')?.scrollHeight ?? 0
+      height: document.querySelector('body > :not(style)')?.scrollHeight ?? 0,
+      deviceScaleFactor: 2
     }))
   )
   await page.screenshot({
