@@ -2,7 +2,7 @@
 
 A [react-guitar](https://github.com/4lejandrito/react-guitar) theme from the film [Coco](<https://en.wikipedia.org/wiki/Coco_(2017_film)>).
 
-See https://react-guitar.com for a live demo.
+See https://react-guitar.com?theme=coco for a live demo.
 
 ![Screenshot of the rendered component with an A minor chord](screenshot.png)
 

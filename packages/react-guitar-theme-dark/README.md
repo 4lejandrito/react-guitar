@@ -2,7 +2,7 @@
 
 A [react-guitar](https://github.com/4lejandrito/react-guitar) dark theme.
 
-See https://react-guitar.com for a live demo.
+See https://react-guitar.com?theme=dark for a live demo.
 
 ![Screenshot of the rendered component with an A minor chord](screenshot.png)
 
