@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "declaration": true,
+    "strict": true,
+    "lib": ["es2017", "dom"],
+    "sourceMap": true
+  },
+  "files": ["src/index.ts"],
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

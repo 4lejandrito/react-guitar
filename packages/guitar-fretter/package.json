@@ -1,0 +1,36 @@
+{
+  "name": "guitar-fretter",
+  "version": "0.5.2",
+  "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "author": "Alejandro Tardín <alejandro@tardin.com>",
+  "homepage": "https://react-guitar.com",
+  "license": "MIT",
+  "repository": "https://github.com/4lejandrito/react-guitar/tree/master/packages/guitar-fretter",
+  "funding": "https://github.com/4lejandrito/react-guitar?sponsor=1",
+  "keywords": [
+    "guitar",
+    "fret",
+    "fretter",
+    "chords"
+  ],
+  "scripts": {
+    "start": "rollup -c -w",
+    "test": "jest",
+    "build": "rollup -c",
+    "prepublishOnly": "NODE_ENV=production yarn build"
+  },
+  "devDependencies": {
+    "jest": "^26.4.0",
+    "rollup": "^2.21.0",
+    "@types/jest": "^26.0.10",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "ts-jest": "^26.2.0",
+    "typescript": "^3.9.6"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}
