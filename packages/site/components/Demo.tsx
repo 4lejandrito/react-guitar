@@ -18,6 +18,7 @@ import QueryProvider, {
   useURL
 } from './Query'
 import { useCopyToClipboard } from 'react-use'
+import ChordSelector from './ChordSelector'
 
 const zero = () => 0
 
@@ -29,6 +30,7 @@ function Demo() {
   const [strings, setStrings] = useQuery('strings', tuning.map(zero), numbers)
   const themes: { [K: string]: Theme } = { spanish: spanishTheme, dark, coco }
   const [themeName, setThemeName] = useQuery('theme', 'spanish', string)
+  const theme = themes[themeName] || themes.spanish
   const { play, strum } = useSound(strings, tuning)
   const [_, copy] = useCopyToClipboard()
   const [copied, setCopied] = useState(false)
@@ -55,6 +57,16 @@ function Demo() {
         </Label>
         <Label name="Play on hover">
           <Toggle value={playOnHover} onChange={setPlayOnHover} />
+        </Label>
+        <Label name="Chord">
+          <ChordSelector
+            strings={strings}
+            tuning={tuning}
+            frets={frets}
+            lefty={lefty}
+            theme={theme}
+            onChange={setStrings}
+          />
         </Label>
         <Label name="Strum">
           <button
@@ -86,7 +98,7 @@ function Demo() {
           tuning={tuning}
           lefty={lefty}
           center={center}
-          theme={themes[themeName] || themes.spanish}
+          theme={theme}
           onChange={strings => {
             setStrings(strings)
             setCenter(false)
