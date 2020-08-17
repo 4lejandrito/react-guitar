@@ -1,14 +1,6 @@
-import Guitar, {
-  useSound,
-  tunings,
-  getRenderFingerSpn,
-  spanishTheme,
-  Theme
-} from 'react-guitar'
-import E2 from 'react-guitar/resources/E2.mp3'
-import D3 from 'react-guitar/resources/D3.mp3'
-import G3 from 'react-guitar/resources/G3.mp3'
-import E4 from 'react-guitar/resources/E4.mp3'
+import { tunings, spanishTheme, Theme } from 'react-guitar'
+import Guitar from './Guitar'
+import useSound from '../hooks/sound'
 import { useState } from 'react'
 import Number from './Number'
 import Toggle from './Toggle'
@@ -37,7 +29,7 @@ function Demo() {
   const [strings, setStrings] = useQuery('strings', tuning.map(zero), numbers)
   const themes: { [K: string]: Theme } = { spanish: spanishTheme, dark, coco }
   const [themeName, setThemeName] = useQuery('theme', 'spanish', string)
-  const { play, strum } = useSound({ E2, D3, G3, E4 }, strings, tuning)
+  const { play, strum } = useSound(strings, tuning)
   const [_, copy] = useCopyToClipboard()
   const [copied, setCopied] = useState(false)
   const [center, setCenter] = useState(true)
@@ -88,21 +80,19 @@ function Demo() {
         </Label>
       </div>
       <div className="relative flex-grow mt-4 flex items-center justify-center">
-        <div className="sm:rounded overflow-hidden shadow">
-          <Guitar
-            frets={{ from: 0, amount: frets }}
-            strings={tuning.map((_, i) => strings[i] ?? 0)}
-            lefty={lefty}
-            center={center}
-            renderFinger={getRenderFingerSpn(tuning)}
-            theme={themes[themeName] || themes.spanish}
-            onChange={strings => {
-              setStrings(strings)
-              setCenter(false)
-            }}
-            onPlay={string => playOnHover && play(string)}
-          />
-        </div>
+        <Guitar
+          frets={{ from: 0, amount: frets }}
+          strings={tuning.map((_, i) => strings[i] ?? 0)}
+          tuning={tuning}
+          lefty={lefty}
+          center={center}
+          theme={themes[themeName] || themes.spanish}
+          onChange={strings => {
+            setStrings(strings)
+            setCenter(false)
+          }}
+          onPlay={playOnHover ? play : undefined}
+        />
       </div>
     </div>
   )
