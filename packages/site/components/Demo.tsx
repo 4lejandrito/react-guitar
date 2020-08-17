@@ -108,8 +108,10 @@ function Demo() {
   )
 }
 
-export default () => (
-  <QueryProvider>
-    <Demo />
-  </QueryProvider>
-)
+export default function DemoWithQuery() {
+  return (
+    <QueryProvider>
+      <Demo />
+    </QueryProvider>
+  )
+}
