@@ -12,6 +12,14 @@ export default function Home() {
     <div className="text-gray-800 font-sans min-h-screen flex flex-col items-center justify-center m-auto">
       <Head>
         <link rel="icon" href={logo} />
+        {process.env.NODE_ENV === 'production' && (
+          <script
+            async
+            defer
+            data-domain="react-guitar.com"
+            src="https://plausible.io/js/plausible.js"
+          />
+        )}
       </Head>
 
       <NextSeo
