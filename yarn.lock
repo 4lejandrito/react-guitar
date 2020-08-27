@@ -10219,6 +10219,11 @@ neo-async@^2.5.0, neo-async@^2.6.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
+next-plausible@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/next-plausible/-/next-plausible-1.0.2.tgz#373b776881e049a6ffcdf0c5c0b29d71409a4c6a"
+  integrity sha512-0J8SrhD8pqmx56FRpISQlyWack+Hc6Z6ohB8DNEVV32ypWCEOO779HITUTbEN69rQ2isXVDgURS+TiQQkVFFiA==
+
 next-seo@^4.7.3:
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-4.7.3.tgz#8da82dca4f425c84392c4a8462f215dfcb4195b0"

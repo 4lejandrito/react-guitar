@@ -1,14 +1,15 @@
 import classNames from 'classnames'
-import analytics from '../util/analytics'
+import { usePlausible } from 'next-plausible'
 
 export function BuyMeACoffee() {
+  const plausible = usePlausible()
   return (
     <a
       style={{ height: '2.25rem' }}
       className="rounded overflow-hidden border-2 mx-2 flex-shrink-0"
       href="https://www.buymeacoffee.com/b4iusc3"
       target="_blank"
-      onClick={() => analytics('buymeacoffee')}
+      onClick={() => plausible('buymeacoffee')}
     >
       <img
         className="h-full"

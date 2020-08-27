@@ -2,24 +2,17 @@ import Head from 'next/head'
 import { NextSeo } from 'next-seo'
 import Button, { BuyMeACoffee } from '../components/Button'
 import Demo from '../components/Demo'
+import PlausibleProvider from 'next-plausible'
 
 const logo = `${process.env.NEXT_PUBLIC_URL}/logo.png`
 
-export default function Home() {
+function Home() {
   const title = 'React Guitar'
   const description = 'A beautiful and flexible guitar component for React.'
   return (
     <div className="text-gray-800 font-sans min-h-screen flex flex-col items-center justify-center m-auto">
       <Head>
         <link rel="icon" href={logo} />
-        {process.env.NODE_ENV === 'production' && (
-          <script
-            async
-            defer
-            data-domain="react-guitar.com"
-            src="https://plausible.io/js/plausible.js"
-          />
-        )}
       </Head>
 
       <NextSeo
@@ -82,5 +75,13 @@ export default function Home() {
         </a>
       </footer>
     </div>
+  )
+}
+
+export default function HomeWithPlausible() {
+  return (
+    <PlausibleProvider domain="react-guitar.com">
+      <Home />
+    </PlausibleProvider>
   )
 }
