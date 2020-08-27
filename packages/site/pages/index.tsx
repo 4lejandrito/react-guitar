@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { NextSeo } from 'next-seo'
-import Button from '../components/Button'
+import Button, { BuyMeACoffee } from '../components/Button'
 import Demo from '../components/Demo'
 
 const logo = `${process.env.NEXT_PUBLIC_URL}/logo.png`
@@ -56,9 +56,15 @@ export default function Home() {
         <div className="slide-up flex items-center justify-center mt-4 sm:mt-6">
           <Button
             href="https://github.com/4lejandrito/react-guitar"
-            label="View on GitHub"
+            label="GitHub"
           />
-          <Button href="storybook" label="Storybook" target="_blank" />
+          <Button
+            className="hidden sm:inline-block"
+            href="storybook"
+            label="Storybook"
+            target="_blank"
+          />
+          <BuyMeACoffee />
         </div>
       </header>
 
