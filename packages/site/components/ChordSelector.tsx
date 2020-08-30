@@ -13,6 +13,7 @@ import { fromSemitones } from '@tonaljs/interval'
 import pcset from '@tonaljs/pcset'
 import fretter from 'guitar-fretter'
 import useSound from '../hooks/sound'
+import { usePlausible } from 'next-plausible'
 
 const getNotes = (type: string) => ChordType.get(type).setNum
 const mask = (i: number) => 1 << (11 - i)
@@ -224,12 +225,14 @@ export default function ChordSelector(props: {
       .reverse()
       .map(midi => midiToNoteName(midi))
   )[0]
+  const plausible = usePlausible()
   return (
     <>
       <button
         className="border h-10 w-24 hover:bg-gray-200 py-1 px-2 rounded truncate"
         title={chordName || 'Select a chord'}
         onClick={() => {
+          plausible('chords')
           setOpen(true)
           setClosed(false)
         }}
