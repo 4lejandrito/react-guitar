@@ -71,6 +71,20 @@ function ChordSelectorModal(props: {
       onRequestClose={props.onRequestClose}
       onAfterClose={props.onAfterClose}
     >
+      <div
+        className="text-sm bg-blue-500 text-white px-3 py-2 rounded mb-3"
+        role="alert"
+      >
+        <strong>Work in progress!</strong> Feedback is welcome on{' '}
+        <a
+          className="underline"
+          href="https://github.com/4lejandrito/react-guitar/issues/8"
+          target="__blank"
+        >
+          <strong>this issue</strong>
+        </a>
+        .
+      </div>
       <div className="w-full flex items-center justify-center flex-wrap border-b pb-2 mb-4">
         <Label
           name={
