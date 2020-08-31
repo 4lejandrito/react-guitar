@@ -62,7 +62,7 @@ function ChordSelectorModal(props: {
   )
   const [frettingIndex, setFrettingIndex] = useState(0)
   const fretting = frettings[frettingIndex] ?? props.tuning.map(() => 0)
-  useEffect(() => setFrettingIndex(0), [notes])
+  useEffect(() => setFrettingIndex(0), [notes, root])
   const { strum } = useSound(fretting, props.tuning)
   return (
     <Modal
