@@ -173,17 +173,19 @@ function ChordSelectorModal(props: {
       <div>
         <button
           className="mx-2 border-2 hover:bg-gray-200 font-bold py-1 px-2 rounded"
-          disabled={frettingIndex === 0}
+          disabled={frettingIndex === 0 || frettings.length === 0}
           onClick={() => setFrettingIndex(frettingIndex - 1)}
         >
           👈
         </button>
         <span className="inline-block w-24 text-center">
-          {frettingIndex + 1} / {frettings.length}
+          {frettings.length ? frettingIndex + 1 : 0} / {frettings.length}
         </span>
         <button
           className="mx-2 border-2 hover:bg-gray-200 font-bold py-1 px-2 rounded"
-          disabled={frettingIndex === frettings.length - 1}
+          disabled={
+            frettingIndex === frettings.length - 1 || frettings.length === 0
+          }
           onClick={() => setFrettingIndex(frettingIndex + 1)}
         >
           👉
