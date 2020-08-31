@@ -9,7 +9,7 @@ export const strings = css({
   height: '20em'
 })
 
-export const string = (string: number, theme: Theme) =>
+export const string = (string: number, fret: number, theme: Theme) =>
   css({
     zIndex: 1,
     margin: '0',
@@ -20,6 +20,8 @@ export const string = (string: number, theme: Theme) =>
     justifyContent: 'center',
 
     '&::after': {
+      opacity: fret === -1 ? 0.2 : 1,
+      transition: 'opacity ease-in-out 0.1s',
       content: '""',
       width: '100%',
       height: '0.65em',

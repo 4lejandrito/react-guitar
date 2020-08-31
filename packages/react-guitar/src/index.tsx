@@ -99,7 +99,7 @@ export default function Guitar(props: {
             {strings.map((currentFret, string) => (
               <li
                 key={string}
-                css={styles.string(string, theme)}
+                css={styles.string(string, currentFret, theme)}
                 onMouseEnter={() => currentFret >= 0 && props.onPlay?.(string)}
               >
                 <label>
