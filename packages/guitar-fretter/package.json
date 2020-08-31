@@ -1,6 +1,6 @@
 {
   "name": "guitar-fretter",
-  "version": "0.5.2",
+  "version": "0.5.4",
   "private": true,
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -23,9 +23,9 @@
     "prepublishOnly": "NODE_ENV=production yarn build"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.10",
     "jest": "^26.4.0",
     "rollup": "^2.21.0",
-    "@types/jest": "^26.0.10",
     "rollup-plugin-typescript2": "^0.27.1",
     "ts-jest": "^26.2.0",
     "typescript": "^3.9.6"
