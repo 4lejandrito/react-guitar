@@ -223,14 +223,15 @@ function ChordSelectorModal(props: {
 }
 
 export default function ChordSelector(props: {
+  open: boolean
   strings: number[]
   tuning: number[]
   frets: number
   lefty: boolean
   theme?: Theme
   onChange: (strings: number[]) => void
+  onRequestOpenChange: (open: boolean) => void
 }) {
-  const [open, setOpen] = useState(false)
   const [closed, setClosed] = useState(true)
   const chordName = Chord.detect(
     props.tuning
@@ -249,7 +250,7 @@ export default function ChordSelector(props: {
         title={chordName || 'Select a chord'}
         onClick={() => {
           plausible('chords')
-          setOpen(true)
+          props.onRequestOpenChange(true)
           setClosed(false)
         }}
       >
@@ -259,8 +260,8 @@ export default function ChordSelector(props: {
         <ChordSelectorModal
           {...props}
           initialName={chordName}
-          open={open}
-          onRequestClose={() => setOpen(false)}
+          open={props.open}
+          onRequestClose={() => props.onRequestOpenChange(false)}
           onAfterClose={() => setClosed(true)}
         />
       )}

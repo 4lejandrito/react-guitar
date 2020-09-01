@@ -6,8 +6,17 @@ import E4 from 'react-guitar/resources/E4.mp3'
 import { useEffect } from 'react'
 import tinikeys from 'tinykeys'
 
-export default function useClassicSound(strings: number[], tuning?: number[]) {
-  const { strum, ...rest } = useSound({ E2, D3, G3, E4 }, strings, tuning)
+export default function useClassicSound(
+  strings: number[],
+  tuning: number[],
+  muted?: boolean
+) {
+  const { strum, ...rest } = useSound(
+    { E2, D3, G3, E4 },
+    strings,
+    tuning,
+    muted
+  )
 
   useEffect(() => {
     return tinikeys(window, {

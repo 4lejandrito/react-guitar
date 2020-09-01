@@ -31,7 +31,8 @@ function Demo() {
   const themes: { [K: string]: Theme } = { spanish: spanishTheme, dark, coco }
   const [themeName, setThemeName] = useQuery('theme', 'spanish', string)
   const theme = themes[themeName] || themes.spanish
-  const { play, strum } = useSound(strings, tuning)
+  const [chordSelectorOpen, setChordSelectorOpen] = useState(false)
+  const { play, strum } = useSound(strings, tuning, chordSelectorOpen)
   const [_, copy] = useCopyToClipboard()
   const [copied, setCopied] = useState(false)
   const [center, setCenter] = useState(true)
@@ -61,11 +62,13 @@ function Demo() {
         </Label>
         <Label name="Chord">
           <ChordSelector
+            open={chordSelectorOpen}
             strings={strings}
             tuning={tuning}
             frets={frets}
             lefty={lefty}
             theme={theme}
+            onRequestOpenChange={setChordSelectorOpen}
             onChange={setStrings}
           />
         </Label>
