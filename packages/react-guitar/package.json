@@ -25,7 +25,7 @@
     "classnames": "^2.2.6",
     "color": "^3.1.2",
     "lodash.range": "^3.2.0",
-    "tone": "^13.8.25"
+    "tone": "^14.7.39"
   },
   "peerDependencies": {
     "react": "^16.8",
