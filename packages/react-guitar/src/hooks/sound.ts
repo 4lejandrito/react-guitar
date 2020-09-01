@@ -28,7 +28,7 @@ export default function useSound(
     (string: number, when: number = 0) => {
       const fret = fretting[string] ?? 0
       if (loaded && !muted && synth && fret >= 0) {
-        setPlaying(playing => set(playing, string, true))
+        setTimeout(() => setPlaying(playing => set(playing, string, true)), 0)
         setTimeout(
           () => setPlaying(playing => set(playing, string, false)),
           3000
