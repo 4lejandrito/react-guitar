@@ -24,25 +24,34 @@ export default function useSound(
     }
   }, [muted])
 
-  const play = (string: number, when: number = 0) => {
-    const fret = fretting[string] ?? 0
-    if (loaded && !muted && synth && fret >= 0) {
-      setPlaying(playing => set(playing, string, true))
-      setTimeout(() => setPlaying(playing => set(playing, string, false)), 3000)
-      synth.triggerAttackRelease(
-        Frequency(tuning[string] + fret, 'midi').toFrequency(),
-        4,
-        now() + when
-      )
-    }
-  }
+  const play = useCallback(
+    (string: number, when: number = 0) => {
+      const fret = fretting[string] ?? 0
+      if (loaded && !muted && synth && fret >= 0) {
+        setPlaying(playing => set(playing, string, true))
+        setTimeout(
+          () => setPlaying(playing => set(playing, string, false)),
+          3000
+        )
+        synth.triggerAttackRelease(
+          Frequency(tuning[string] + fret, 'midi').toFrequency(),
+          4,
+          now() + when
+        )
+      }
+    },
+    [loaded, muted, synth, fretting.toString(), tuning.toString()]
+  )
 
-  const strum = (up?: boolean) => {
-    range(tuning.length).forEach(i => {
-      const string = !up ? tuning.length - i - 1 : i
-      play(string, 0.05 * i)
-    })
-  }
+  const strum = useCallback(
+    (up?: boolean) => {
+      range(tuning.length).forEach(i => {
+        const string = !up ? tuning.length - i - 1 : i
+        play(string, 0.05 * i)
+      })
+    },
+    [tuning.toString(), play]
+  )
 
   return { play, strum, playing }
 }
