@@ -10,6 +10,7 @@ import classNames from 'classnames'
 import { get, fromMidiSharps } from '@tonaljs/note'
 import spanishTheme, { Theme } from './util/theme'
 import styles from './styles'
+import color from 'color'
 
 export { useSound, tunings, spanishTheme, Theme }
 
@@ -82,26 +83,37 @@ export default function Guitar(props: {
   return (
     <ol
       className={classNames('guitar', { lefty }, props.className)}
-      css={styles.guitar}
+      css={styles(theme)}
       ref={fretsNodeRef}
     >
       {range(frets.from, frets.from + frets.amount + 1).map(fret => (
         <li
           className={fret === 0 ? 'nut' : undefined}
           key={fret}
-          css={styles.fret(fret, theme)}
+          style={{
+            backgroundColor: fret === 0 ? theme.nut.color : theme.fret.color
+          }}
           ref={node => (fretNodesRef.current[fret] = node)}
         >
           {theme.fret.marker && (
             <div className="marker">{theme.fret.marker(fret)}</div>
           )}
-          <ol className="strings" css={styles.strings}>
+          <ol className="strings">
             {strings.map((currentFret, string) => (
               <li
                 key={string}
-                css={styles.string(string, currentFret, theme)}
                 onMouseEnter={() => currentFret >= 0 && props.onPlay?.(string)}
               >
+                <div
+                  className="string"
+                  style={{
+                    opacity: currentFret === -1 ? 0.2 : 1,
+                    borderBottom: `solid 0.2em ${color(
+                      theme.string.color(string)
+                    ).darken(0.35)}`,
+                    backgroundColor: theme.string.color(string)
+                  }}
+                />
                 <label>
                   <input
                     disabled={!props.onChange}
@@ -121,18 +133,12 @@ export default function Guitar(props: {
                       )
                     }
                   />
-                  <span className="finger" css={styles.finger(theme)}>
-                    {renderFinger?.(string, fret)}
-                  </span>
+                  <span className="finger">{renderFinger?.(string, fret)}</span>
                 </label>
               </li>
             ))}
           </ol>
-          {fret !== 0 && (
-            <span className="counter" css={styles.counter(theme)}>
-              {fret}
-            </span>
-          )}
+          {fret !== 0 && <span className="counter">{fret}</span>}
         </li>
       ))}
     </ol>
