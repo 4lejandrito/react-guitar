@@ -14,6 +14,8 @@ import pcset from '@tonaljs/pcset'
 import fretter from 'guitar-fretter'
 import useSound from '../hooks/sound'
 import { usePlausible } from 'next-plausible'
+import { button } from '../css/classes'
+import classNames from 'classnames'
 
 const getNotes = (type: string) => ChordType.get(type).setNum
 const mask = (i: number) => 1 << (11 - i)
@@ -172,7 +174,7 @@ function ChordSelectorModal(props: {
       </div>
       <div>
         <button
-          className="mx-2 border-2 hover:bg-gray-200 font-bold py-1 px-2 rounded"
+          className={classNames(button, 'w-10')}
           disabled={frettingIndex === 0 || frettings.length === 0}
           onClick={() => setFrettingIndex(frettingIndex - 1)}
         >
@@ -182,7 +184,7 @@ function ChordSelectorModal(props: {
           {frettings.length ? frettingIndex + 1 : 0} / {frettings.length}
         </span>
         <button
-          className="mx-2 border-2 hover:bg-gray-200 font-bold py-1 px-2 rounded"
+          className={classNames(button, 'w-10')}
           disabled={
             frettingIndex === frettings.length - 1 || frettings.length === 0
           }
@@ -202,14 +204,11 @@ function ChordSelectorModal(props: {
         />
       </div>
       <div>
-        <button
-          className="mx-2 border-2 bg-white hover:bg-gray-200 font-bold py-1 px-2 rounded"
-          onClick={() => strum()}
-        >
+        <button className={classNames(button, 'mx-2')} onClick={() => strum()}>
           👆 Strum 🎶
         </button>
         <button
-          className="mx-2 border-2 bg-white hover:bg-gray-200 font-bold py-1 px-2 rounded"
+          className={classNames(button, 'mx-2')}
           onClick={() => {
             props.onChange(fretting)
             props.onRequestClose()
@@ -246,7 +245,7 @@ export default function ChordSelector(props: {
   return (
     <>
       <button
-        className="border h-10 w-24 hover:bg-gray-200 py-1 px-2 rounded truncate"
+        className={classNames(button, 'w-32 truncate')}
         title={chordName || 'Select a chord'}
         onClick={() => {
           plausible('chords')

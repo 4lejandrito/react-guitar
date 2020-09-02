@@ -19,6 +19,7 @@ import QueryProvider, {
 } from './Query'
 import { useCopyToClipboard } from 'react-use'
 import ChordSelector from './ChordSelector'
+import { button } from '../css/classes'
 
 const zero = () => 0
 
@@ -73,17 +74,13 @@ function Demo() {
           />
         </Label>
         <Label name="Strum">
-          <button
-            className="border-2 hover:bg-gray-200 font-bold py-1 px-2 rounded"
-            onClick={() => strum()}
-            title="Strum"
-          >
+          <button className={button} onClick={() => strum()} title="Strum">
             🎶 👆
           </button>
         </Label>
         <Label className="w-24" name={copied ? 'Copied!' : 'Copy Link'}>
           <button
-            className="border-2 hover:bg-gray-200 font-bold py-1 px-2 rounded"
+            className={button}
             onClick={() => {
               copy(url)
               setCopied(true)

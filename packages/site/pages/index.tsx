@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import { NextSeo } from 'next-seo'
-import Button, { BuyMeACoffee } from '../components/Button'
+import { headerButton } from '../css/classes'
 import Demo from '../components/Demo'
 import PlausibleProvider from 'next-plausible'
+import classNames from 'classnames'
+import { BuyMeACoffee } from '../components/BuyMeACoffee'
 
 const logo = `${process.env.NEXT_PUBLIC_URL}/logo.png`
 
@@ -47,14 +49,16 @@ function Home() {
         </h1>
         <p className="slide-up text-lg sm:text-xl mt-2">{description}</p>
         <div className="slide-up flex items-center justify-center mt-4 sm:mt-6">
-          <Button
+          <a
+            className={headerButton}
             href="https://github.com/4lejandrito/react-guitar"
-            label="GitHub"
+            children="GitHub"
+            target="_blank"
           />
-          <Button
-            className="hidden sm:inline-block"
+          <a
+            className={classNames(headerButton, 'hidden sm:inline-block')}
             href="storybook"
-            label="Storybook"
+            children="Storybook"
             target="_blank"
           />
           <BuyMeACoffee />

@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import classNames from 'classnames'
+import { clickable } from '../css/classes'
 
 export default function Number(props: {
   disabled?: boolean
@@ -22,7 +24,10 @@ export default function Number(props: {
   }, [value, props.value, props.onChange])
   return (
     <input
-      className="w-16 appearance-none placeholder-gray-500 placeholder-opacity-100 border rounded h-10 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      className={classNames(
+        clickable,
+        'w-16 appearance-none placeholder-gray-500 placeholder-opacity-100'
+      )}
       disabled={props.disabled}
       type="number"
       min={props.min}
