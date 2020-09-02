@@ -16,6 +16,7 @@ import useSound from '../hooks/sound'
 import { usePlausible } from 'next-plausible'
 import { button } from '../css/classes'
 import classNames from 'classnames'
+import Emoji from './Emoji'
 
 const getNotes = (type: string) => ChordType.get(type).setNum
 const mask = (i: number) => 1 << (11 - i)
@@ -178,7 +179,7 @@ function ChordSelectorModal(props: {
           disabled={frettingIndex === 0 || frettings.length === 0}
           onClick={() => setFrettingIndex(frettingIndex - 1)}
         >
-          👈
+          <Emoji text="👈" />
         </button>
         <span className="inline-block w-24 text-center">
           {frettings.length ? frettingIndex + 1 : 0} / {frettings.length}
@@ -190,7 +191,7 @@ function ChordSelectorModal(props: {
           }
           onClick={() => setFrettingIndex(frettingIndex + 1)}
         >
-          👉
+          <Emoji text="👉" />
         </button>
       </div>
       <div className="text-sm my-4 w-full flex items-center justify-center">
@@ -205,7 +206,7 @@ function ChordSelectorModal(props: {
       </div>
       <div>
         <button className={classNames(button, 'mx-2')} onClick={() => strum()}>
-          👆 Strum 🎶
+          <Emoji text="👆 Strum 🎶" />
         </button>
         <button
           className={classNames(button, 'mx-2')}
@@ -214,7 +215,7 @@ function ChordSelectorModal(props: {
             props.onRequestClose()
           }}
         >
-          🎯 Select 🎶
+          <Emoji text="🎯 Select 🎶" />
         </button>
       </div>
     </Modal>
@@ -253,7 +254,7 @@ export default function ChordSelector(props: {
           setClosed(false)
         }}
       >
-        {chordName || '❓'}
+        {chordName || <Emoji text="❓" />}
       </button>
       {!closed && (
         <ChordSelectorModal

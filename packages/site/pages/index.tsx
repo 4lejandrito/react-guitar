@@ -5,6 +5,7 @@ import Demo from '../components/Demo'
 import PlausibleProvider from 'next-plausible'
 import classNames from 'classnames'
 import { BuyMeACoffee } from '../components/BuyMeACoffee'
+import Emoji from '../components/Emoji'
 
 const logo = `${process.env.NEXT_PUBLIC_URL}/logo.png`
 
@@ -70,7 +71,7 @@ function Home() {
       </main>
 
       <footer className="w-full text-center bg-gray-100 text-gray-600 p-6 border-t">
-        Made with ❤️ and 🎶 by{' '}
+        <Emoji text="Made with ❤️ and 🎶 by" />{' '}
         <a
           className="hover:underline text-blue-500"
           href="https://github.com/4lejandrito"

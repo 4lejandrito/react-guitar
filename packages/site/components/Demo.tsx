@@ -20,6 +20,7 @@ import QueryProvider, {
 import { useCopyToClipboard } from 'react-use'
 import ChordSelector from './ChordSelector'
 import { button } from '../css/classes'
+import Emoji from './Emoji'
 
 const zero = () => 0
 
@@ -75,7 +76,7 @@ function Demo() {
         </Label>
         <Label name="Strum">
           <button className={button} onClick={() => strum()} title="Strum">
-            🎶 👆
+            <Emoji text="🎶 👆" />
           </button>
         </Label>
         <Label className="w-24" name={copied ? 'Copied!' : 'Copy Link'}>
@@ -88,7 +89,7 @@ function Demo() {
             }}
             title={`Copy link to current state: ${url}`}
           >
-            🎸🔗
+            <Emoji text="🎸🔗" />
           </button>
         </Label>
       </div>
