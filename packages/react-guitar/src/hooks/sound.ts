@@ -16,7 +16,7 @@ export default function useSound(
 
   useEffect(() => {
     if (!muted) {
-      const synth = new Sampler(samples, () => setLoaded(true)).toMaster()
+      const synth = new Sampler(samples, () => setLoaded(true)).toDestination()
       setSynth(synth)
       return () => {
         synth.dispose()
