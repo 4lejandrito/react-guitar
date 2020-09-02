@@ -2,14 +2,14 @@
 import { jsx } from '@emotion/core'
 import useSound from './hooks/sound'
 import tunings from './util/tunings'
-import { useRef, Fragment } from 'react'
+import { useRef, Fragment, useMemo } from 'react'
 import useLayoutEffect from './hooks/layoutEffect'
 import range from 'lodash.range'
 import { set } from './util/arrays'
 import classNames from 'classnames'
 import { get, fromMidiSharps } from '@tonaljs/note'
 import spanishTheme, { Theme } from './util/theme'
-import styles from './styles'
+import getStyles from './styles'
 import color from 'color'
 
 export { useSound, tunings, spanishTheme, Theme }
@@ -62,6 +62,7 @@ export default function Guitar(props: {
     renderFinger,
     theme = spanishTheme
   } = props
+  const styles = useMemo(() => getStyles(theme), [theme])
   const fretsNodeRef = useRef(null as HTMLOListElement | null)
   const fretNodesRef = useRef({} as { [K: number]: HTMLLIElement | null })
   useLayoutEffect(() => {
@@ -83,7 +84,7 @@ export default function Guitar(props: {
   return (
     <ol
       className={classNames('guitar', { lefty }, props.className)}
-      css={styles(theme)}
+      css={styles}
       ref={fretsNodeRef}
     >
       {range(frets.from, frets.from + frets.amount + 1).map(fret => (
