@@ -18,7 +18,10 @@ export default (theme: Theme) =>
     listStyle: 'none',
 
     '&.lefty': {
-      direction: 'rtl'
+      direction: 'rtl',
+      '.marker': {
+        transform: 'scale(-1, 1)'
+      }
     },
 
     '*, *::before, *::after': {
@@ -73,11 +76,7 @@ export default (theme: Theme) =>
         bottom: '0',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
-
-        '.lefty &': {
-          transform: 'scale(-1, 1)'
-        }
+        justifyContent: 'center'
       },
 
       '.counter': {
