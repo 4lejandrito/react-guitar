@@ -31,14 +31,26 @@ export default function KeyboardShortcuts() {
           <tbody>
             {[
               { keys: 'w', description: 'Strum up 🎶 👇' },
-              { keys: 's', description: 'Strum down 🎶 👆' }
+              { keys: 's', description: 'Strum down 🎶 👆' },
+              {
+                keys: 'tab',
+                description: 'Move between strings and frets ⏪ ⏩'
+              },
+              {
+                keys: 'space',
+                description: 'Press / release the focused string 👎 👍'
+              },
+              {
+                keys: 'p',
+                description: 'Play the focused string 🎶 🎻'
+              }
             ].map(({ keys, description }, i) => (
               <tr key={i}>
                 <td className="border px-4 py-2 text-right">
                   <Emoji text={description} />
                 </td>
                 <td className="border px-4 py-2 text-center">
-                  <kbd className="font-mono text-sm h-6 w-6 bg-gray-800 shadow inline-flex items-center justify-center rounded text-white border-b-4 border-gray-900">
+                  <kbd className="font-mono text-sm h-6 px-2 bg-gray-800 shadow inline-flex items-center justify-center rounded text-white border-b-4 border-gray-900">
                     {keys}
                   </kbd>
                 </td>

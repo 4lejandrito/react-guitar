@@ -51,6 +51,7 @@ export default function Guitar(props: {
   center?: boolean
   renderFinger?: (string: number, fret: number) => JSX.Element
   theme?: Theme
+  playOnHover?: boolean
   onChange?: (strings: number[]) => void
   onPlay?: (string: number) => void
 }) {
@@ -60,7 +61,8 @@ export default function Guitar(props: {
     lefty = false,
     center = false,
     renderFinger,
-    theme = spanishTheme
+    theme = spanishTheme,
+    playOnHover
   } = props
   const styles = useMemo(() => getStyles(theme), [theme])
   const fretsNodeRef = useRef(null as HTMLOListElement | null)
@@ -103,7 +105,7 @@ export default function Guitar(props: {
             {strings.map((currentFret, string) => (
               <li
                 key={string}
-                onMouseEnter={() => currentFret >= 0 && props.onPlay?.(string)}
+                onMouseEnter={() => playOnHover && props.onPlay?.(string)}
               >
                 <div
                   className="string"
@@ -133,6 +135,7 @@ export default function Guitar(props: {
                         )
                       )
                     }
+                    onKeyPress={e => e.key === 'p' && props.onPlay?.(string)}
                   />
                   <span className="finger">{renderFinger?.(string, fret)}</span>
                 </label>

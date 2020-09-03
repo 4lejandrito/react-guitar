@@ -109,7 +109,8 @@ function Demo() {
             setStrings(strings)
             setCenter(false)
           }}
-          onPlay={playOnHover ? play : undefined}
+          playOnHover={playOnHover}
+          onPlay={play}
         />
       </div>
     </div>
