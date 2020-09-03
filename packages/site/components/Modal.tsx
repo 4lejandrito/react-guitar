@@ -1,21 +1,21 @@
 import React, { ReactNode } from 'react'
 import ReactModal from 'react-modal'
-import classnames from 'classnames'
+import classNames from 'classnames'
 
 ReactModal.setAppElement('#__next')
 
 export default function Modal({
   children,
-  className,
   isOpen,
   title,
+  small,
   onRequestClose = () => {},
   onAfterClose = () => {}
 }: {
   children: ReactNode | ReactNode[]
-  className?: string
   isOpen: boolean
   title: string
+  small?: boolean
   onRequestClose?: () => void
   onAfterClose?: () => void
 }) {
@@ -23,8 +23,14 @@ export default function Modal({
     <ReactModal
       isOpen={isOpen}
       contentLabel={title}
-      overlayClassName="fixed top-0 w-full h-screen overflow-auto z-50 pt-16 sm:pt-24 sm:px-6"
-      className="w-full mx-auto sm:w-auto max-w-screen-lg outline-none"
+      overlayClassName="fixed top-0 w-full h-screen overflow-auto z-50 flex flex-col"
+      className={classNames(
+        'inline-flex mt-auto md:m-auto max-w-full outline-none',
+        {
+          'm-auto': small,
+          'w-full max-w-screen-md': !small
+        }
+      )}
       closeTimeoutMS={200}
       onRequestClose={onRequestClose}
       onAfterClose={onAfterClose}
@@ -49,13 +55,13 @@ export default function Modal({
         }
       `}</style>
       <main
-        className={classnames(
-          className,
-          'bg-white sm:rounded shadow px-4 sm:px-8 w-full sm:w-auto max-w-full text-gray-800 sm:mb-12'
+        className={classNames(
+          'inline-block max-w-full w-full bg-white md:rounded shadow px-4 md:px-8 text-gray-800 md:my-8',
+          { rounded: small }
         )}
       >
         <p className="relative text-lg w-full text-center py-4 border-t border-b text-gray-700">
-          <strong>{title}</strong>
+          <strong className="inline-block w-64">{title}</strong>
           <button
             className="absolute right-0 top-0 leading-none px-2 pb-1 mt-3 focus:outline-none focus:shadow-outline transition duration-200 rounded text-right text-3xl outline-none"
             onClick={onRequestClose}

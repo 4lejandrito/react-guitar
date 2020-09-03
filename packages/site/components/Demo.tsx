@@ -21,6 +21,7 @@ import { useCopyToClipboard } from 'react-use'
 import ChordSelector from './ChordSelector'
 import { button } from '../css/classes'
 import Emoji from './Emoji'
+import KeyboardShortcuts from './KeyboardShortcuts'
 
 const zero = () => 0
 
@@ -91,6 +92,9 @@ function Demo() {
           >
             <Emoji text="🎸🔗" />
           </button>
+        </Label>
+        <Label name="Keys">
+          <KeyboardShortcuts />
         </Label>
       </div>
       <div className="relative flex-grow mt-4 flex items-center justify-center">
