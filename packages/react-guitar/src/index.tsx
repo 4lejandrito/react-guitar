@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core'
 import useSound from './hooks/sound'
 import tunings from './util/tunings'
-import { useRef, Fragment, useMemo } from 'react'
+import { useRef, Fragment, useMemo, ReactElement, useEffect } from 'react'
 import useLayoutEffect from './hooks/layoutEffect'
 import range from 'lodash.range'
 import { set } from './util/arrays'
@@ -40,6 +40,30 @@ export function getRenderFingerRelative(tuning: number[], root: number) {
   )
 }
 
+function Frets(props: {
+  className?: string
+  frets: {
+    from: number
+    amount: number
+  }
+  children?: (fret: number) => ReactElement | ReactElement[] | null
+  onMouseEnter?: () => void
+}) {
+  const { from, amount } = props.frets
+  return (
+    <div
+      className={classNames(props.className, 'frets')}
+      onMouseEnter={props.onMouseEnter}
+    >
+      {range(from, from + amount + 1).map(fret => (
+        <div className={classNames('fret', { nut: fret === 0 })} key={fret}>
+          {props.children?.(fret)}
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export default function Guitar(props: {
   className?: string
   strings?: number[]
@@ -65,16 +89,34 @@ export default function Guitar(props: {
     playOnHover
   } = props
   const styles = useMemo(() => getStyles(theme), [theme])
-  const fretsNodeRef = useRef(null as HTMLOListElement | null)
-  const fretNodesRef = useRef({} as { [K: number]: HTMLLIElement | null })
+  const ref = useRef(null as HTMLDivElement | null)
+  const toggleString = (string: number, fret: number) => {
+    const newFret =
+      fret === 0 && strings[string] === 0
+        ? -1
+        : strings[string] === fret
+        ? 0
+        : strings[string] === -1
+        ? 0
+        : strings[string]
+    ref.current
+      ?.querySelector?.<HTMLInputElement>(
+        `input[name="string-${string}"][value="${
+          newFret === -1 ? 0 : newFret
+        }"]`
+      )
+      ?.focus()
+    props.onChange?.(set(strings, string, newFret))
+  }
   useLayoutEffect(() => {
-    const fretsNode = fretsNodeRef.current
+    const fretsNode = ref.current
     if (center && fretsNode) {
+      const children = fretsNode.querySelectorAll('.fret')
       const pressedFrets = strings.filter(fret => fret > 0)
       const minFret = Math.min.apply(Math, pressedFrets)
       const maxFret = Math.max.apply(Math, pressedFrets)
       const toFret = minFret + Math.floor((maxFret - minFret) / 2)
-      const fretNode = fretNodesRef.current[toFret]
+      const fretNode = children[toFret] as HTMLElement | undefined
       if (fretNode) {
         fretsNode.scrollLeft =
           fretNode.offsetLeft -
@@ -82,45 +124,43 @@ export default function Guitar(props: {
           fretNode.offsetWidth / 2
       }
     }
-  }, [fretsNodeRef, fretNodesRef, strings, center, lefty])
+  }, [ref, strings, center, lefty])
   return (
-    <ol
-      aria-label={`This is a guitar with ${strings.length} strings and ${
-        frets.amount
-      } frets, starting from ${
-        frets.from
-      }. Its current fretting is ${strings.join(', ')}.${
-        props.onChange ? ' You can tab between strings and frets.' : ''
-      }${
-        props.onPlay
-          ? " When a specific string is focused you can play it by pressing 'p'."
-          : ''
-      }`}
-      aria-live="polite"
-      className={classNames('guitar', { lefty }, props.className)}
+    <div
+      ref={ref}
       css={styles}
-      ref={fretsNodeRef}
+      className={classNames('guitar', { lefty }, props.className)}
     >
-      {range(frets.from, frets.from + frets.amount + 1).map(fret => (
-        <li
-          className={fret === 0 ? 'nut' : undefined}
-          key={fret}
-          style={{
-            backgroundColor: fret === 0 ? theme.nut.color : theme.fret.color
-          }}
-          ref={node => (fretNodesRef.current[fret] = node)}
-        >
-          {theme.fret.marker && (
-            <div className="marker">{theme.fret.marker(fret)}</div>
-          )}
-          <ol className="strings">
-            {strings.map((currentFret, string) => (
-              <li
-                key={string}
-                onMouseEnter={() => playOnHover && props.onPlay?.(string)}
-              >
-                <div
-                  className="string"
+      <p className="sr-only" role="status">
+        This is a guitar with {strings.length} strings and {frets.amount} frets,
+        starting from {frets.from}. Its current fretting is {strings.join(', ')}
+        .{props.onChange && <span>You can tab between strings and frets.</span>}
+        {props.onPlay && (
+          <span>
+            When a specific string is focused you can play it by pressing 'p'.
+          </span>
+        )}
+      </p>
+      <div className="strings">
+        <Frets className="fretboard" frets={frets}>
+          {theme.fret.marker
+            ? fret => <div className="marker">{theme.fret.marker?.(fret)}</div>
+            : undefined}
+        </Frets>
+        {strings.map((currentFret, string) => (
+          <Frets
+            key={string}
+            className="string"
+            frets={frets}
+            onMouseEnter={() => playOnHover && props.onPlay?.(string)}
+          >
+            {fret => (
+              <label>
+                <span className="sr-only">
+                  String {string + 1}, fret {fret}.
+                </span>
+                <span
+                  className="actual-string"
                   style={{
                     opacity: currentFret === -1 ? 0.2 : 1,
                     borderBottom: `solid 0.2em ${color(
@@ -129,37 +169,43 @@ export default function Guitar(props: {
                     backgroundColor: theme.string.color(string)
                   }}
                 />
-                <label>
-                  <input
-                    disabled={!props.onChange}
-                    type="checkbox"
-                    checked={currentFret === fret}
-                    onChange={() =>
-                      props.onChange?.(
-                        set(
-                          strings,
-                          string,
-                          fret === 0 && strings[string] === 0
-                            ? -1
-                            : strings[string] === fret
-                            ? 0
-                            : fret
-                        )
-                      )
+                <input
+                  className={classNames({ muted: currentFret === -1 })}
+                  disabled={!props.onChange}
+                  type="radio"
+                  name={`string-${string}`}
+                  value={fret}
+                  checked={
+                    (fret === 0 && currentFret === -1) || currentFret === fret
+                  }
+                  onChange={e => {
+                    props.onChange?.(set(strings, string, fret))
+                    e.target.focus()
+                  }}
+                  onClick={() =>
+                    fret === currentFret && toggleString(string, fret)
+                  }
+                  onKeyDown={e => {
+                    switch (e.keyCode) {
+                      case 80:
+                        props.onPlay?.(string)
+                        break
+                      case 0:
+                      case 32:
+                        toggleString(string, fret)
+                        e.preventDefault()
                     }
-                    onKeyPress={e => e.key === 'p' && props.onPlay?.(string)}
-                  />
-                  <span className="sr-only">
-                    String {string + 1}, fret {fret}.
-                  </span>
-                  <span className="finger">{renderFinger?.(string, fret)}</span>
-                </label>
-              </li>
-            ))}
-          </ol>
-          {fret !== 0 && <span className="counter">{fret}</span>}
-        </li>
-      ))}
-    </ol>
+                  }}
+                />
+                <span className="finger">{renderFinger?.(string, fret)}</span>
+              </label>
+            )}
+          </Frets>
+        ))}
+      </div>
+      <Frets className="frame" frets={frets}>
+        {fret => (fret !== 0 ? <span className="counter">{fret}</span> : null)}
+      </Frets>
+    </div>
   )
 }

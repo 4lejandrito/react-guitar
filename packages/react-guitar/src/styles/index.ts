@@ -16,6 +16,9 @@ export default (theme: Theme) =>
     margin: 0,
     padding: 0,
     listStyle: 'none',
+    borderTopColor: theme.color,
+    borderTopStyle: 'solid',
+    borderTopWidth: '0.5em',
 
     '&.lefty': {
       direction: 'rtl',
@@ -28,128 +31,133 @@ export default (theme: Theme) =>
       boxSizing: 'border-box'
     },
 
-    'ol,li': {
-      margin: 0,
-      padding: 0,
-      listStyle: 'none'
+    '.frets': {
+      display: 'flex',
+      '.fret': {
+        width: '10em',
+        flexShrink: 0,
+        '&.nut': {
+          width: '7em'
+        }
+      }
     },
 
-    '> li': {
-      width: '10em',
-      display: 'inline-flex',
-      flexDirection: 'row-reverse',
-      position: 'relative',
-      borderTopWidth: '0.5em',
-      borderBottomWidth: '2em',
-      borderTopStyle: 'solid',
-      borderBottomStyle: 'solid',
-      verticalAlign: 'top',
-      borderColor: theme.color,
-
-      '&.nut': {
-        width: '7em',
-        flexShrink: 0,
-        zIndex: 1
+    '.frame': {
+      height: '2em',
+      '.counter': {
+        fontWeight: 'bold',
+        color: theme.fret.counter.color
       },
-
-      '&:not(.nut)::before': {
-        content: '""',
-        position: 'absolute',
-        top: '0',
-        bottom: '0',
-        width: `${sw(theme)}em`,
-        backgroundColor: theme.fret.separator.color,
-        borderRight: theme.fret.separator.shadow
-          ? `solid ${sw(theme) / 2}em ${color(
-              theme.fret.separator.color
-            ).darken(0.1)}`
-          : 0,
-        borderRadius: theme.fret.separator.radius ? '3px' : 0,
-        display: 'inline-block'
-      },
-
-      '.marker': {
-        position: 'absolute',
-        left: '0',
-        right: '0',
-        top: '0',
-        bottom: '0',
+      '.fret': {
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
-      },
-
-      '.counter': {
-        width: '100%',
-        height: '6%',
-        position: 'absolute',
-        bottom: '-1.5em',
-        fontWeight: 'bold',
-        textAlign: 'center',
-        color: theme.fret.counter.color
+        justifyContent: 'center',
+        background: theme.color
       }
     },
 
     '.strings': {
-      width: '100%',
       display: 'flex',
       flexDirection: 'column',
-      height: '20em',
+      position: 'relative',
 
-      '> li': {
-        zIndex: 1,
-        margin: '0',
-        position: 'relative',
+      '.string': {
+        '.fret': {
+          display: 'flex',
+          alignItems: 'center',
+          position: 'relative',
+
+          '.actual-string': {
+            transition: 'opacity ease-in-out 0.1s',
+            content: '""',
+            width: '100%',
+            height: '0.65em',
+            position: 'absolute',
+            left: '0'
+          },
+
+          label: {
+            fontSize: '1em',
+            width: '100%',
+            height: '3.33125em',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: 0
+          },
+
+          '&:hover input:not(:disabled):not(:checked) ~ .finger,&:hover input.muted:not(:disabled) ~ .finger,input:focus:not(:disabled):not(:checked) ~ .finger': {
+            opacity: 0.5
+          },
+
+          'input:not(:disabled)': {
+            height: '100%',
+            width: '100%'
+          },
+
+          'input:not(:disabled),input:not(:disabled) ~ .finger': {
+            cursor: 'pointer'
+          },
+
+          input: {
+            position: 'absolute',
+            margin: 0,
+            opacity: 0,
+            '&:checked:not(.muted) ~ .finger': {
+              opacity: 1
+            },
+            '&.muted:checked:focus ~ .finger': {
+              opacity: 0.5
+            },
+            '&:focus:not(:disabled) ~ .finger': {
+              boxShadow: '0 0 0 0.2em rgba(66, 153, 225, 0.5)'
+            }
+          }
+        }
+      }
+    },
+
+    '.fretboard': {
+      position: 'absolute',
+      left: '0',
+      right: '0',
+      top: '0',
+      bottom: '0',
+      '.fret': {
+        background: 'red',
         display: 'flex',
-        flexGrow: 1,
+        flexDirection: 'row-reverse',
         alignItems: 'center',
-        justifyContent: 'center',
-
-        '.string': {
-          transition: 'opacity ease-in-out 0.1s',
-          content: '""',
-          width: '100%',
-          height: '0.65em',
-          position: 'absolute',
-          left: '0'
+        justifyContent: 'end',
+        backgroundColor: theme.fret.color,
+        position: 'relative',
+        '&.nut': {
+          backgroundColor: theme.nut.color
         },
-
-        label: {
-          fontSize: '1em',
+        '&:not(.nut)::before': {
+          content: '""',
           position: 'absolute',
           top: '0',
           bottom: '0',
+          width: `${sw(theme)}em`,
+          backgroundColor: theme.fret.separator.color,
+          borderRight: theme.fret.separator.shadow
+            ? `solid ${sw(theme) / 2}em ${color(
+                theme.fret.separator.color
+              ).darken(0.1)}`
+            : 0,
+          borderRadius: theme.fret.separator.radius ? '3px' : 0,
+          display: 'inline-block'
+        },
+        '.marker': {
+          position: 'absolute',
           left: '0',
           right: '0',
+          top: '0',
+          bottom: '0',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 2,
-          margin: 0
-        },
-
-        '&:hover input:not(:disabled):not(:checked) ~ .finger,input:focus:not(:disabled):not(:checked) ~ .finger': {
-          opacity: 0.5
-        },
-
-        'input:not(:disabled)': {
-          height: '100%',
-          width: '100%'
-        },
-
-        'input:not(:disabled),input:not(:disabled) ~ .finger': {
-          cursor: 'pointer'
-        },
-
-        input: {
-          position: 'absolute',
-          opacity: 0,
-          '&:checked ~ .finger': {
-            opacity: 1
-          },
-          '&:focus:not(:disabled) ~ .finger': {
-            boxShadow: '0 0 0 0.2em rgba(66, 153, 225, 0.5)'
-          }
+          justifyContent: 'center'
         }
       }
     },
@@ -170,7 +178,8 @@ export default (theme: Theme) =>
       opacity: 0,
       display: 'inline-flex',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      position: 'relative'
     },
 
     '.sr-only': {
