@@ -12,7 +12,7 @@ export function BuyMeACoffee() {
         'overflow-hidden flex-shrink-0'
       )}
       href="https://www.buymeacoffee.com/b4iusc3"
-      title="Buy Me A Coffee"
+      title="If you liked this you can buy me a coffee"
       target="_blank"
       onClick={() => plausible('buymeacoffee')}
     >

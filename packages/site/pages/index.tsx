@@ -48,7 +48,12 @@ function Home() {
           />{' '}
           {title}
         </h1>
-        <p className="slide-up text-lg sm:text-xl mt-2">{description}</p>
+        <p className="slide-up text-lg sm:text-xl mt-2">
+          {description}
+          <span className="sr-only">
+            Hopefully accessible enough to be usable for you.
+          </span>
+        </p>
         <div className="slide-up flex items-center justify-center mt-4 sm:mt-6">
           <a
             className={headerButton}

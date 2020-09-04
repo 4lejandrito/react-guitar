@@ -246,6 +246,7 @@ export default function ChordSelector(props: {
   return (
     <>
       <button
+        aria-live="polite"
         className={classNames(button, 'w-32 truncate')}
         title={chordName || 'Select a chord'}
         onClick={() => {
