@@ -131,16 +131,19 @@ export default function Guitar(props: {
       css={styles}
       className={classNames('guitar', { lefty }, props.className)}
     >
-      <p className="sr-only" role="status">
+      <div className="sr-only">
         This is a guitar with {strings.length} strings and {frets.amount} frets,
-        starting from {frets.from}. Its current fretting is {strings.join(', ')}
-        .{props.onChange && <span>You can tab between strings and frets.</span>}
+        starting from {frets.from}.
+        {props.onChange && <span>You can tab between strings and frets.</span>}
         {props.onPlay && (
           <span>
             When a specific string is focused you can play it by pressing 'p'.
           </span>
         )}
-      </p>
+      </div>
+      <div className="sr-only" role="status">
+        Current fretting: {strings.join(', ')}.
+      </div>
       <div className="strings">
         <Frets className="fretboard" frets={frets}>
           {theme.fret.marker
@@ -156,8 +159,9 @@ export default function Guitar(props: {
           >
             {fret => (
               <label>
-                <span className="sr-only">
-                  String {string + 1}, fret {fret}.
+                <span className="sr-only" role="status">
+                  String {string + 1}, fret {fret}.{' '}
+                  {currentFret === -1 && 'This string is muted.'}
                 </span>
                 <span
                   className="actual-string"
