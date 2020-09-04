@@ -21,7 +21,7 @@ export function getRenderFingerSpn(tuning: number[]) {
       <span>
         {letter}
         {acc === '#' ? '♯' : acc === 'b' ? '♭' : ''}
-        <sub>{oct}</sub>
+        <sub aria-label={`octave ${oct}`}>{oct}</sub>
       </span>
     )
   }
@@ -85,6 +85,18 @@ export default function Guitar(props: {
   }, [fretsNodeRef, fretNodesRef, strings, center, lefty])
   return (
     <ol
+      aria-label={`This is a guitar with ${strings.length} strings and ${
+        frets.amount
+      } frets, starting from ${
+        frets.from
+      }. Its current fretting is ${strings.join(', ')}.${
+        props.onChange ? ' You can tab between strings and frets.' : ''
+      }${
+        props.onPlay
+          ? " When a specific string is focused you can play it by pressing 'p'."
+          : ''
+      }`}
+      aria-live="polite"
       className={classNames('guitar', { lefty }, props.className)}
       css={styles}
       ref={fretsNodeRef}
@@ -137,6 +149,9 @@ export default function Guitar(props: {
                     }
                     onKeyPress={e => e.key === 'p' && props.onPlay?.(string)}
                   />
+                  <span className="sr-only">
+                    String {string + 1}, fret {fret}.
+                  </span>
                   <span className="finger">{renderFinger?.(string, fret)}</span>
                 </label>
               </li>
