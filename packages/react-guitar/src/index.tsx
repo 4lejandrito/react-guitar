@@ -194,8 +194,7 @@ export default function Guitar(props: {
                       case 80:
                         props.onPlay?.(string)
                         break
-                      case 0:
-                      case 32:
+                      case 13:
                         toggleString(string, fret)
                         e.preventDefault()
                     }
