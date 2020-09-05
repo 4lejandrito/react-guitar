@@ -42,7 +42,7 @@ function Demo() {
   const url = useURL()
 
   return (
-    <div className="slide-up animation-delay w-full py-4">
+    <div className="slide-up animation-delay w-full py-4 flex-grow flex flex-col">
       <div className="flex flex-wrap items-stretch justify-center px-4">
         <Label name="Tuning">
           <TuningSelector tuning={tuning} onChange={setTuning} />
