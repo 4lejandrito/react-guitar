@@ -34,11 +34,15 @@ export default function KeyboardShortcuts() {
               { keys: 's', description: 'Strum down 🎶 👆' },
               {
                 keys: 'tab',
-                description: 'Move between strings and frets ⏪ ⏩'
+                description: 'Move between strings ⏫ ⏬'
               },
               {
-                keys: 'space',
-                description: 'Press / release the focused string 👎 👍'
+                keys: '← →',
+                description: 'Select frets on the focused string ⏪ ⏩'
+              },
+              {
+                keys: 'enter',
+                description: 'Release / mute the focused string 👎 👍'
               },
               {
                 keys: 'p',
@@ -50,9 +54,14 @@ export default function KeyboardShortcuts() {
                   <Emoji text={description} />
                 </td>
                 <td className="border px-4 py-2 text-center">
-                  <kbd className="font-mono text-sm h-6 px-2 bg-gray-800 shadow inline-flex items-center justify-center rounded text-white border-b-4 border-gray-900">
-                    {keys}
-                  </kbd>
+                  {keys.split(' ').map((key, i) => (
+                    <kbd
+                      key={i}
+                      className="font-mono text-sm h-6 px-2 mx-1 bg-gray-800 shadow inline-flex items-center justify-center rounded text-white border-b-4 border-gray-900"
+                    >
+                      {key}
+                    </kbd>
+                  ))}
                 </td>
               </tr>
             ))}
