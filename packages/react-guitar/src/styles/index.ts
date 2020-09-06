@@ -3,7 +3,7 @@ import { Theme } from '..'
 import color from 'color'
 
 const sw = (theme: Theme) => (theme.fret.separator.width === 'md' ? 0.7 : 0.3)
-const height = `${3.5 / 1.5}em`
+const stringHeight = 3.33125
 
 export default (theme: Theme) =>
   css({
@@ -66,7 +66,9 @@ export default (theme: Theme) =>
     '.strings': {
       display: 'flex',
       flexDirection: 'column',
+      justifyContent: 'center',
       position: 'relative',
+      minHeight: `${stringHeight * 3}em`,
 
       '.string': {
         '.fret': {
@@ -85,7 +87,7 @@ export default (theme: Theme) =>
           label: {
             fontSize: '1em',
             width: '100%',
-            height: '3.33125em',
+            height: `${stringHeight}em`,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -179,11 +181,10 @@ export default (theme: Theme) =>
       background: theme.finger.color,
       width: '5em',
       padding: '0',
-      height: height,
+      height: `${3.5 / 1.5}em`,
       borderRadius: '20px',
       borderBottom: `solid 0.2em ${color(theme.finger.color).darken(0.35)}`,
       boxShadow: '0 1px 2px rgba(0, 0, 0, 0.16), 0 1px 2px rgba(0, 0, 0, 0.23)',
-      lineHeight: height,
       textAlign: 'center',
       fontWeight: 'bold',
       opacity: 0,
