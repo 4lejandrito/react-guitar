@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import { Theme, getRenderFingerRelative } from '..'
+import { Theme } from '..'
 import color from 'color'
 
 const sw = (theme: Theme) => (theme.fret.separator.width === 'md' ? 0.7 : 0.3)
