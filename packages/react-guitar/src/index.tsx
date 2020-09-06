@@ -164,16 +164,18 @@ export default function Guitar(props: {
                   String {string + 1}, fret {fret}.{' '}
                   {currentFret === -1 && 'This string is muted.'}
                 </span>
-                <span
-                  className="actual-string"
-                  style={{
-                    opacity: currentFret === -1 ? 0.2 : 1,
-                    borderBottom: `solid 0.2em ${color(
-                      theme.string.color(string)
-                    ).darken(0.35)}`,
-                    backgroundColor: theme.string.color(string)
-                  }}
-                />
+                {fret >= 0 && (
+                  <span
+                    className="actual-string"
+                    style={{
+                      opacity: currentFret === -1 ? 0.2 : 1,
+                      borderBottom: `solid 0.2em ${color(
+                        theme.string.color(string)
+                      ).darken(0.35)}`,
+                      backgroundColor: theme.string.color(string)
+                    }}
+                  />
+                )}
                 <input
                   className={classNames({ muted: currentFret === -1 })}
                   disabled={!props.onChange}
