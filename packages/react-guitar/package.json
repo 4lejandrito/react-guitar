@@ -1,6 +1,6 @@
 {
   "name": "react-guitar",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
