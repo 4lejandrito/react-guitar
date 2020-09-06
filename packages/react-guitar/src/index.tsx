@@ -177,7 +177,6 @@ export default function Guitar(props: {
                   />
                 )}
                 <input
-                  className={classNames({ muted: currentFret === -1 })}
                   disabled={!props.onChange}
                   type="radio"
                   name={`string-${string}`}

@@ -92,7 +92,7 @@ export default (theme: Theme) =>
             margin: 0
           },
 
-          '&:hover input:not(:disabled) ~ .finger': {
+          '&:hover input:not(:disabled):not(:checked) ~ .finger': {
             opacity: 0.5
           },
 
@@ -109,14 +109,19 @@ export default (theme: Theme) =>
             position: 'absolute',
             margin: 0,
             opacity: 0,
-            '&:checked:not(.muted) ~ .finger': {
+            '&:checked ~ .finger': {
               opacity: 1
-            },
-            '&.muted:focus ~ .finger': {
-              opacity: 0.5
             },
             '&:focus:not(:disabled) ~ .finger': {
               boxShadow: '0 0 0 0.2em rgba(66, 153, 225, 0.5)'
+            }
+          },
+          '&.mute': {
+            'input:checked ~ .finger': {
+              opacity: 0
+            },
+            'input:focus ~ .finger,&:hover input:checked ~ .finger': {
+              opacity: 0.5
             }
           }
         }
