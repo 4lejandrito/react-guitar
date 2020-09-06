@@ -42,6 +42,7 @@ export function getRenderFingerRelative(tuning: number[], root: number) {
 
 function Frets(props: {
   className?: string
+  currentFret?: number
   frets: {
     from: number
     amount: number
@@ -55,6 +56,14 @@ function Frets(props: {
       className={classNames(props.className, 'frets')}
       onMouseEnter={props.onMouseEnter}
     >
+      {props.currentFret !== undefined && (
+        <div
+          className="fret mute"
+          style={{ zIndex: props.currentFret === -1 ? 1 : undefined }}
+        >
+          {props.children?.(-1)}
+        </div>
+      )}
       {range(from, from + amount + 1).map(fret => (
         <div className={classNames('fret', { nut: fret === 0 })} key={fret}>
           {props.children?.(fret)}
@@ -90,20 +99,11 @@ export default function Guitar(props: {
   } = props
   const styles = useMemo(() => getStyles(theme), [theme])
   const ref = useRef(null as HTMLDivElement | null)
-  const toggleString = (string: number, fret: number) => {
-    const newFret =
-      fret === 0 && strings[string] === 0
-        ? -1
-        : strings[string] === fret
-        ? 0
-        : strings[string] === -1
-        ? 0
-        : strings[string]
+  const releaseString = (string: number) => {
+    const newFret = strings[string] === 0 ? -1 : 0
     ref.current
       ?.querySelector?.<HTMLInputElement>(
-        `input[name="string-${string}"][value="${
-          newFret === -1 ? 0 : newFret
-        }"]`
+        `input[name="string-${string}"][value="${newFret}"]`
       )
       ?.focus()
     props.onChange?.(set(strings, string, newFret))
@@ -154,6 +154,7 @@ export default function Guitar(props: {
           <Frets
             key={string}
             className="string"
+            currentFret={currentFret}
             frets={frets}
             onMouseEnter={() => playOnHover && props.onPlay?.(string)}
           >
@@ -179,30 +180,26 @@ export default function Guitar(props: {
                   type="radio"
                   name={`string-${string}`}
                   value={fret}
-                  checked={
-                    (fret === 0 && currentFret === -1) || currentFret === fret
-                  }
+                  checked={currentFret === fret}
                   onChange={e => {
                     props.onChange?.(set(strings, string, fret))
                     e.target.focus()
                   }}
-                  onClick={() =>
-                    (fret === currentFret ||
-                      (fret === 0 && currentFret === -1)) &&
-                    toggleString(string, fret)
-                  }
+                  onClick={() => fret === currentFret && releaseString(string)}
                   onKeyDown={e => {
                     switch (e.keyCode) {
                       case 80:
                         props.onPlay?.(string)
                         break
                       case 13:
-                        toggleString(string, fret)
+                        releaseString(string)
                         e.preventDefault()
                     }
                   }}
                 />
-                <span className="finger">{renderFinger?.(string, fret)}</span>
+                <span className="finger">
+                  {renderFinger?.(string, fret === -1 ? 0 : fret)}
+                </span>
               </label>
             )}
           </Frets>

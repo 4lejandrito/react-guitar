@@ -1,5 +1,5 @@
 import { css } from '@emotion/core'
-import { Theme } from '..'
+import { Theme, getRenderFingerRelative } from '..'
 import color from 'color'
 
 const sw = (theme: Theme) => (theme.fret.separator.width === 'md' ? 0.7 : 0.3)
@@ -33,11 +33,18 @@ export default (theme: Theme) =>
 
     '.frets': {
       display: 'flex',
+      position: 'relative',
       '.fret': {
         width: '10em',
         flexShrink: 0,
-        '&.nut': {
+        position: 'relative',
+        '&.nut,&.mute': {
           width: '7em'
+        },
+        '&.mute': {
+          position: 'absolute',
+          top: 0,
+          left: 0
         }
       }
     },
@@ -65,7 +72,6 @@ export default (theme: Theme) =>
         '.fret': {
           display: 'flex',
           alignItems: 'center',
-          position: 'relative',
 
           '.actual-string': {
             transition: 'opacity ease-in-out 0.1s',
@@ -86,7 +92,7 @@ export default (theme: Theme) =>
             margin: 0
           },
 
-          '&:hover input:not(:disabled):not(:checked) ~ .finger,&:hover input.muted:not(:disabled) ~ .finger,input:focus:not(:disabled):not(:checked) ~ .finger': {
+          '&:hover input:not(:disabled):not(:checked) ~ .finger,input:focus:not(:disabled):not(:checked) ~ .finger': {
             opacity: 0.5
           },
 
@@ -106,7 +112,7 @@ export default (theme: Theme) =>
             '&:checked:not(.muted) ~ .finger': {
               opacity: 1
             },
-            '&.muted:checked:focus ~ .finger': {
+            '&.muted:focus ~ .finger': {
               opacity: 0.5
             },
             '&:focus:not(:disabled) ~ .finger': {
