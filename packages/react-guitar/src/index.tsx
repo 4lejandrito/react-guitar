@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core'
 import useSound from './hooks/sound'
 import tunings from './util/tunings'
-import { useRef, Fragment, useMemo, ReactElement, useEffect } from 'react'
+import { useRef, Fragment, useMemo, ReactElement } from 'react'
 import useLayoutEffect from './hooks/layoutEffect'
 import range from 'lodash.range'
 import { set } from './util/arrays'
