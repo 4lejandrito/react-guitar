@@ -12,10 +12,6 @@ export default (theme: Theme) =>
     boxSizing: 'border-box',
     maxWidth: '100%',
     overflowY: 'auto',
-    whiteSpace: 'nowrap',
-    margin: 0,
-    padding: 0,
-    listStyle: 'none',
     borderTopColor: theme.color,
     borderTopStyle: 'solid',
     borderTopWidth: '0.5em',
@@ -137,13 +133,11 @@ export default (theme: Theme) =>
       top: '0',
       bottom: '0',
       '.fret': {
-        background: 'red',
         display: 'flex',
         flexDirection: 'row-reverse',
         alignItems: 'center',
         justifyContent: 'end',
         backgroundColor: theme.fret.color,
-        position: 'relative',
         '&.nut': {
           backgroundColor: theme.nut.color
         },
@@ -185,7 +179,6 @@ export default (theme: Theme) =>
       borderRadius: '20px',
       borderBottom: `solid 0.2em ${color(theme.finger.color).darken(0.35)}`,
       boxShadow: '0 1px 2px rgba(0, 0, 0, 0.16), 0 1px 2px rgba(0, 0, 0, 0.23)',
-      textAlign: 'center',
       fontWeight: 'bold',
       opacity: 0,
       display: 'inline-flex',
