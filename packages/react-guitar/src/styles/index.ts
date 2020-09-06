@@ -92,7 +92,7 @@ export default (theme: Theme) =>
             margin: 0
           },
 
-          '&:hover input:not(:disabled):not(:checked) ~ .finger,input:focus:not(:disabled):not(:checked) ~ .finger': {
+          '&:hover input:not(:disabled) ~ .finger': {
             opacity: 0.5
           },
 
