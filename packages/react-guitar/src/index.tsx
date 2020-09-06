@@ -187,7 +187,9 @@ export default function Guitar(props: {
                     e.target.focus()
                   }}
                   onClick={() =>
-                    fret === currentFret && toggleString(string, fret)
+                    (fret === currentFret ||
+                      (fret === 0 && currentFret === -1)) &&
+                    toggleString(string, fret)
                   }
                   onKeyDown={e => {
                     switch (e.keyCode) {
