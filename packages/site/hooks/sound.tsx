@@ -3,8 +3,7 @@ import E2 from 'react-guitar/resources/E2.mp3'
 import D3 from 'react-guitar/resources/D3.mp3'
 import G3 from 'react-guitar/resources/G3.mp3'
 import E4 from 'react-guitar/resources/E4.mp3'
-import { useEffect } from 'react'
-import tinikeys from 'tinykeys'
+import { useKey } from 'react-use'
 
 export default function useClassicSound(
   strings: number[],
@@ -18,12 +17,8 @@ export default function useClassicSound(
     muted
   )
 
-  useEffect(() => {
-    return tinikeys(window, {
-      w: () => strum(true),
-      s: () => strum()
-    })
-  }, [strum])
+  useKey('w', () => strum(true), {}, [strum])
+  useKey('s', () => strum(), {}, [strum])
 
   return { strum, ...rest }
 }
