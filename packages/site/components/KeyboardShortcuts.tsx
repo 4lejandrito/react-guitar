@@ -33,7 +33,7 @@ export default function KeyboardShortcuts() {
               { keys: 'w', description: 'Strum up 🎶 👇' },
               { keys: 's', description: 'Strum down 🎶 👆' },
               {
-                keys: 'tab',
+                keys: '↑ ↓ tab',
                 description: 'Move between strings ⏫ ⏬'
               },
               {

@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core'
 import useSound from './hooks/sound'
 import tunings from './util/tunings'
-import { useRef, Fragment, useMemo, ReactElement } from 'react'
+import { useRef, Fragment, useMemo, ReactElement, useState } from 'react'
 import useLayoutEffect from './hooks/layoutEffect'
 import range from 'lodash.range'
 import { set } from './util/arrays'
@@ -27,8 +27,9 @@ export function getRenderFingerSpn(tuning: number[]) {
   }
 }
 
+const mod = (n: number, m: number) => (m + (n % m)) % m
+
 export function getRenderFingerRelative(tuning: number[], root: number) {
-  const mod = (n: number, m: number) => (m + (n % m)) % m
   return (string: number, fret: number) => (
     <Fragment>
       {
@@ -99,13 +100,15 @@ export default function Guitar(props: {
   } = props
   const styles = useMemo(() => getStyles(theme), [theme])
   const ref = useRef(null as HTMLDivElement | null)
-  const releaseString = (string: number) => {
-    const newFret = strings[string] === 0 ? -1 : 0
+  const focusString = (string: number, fret: number = strings[string]) =>
     ref.current
       ?.querySelector?.<HTMLInputElement>(
-        `input[name="string-${string}"][value="${newFret}"]`
+        `input[name="string-${string}"][value="${fret}"]`
       )
       ?.focus()
+  const releaseString = (string: number) => {
+    const newFret = strings[string] === 0 ? -1 : 0
+    focusString(string, newFret)
     props.onChange?.(set(strings, string, newFret))
   }
   useLayoutEffect(() => {
@@ -125,11 +128,20 @@ export default function Guitar(props: {
       }
     }
   }, [ref, strings, center, lefty])
+  const [focusedString, setFocusedString] = useState(0)
   return (
     <div
       ref={ref}
       css={styles}
       className={classNames('guitar', { lefty }, props.className)}
+      onKeyDown={e => {
+        if (e.keyCode === 38 || e.keyCode === 40) {
+          focusString(
+            mod(focusedString + (e.keyCode === 38 ? -1 : 1), strings.length)
+          )
+          e.preventDefault()
+        }
+      }}
     >
       <div className="sr-only">
         This is a guitar with {strings.length} strings and {frets.amount} frets,
@@ -197,6 +209,7 @@ export default function Guitar(props: {
                         e.preventDefault()
                     }
                   }}
+                  onFocus={() => setFocusedString(string)}
                 />
                 <span className="finger">
                   {renderFinger?.(string, fret === -1 ? 0 : fret)}
