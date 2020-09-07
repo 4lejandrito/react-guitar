@@ -177,7 +177,7 @@ export default function Guitar(props: {
           >
             {fret => (
               <label>
-                <span className="sr-only" role="status">
+                <span className="sr-only">
                   String {string + 1}, fret {fret}.{' '}
                   {currentFret === -1 && 'This string is muted.'}
                 </span>
