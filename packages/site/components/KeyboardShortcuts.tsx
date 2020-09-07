@@ -3,9 +3,11 @@ import Modal from './Modal'
 import { button } from '../css/classes'
 import classNames from 'classnames'
 import Emoji from './Emoji'
+import { useKey } from 'react-use'
 
 export default function KeyboardShortcuts() {
   const [show, setShow] = useState(false)
+  useKey('?', () => setShow(true))
   return (
     <>
       <button
