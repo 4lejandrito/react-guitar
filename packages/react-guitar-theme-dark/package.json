@@ -1,6 +1,6 @@
 {
   "name": "react-guitar-theme-dark",
-  "version": "0.7.8",
+  "version": "0.8.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -28,7 +28,7 @@
     "@types/react": "^16.9.23",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-guitar": "^0.7.8",
+    "react-guitar": "^0.8.0",
     "rollup": "^2.21.0",
     "rollup-plugin-typescript2": "^0.27.1",
     "typescript": "^3.9.6"
