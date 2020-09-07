@@ -53,6 +53,11 @@ export default function KeyboardShortcuts() {
                 keys: 'p',
                 description: 'Play the focused string',
                 emojis: '🎶 🎻'
+              },
+              {
+                keys: '?',
+                description: 'Open keyboard shortcut help',
+                emojis: '⌨️❓'
               }
             ].map(({ keys, description, emojis }, i) => (
               <tr key={i}>
