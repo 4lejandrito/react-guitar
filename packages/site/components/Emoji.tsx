@@ -1,18 +1,21 @@
 import emoji from 'react-easy-emoji'
 
-export default function Emoji(props: {
-  text: string
-  title?: string
-  style?: any
-}) {
+export default function Emoji(
+  props: React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLSpanElement>,
+    HTMLSpanElement
+  > & {
+    text: string
+  }
+) {
+  const { text, ...rest } = props
   return (
-    <span style={props.style} className="inline-block">
+    <span {...rest} className="inline-block">
       {emoji(props.text, {
         baseUrl: 'https://twemoji.maxcdn.com/2/svg/',
         ext: '.svg',
         size: '',
         props: {
-          title: props.title,
           className: 'emoji inline-block'
         }
       })}

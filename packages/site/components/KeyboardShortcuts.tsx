@@ -30,28 +30,32 @@ export default function KeyboardShortcuts() {
           </thead>
           <tbody>
             {[
-              { keys: 'w', description: 'Strum up 🎶 👇' },
-              { keys: 's', description: 'Strum down 🎶 👆' },
+              { keys: 'w', description: 'Strum up', emojis: ' 🎶 👇' },
+              { keys: 's', description: 'Strum down', emojis: '🎶 👆' },
               {
                 keys: '↑ ↓ tab',
-                description: 'Move between strings ⏫ ⏬'
+                description: 'Move between strings',
+                emojis: '⏫ ⏬'
               },
               {
                 keys: '← →',
-                description: 'Select frets on the focused string ⏪ ⏩'
+                description: 'Select frets on the focused string',
+                emojis: '⏪ ⏩'
               },
               {
                 keys: 'enter',
-                description: 'Release / mute the focused string 👎 👍'
+                description: 'Release / mute the focused string',
+                emojis: '👎 👍'
               },
               {
                 keys: 'p',
-                description: 'Play the focused string 🎶 🎻'
+                description: 'Play the focused string',
+                emojis: '🎶 🎻'
               }
-            ].map(({ keys, description }, i) => (
+            ].map(({ keys, description, emojis }, i) => (
               <tr key={i}>
                 <td className="border px-4 py-2 text-right">
-                  <Emoji text={description} />
+                  {description} <Emoji aria-hidden text={emojis} />
                 </td>
                 <td className="border px-4 py-2 text-center">
                   {keys.split(' ').map((key, i) => (
