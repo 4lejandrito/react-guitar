@@ -146,7 +146,12 @@ export default function Guitar(props: {
       <div className="sr-only">
         This is a guitar with {strings.length} strings and {frets.amount} frets,
         starting from {frets.from}.
-        {props.onChange && <span>You can tab between strings and frets.</span>}
+        {props.onChange && (
+          <span>
+            Once you focus on a string you will be able to navigate strings and
+            frets using the arrow keys.
+          </span>
+        )}
         {props.onPlay && (
           <span>
             When a specific string is focused you can play it by pressing 'p'.
