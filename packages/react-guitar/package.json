@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
+    "@tonaljs/interval": "^3.5.4",
     "@tonaljs/note": "^3.6.0",
     "classnames": "^2.2.6",
     "color": "^3.1.2",

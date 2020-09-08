@@ -8,6 +8,7 @@ import range from 'lodash.range'
 import { set } from './util/arrays'
 import classNames from 'classnames'
 import { get, fromMidiSharps } from '@tonaljs/note'
+import { fromSemitones } from '@tonaljs/interval'
 import spanishTheme, { Theme } from './util/theme'
 import getStyles from './styles'
 import color from 'color'
@@ -32,11 +33,7 @@ const mod = (n: number, m: number) => (m + (n % m)) % m
 export function getRenderFingerRelative(tuning: number[], root: number) {
   return (string: number, fret: number) => (
     <Fragment>
-      {
-        ['1', '2m', '2', '3m', '3', '4', '5dim', '5', '5aug', '6', '7m', '7'][
-          mod(tuning[string] + fret - root, 12)
-        ]
-      }
+      {range(12).map(fromSemitones)[mod(tuning[string] + fret - root, 12)]}
     </Fragment>
   )
 }
