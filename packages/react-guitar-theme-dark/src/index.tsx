@@ -2,6 +2,8 @@ import React from 'react'
 import { Theme } from 'react-guitar'
 
 const dark: Theme = {
+  description:
+    "Jimi Hendrix's Fender Stratocaster with a black fretboard and silver details",
   color: '#222831',
   nut: { color: '#222831' },
   fret: {

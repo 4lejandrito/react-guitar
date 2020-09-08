@@ -142,7 +142,8 @@ export default function Guitar(props: {
     >
       <div className="sr-only">
         This is a guitar with {strings.length} strings and {frets.amount} frets,
-        starting from {frets.from}.
+        starting from {frets.from}. Its theme describes it as:{' '}
+        {theme.description}.
         {props.onChange && (
           <span>
             Once you focus on a string you will be able to navigate strings and

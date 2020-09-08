@@ -84,6 +84,7 @@ And will return an object containing:
 
 ```tsx
 {
+  description: string // for screen readers
   color: string
   nut: { color: string }
   fret: {

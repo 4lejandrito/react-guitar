@@ -1,4 +1,5 @@
 export type Theme = {
+  description: string
   color: string
   nut: { color: string }
   fret: {
@@ -18,6 +19,8 @@ export type Theme = {
 const makeTheme = (theme: Theme) => theme
 
 export default makeTheme({
+  description:
+    'A typical spanish guitar with a brown fretboard and golden details',
   color: '#333333',
   nut: { color: '#fffacd' },
   fret: {

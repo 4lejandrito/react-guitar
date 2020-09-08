@@ -3,6 +3,8 @@ import Skull from './skull'
 import { Theme } from 'react-guitar'
 
 const coco: Theme = {
+  description:
+    "The guitar from the Pixar's film Coco with a white fretboard and golden details including a typical Mexican skull on the third fret",
   color: '#333333',
   nut: { color: '#FEB756' },
   fret: {
