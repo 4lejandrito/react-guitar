@@ -1,6 +1,6 @@
 {
   "name": "guitar-fretter",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": true,
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
