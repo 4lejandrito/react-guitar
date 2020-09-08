@@ -20,7 +20,7 @@ const makeTheme = (theme: Theme) => theme
 
 export default makeTheme({
   description:
-    'A typical spanish guitar with a brown fretboard and golden details',
+    'A typical Spanish guitar with a brown fretboard and golden details',
   color: '#333333',
   nut: { color: '#fffacd' },
   fret: {
