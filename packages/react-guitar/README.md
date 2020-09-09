@@ -6,7 +6,7 @@ See https://react-guitar.com for a live demo.
 
 **For the full documentation go to the [root README](https://github.com/4lejandrito/react-guitar).**
 
-![Screenshot of the rendered component with an A minor chord](screenshot.png)
+![Screenshot of the rendered component with an E major chord](screenshot.png)
 
 [![Edit quizzical-dawn-0hzuq](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/interesting-breeze-ll7zh)
 

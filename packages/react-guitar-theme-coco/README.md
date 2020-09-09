@@ -4,7 +4,7 @@ A [react-guitar](https://github.com/4lejandrito/react-guitar) theme from the fil
 
 See https://react-guitar.com?theme=coco for a live demo.
 
-![Screenshot of the rendered component with an A minor chord](screenshot.png)
+![Screenshot of the rendered component with an E major chord](screenshot.png)
 
 ## Usage
 
