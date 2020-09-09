@@ -109,6 +109,7 @@ storiesOf('Guitar', module)
   .add('theming', () => (
     <Guitar
       theme={{
+        description: 'A guitar with user defined colors',
         color: color('color', spanishTheme.color),
         nut: { color: color('Nut color', spanishTheme.nut.color) },
         fret: {
