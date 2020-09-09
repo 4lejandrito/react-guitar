@@ -17,8 +17,9 @@ import { usePlausible } from 'next-plausible'
 import { button } from '../css/classes'
 import classNames from 'classnames'
 import Emoji from './Emoji'
+import ChordTypeSelector from './ChordTypeSelector'
 
-const getNotes = (type: string) => ChordType.get(type).setNum
+const getNotes = (type: { setNum: number }) => type.setNum
 const mask = (i: number) => 1 << (11 - i)
 const set = (bits: number, i: number) => bits | mask(i)
 const clear = (bits: number, i: number) => bits & ~mask(i)
@@ -52,13 +53,16 @@ function ChordSelectorModal(props: {
 }) {
   const initialChord = Chord.get(props.initialName)
   const [root, setRoot] = useState(initialChord.tonic || 'C')
-  const [type, setType] = useState(initialChord.aliases[0] || 'M')
-  const [notes, setNotes] = useState(() => getNotes(type))
+  const [notes, setNotes] = useState(() => getNotes(initialChord))
   const pressed = 0
-  const types = ChordType.all()
-    .filter(type => type.intervals.length <= props.tuning.length)
-    .filter(type => type.aliases.length > 0)
-    .sort((t1, t2) => t2.aliases[0].localeCompare(t1.aliases[0]))
+  const types = useMemo(
+    () =>
+      ChordType.all()
+        .filter(type => type.intervals.length <= props.tuning.length)
+        .filter(type => type.aliases.length > 0)
+        .sort((t1, t2) => t2.aliases[0].localeCompare(t1.aliases[0])),
+    [props.tuning]
+  )
   const frettings = useMemo(
     () => fretter(getFretterChord(root, notes), props),
     [props.tuning, props.frets, notes, root]
@@ -94,20 +98,21 @@ function ChordSelectorModal(props: {
             <div>
               Type
               <div className="mt-1">
-                <strong>{type}</strong>
+                <strong>{ChordType.get(notes)?.aliases[0] ?? '❓'}</strong>
               </div>
             </div>
           }
           lowercase
         >
-          <Select
-            value={type}
-            values={[...types.map(type => type.aliases[0]), '-']}
-            onChange={type => {
-              setType(type)
-              setNotes(getNotes(type))
-            }}
-          />
+          <div className="w-24 h-10">
+            {props.open && (
+              <ChordTypeSelector
+                notes={notes}
+                types={types}
+                onChange={setNotes}
+              />
+            )}
+          </div>
         </Label>
         <Label
           name={
@@ -162,12 +167,9 @@ function ChordSelectorModal(props: {
                     ))
                 }
                 checked={test(notes, i)}
-                onChange={e => {
-                  const setNum = (e.target.checked ? set : clear)(notes, i)
-                  const newType = types.find(type => type.setNum === setNum)
-                  setType(newType?.aliases[0] ?? '-')
-                  setNotes(setNum)
-                }}
+                onChange={e =>
+                  setNotes((e.target.checked ? set : clear)(notes, i))
+                }
               />
             </Label>
           ))}
