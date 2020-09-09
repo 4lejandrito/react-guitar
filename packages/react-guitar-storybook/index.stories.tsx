@@ -142,3 +142,8 @@ storiesOf('Guitar', module)
       strings={[0, 0, 0, 0, 0, 0]}
     />
   ))
+  .add('smaller', () => (
+    <div style={{ fontSize: '.5em' }}>
+      <Guitar strings={[0, 1, 2, 2, 0, -1]} />
+    </div>
+  ))
