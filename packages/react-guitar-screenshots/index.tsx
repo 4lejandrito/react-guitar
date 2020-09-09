@@ -7,7 +7,7 @@ import shoot from './shoot'
 
 const SampleGuitar = (props: { theme?: Theme }) => (
   <Guitar
-    strings={[0, 1, 2, 2, 0, -1]}
+    strings={[0, 0, 1, 2, 2, 0]}
     frets={{ from: 0, amount: 5 }}
     renderFinger={getRenderFingerSpn(tunings.standard)}
     theme={props.theme}
