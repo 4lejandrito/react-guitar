@@ -1,6 +1,8 @@
 import tunings, { toString, parse } from '../util/tunings'
 import Select from 'react-select/creatable'
 import { components } from 'react-select'
+import { theme, styles, className } from '../util/react-select'
+import classNames from 'classnames'
 
 export default function TuningSelector(props: {
   tuning: number[]
@@ -8,30 +10,9 @@ export default function TuningSelector(props: {
 }) {
   return (
     <Select<{ label: string; value: number[] }>
-      className="w-40 font-semibold text-gray-700 hover:shadow rounded"
-      theme={theme => ({
-        ...theme,
-        borderRadius: 4,
-        colors: {
-          ...theme.colors,
-          neutral20: '#e2e8f0',
-          neutral40: 'rgba(203, 213, 224)'
-        }
-      })}
-      styles={{
-        singleValue: provided => ({ ...provided, color: 'inherit' }),
-        menu: provided => ({ ...provided, width: '18em', zIndex: 3 }),
-        control: (provided, state) => ({
-          ...provided,
-          borderColor: state.theme.colors.neutral20,
-          borderWidth: '2px',
-          '&:hover': {
-            borderColor: state.theme.colors.neutral40
-          },
-          height: '2.5rem',
-          boxShadow: state.isFocused && `0 0 0 3px rgba(66, 153, 225, 0.5)`
-        })
-      }}
+      className={classNames(className, 'w-40')}
+      theme={theme}
+      styles={styles}
       components={{
         DropdownIndicator: null,
         Option: props =>
