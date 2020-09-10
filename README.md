@@ -112,5 +112,5 @@ By default the guitar is styled as a Spanish guitar but some other themes are av
 
 ## Developing
 
-- `yarn start` will spin up the storybook and the site.
-- `yarn build` will build the component and the site.
+- `yarn build` will build the component and the site, this is mandatory the first time you clone the repo.
+- `yarn start` will spin up the storybook and the site and all the packages in watch mode.

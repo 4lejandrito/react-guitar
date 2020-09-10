@@ -1,19 +1,19 @@
 {
+  "include": ["src", "types"],
   "compilerOptions": {
-    "esModuleInterop": true,
-    "outDir": "./dist",
-    "target": "es5",
     "module": "esnext",
-    "moduleResolution": "node",
-    "noImplicitAny": true,
+    "lib": ["dom", "esnext"],
+    "importHelpers": true,
     "declaration": true,
-    "jsx": "react",
-    "strict": true,
-    "lib": ["es2017", "dom"],
     "sourceMap": true,
-    "typeRoots": ["./@types", "../../node_modules/@types"]
-  },
-  "files": ["src/index.tsx"],
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules", "dist", "@types"]
+    "rootDir": "./src",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "esModuleInterop": true
+  }
 }

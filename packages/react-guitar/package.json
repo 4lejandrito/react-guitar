@@ -2,7 +2,6 @@
   "name": "react-guitar",
   "version": "0.9.4",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "author": "Alejandro Tardín <alejandro@tardin.com>",
   "homepage": "https://react-guitar.com",
@@ -14,10 +13,10 @@
     "guitar"
   ],
   "scripts": {
-    "start": "rollup -c -w",
-    "build": "rollup -c",
-    "prepublishOnly": "NODE_ENV=production yarn build",
-    "test": "jest"
+    "start": "tsdx watch --noClean",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "prepublishOnly": "tsdx build"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
@@ -29,22 +28,14 @@
     "tone": "^14.7.39"
   },
   "peerDependencies": {
-    "react": "^16.8",
-    "react-dom": "^16.8"
+    "react": "^16.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.4",
     "@types/classnames": "^2.2.10",
     "@types/color": "^3.0.1",
-    "@types/jest": "^24.0.15",
     "@types/lodash.range": "^3.2.6",
     "@types/react": "^16.9.23",
-    "jest": "^26.2.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "rollup": "^2.21.0",
-    "rollup-plugin-typescript2": "^0.27.1",
-    "ts-jest": "^26.1.4",
-    "typescript": "^3.9.6"
+    "react-dom": "^16.13.1"
   }
 }

@@ -15,7 +15,10 @@
     "husky": ">=4",
     "lerna": "^3.22.1",
     "lint-staged": ">=10",
-    "prettier": "^1.15.3"
+    "prettier": "^1.15.3",
+    "tsdx": "^0.13.3",
+    "tslib": "^2.0.1",
+    "typescript": "^3.9.6"
   },
   "lint-staged": {
     "*.{js,ts,tsx,md,json,html,css,scss,webmanifest}": "prettier --write"
@@ -25,7 +28,8 @@
     "shoot": "lerna run shoot",
     "start": "lerna run --parallel start",
     "test": "lerna run test",
-    "test:coverage": "lerna run test:coverage"
+    "test:coverage": "lerna run test:coverage",
+    "lint": "tsdx lint ."
   },
   "prettier": {
     "semi": false,
@@ -33,7 +37,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && yarn lint"
     }
   }
 }

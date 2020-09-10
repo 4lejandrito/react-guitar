@@ -2,7 +2,6 @@
   "name": "react-guitar-theme-coco",
   "version": "0.9.4",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "author": "Alejandro Tardín <alejandro@tardin.com>",
   "homepage": "https://react-guitar.com",
@@ -16,21 +15,17 @@
     "coco"
   ],
   "scripts": {
-    "start": "rollup -c -w",
-    "build": "rollup -c",
-    "prepublishOnly": "NODE_ENV=production yarn build"
+    "start": "tsdx watch --noClean",
+    "build": "tsdx build",
+    "prepublishOnly": "tsdx build"
   },
   "peerDependencies": {
-    "react": "^16.8",
-    "react-dom": "^16.8"
+    "react": "^16.8"
   },
   "devDependencies": {
     "@types/react": "^16.9.23",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-guitar": "^0.9.4",
-    "rollup": "^2.21.0",
-    "rollup-plugin-typescript2": "^0.27.1",
-    "typescript": "^3.9.6"
+    "react-guitar": "^0.9.4"
   }
 }
