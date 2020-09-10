@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import classNames from 'classnames'
 import { clickable } from '../css/classes'
 
@@ -21,7 +21,7 @@ export default function Number(props: {
         props.onChange(value)
       }
     }
-  }, [value, props.value, props.onChange])
+  }, [value, props])
   return (
     <input
       className={classNames(

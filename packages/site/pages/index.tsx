@@ -1,3 +1,4 @@
+import React from 'react'
 import Head from 'next/head'
 import { NextSeo } from 'next-seo'
 import { headerButton } from '../css/classes'
@@ -59,13 +60,15 @@ function Home() {
             className={headerButton}
             href="https://github.com/4lejandrito/react-guitar"
             children="GitHub"
-            target="_blank"
+            target="_blank" // eslint-disable-line react/jsx-no-target-blank
+            rel="noopener"
           />
           <a
             className={classNames(headerButton, 'hidden sm:inline-block')}
             href="storybook"
             children="Storybook"
             target="_blank"
+            rel="noopener"
           />
           <BuyMeACoffee />
         </div>

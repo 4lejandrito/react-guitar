@@ -1,4 +1,4 @@
-import {
+import React, {
   useState,
   createContext,
   useContext,
@@ -27,17 +27,21 @@ export function useQuery<T>(
         ...state,
         [name]: { serializer, value, defaultValue }
       })),
-    [name, serializer, serializer.serialize(defaultValue)]
+    [name, serializer, defaultValue, setState]
   )
   useEffect(() => {
     const param = params.get(name)
     setValue(param ? serializer.deserialize(param) : defaultValue)
-  }, [name, params, serializer.serialize(defaultValue)])
+  }, [name, params, defaultValue, serializer, setValue])
   return [
     (state[name]?.value as T) ?? defaultValue,
     useCallback(
       (value: T) => {
-        history.replaceState('', document.title, window.location.pathname)
+        window.history.replaceState(
+          '',
+          document.title,
+          window.location.pathname
+        )
         setValue(value)
       },
       [setValue]

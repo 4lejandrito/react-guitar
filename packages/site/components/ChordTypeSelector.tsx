@@ -1,7 +1,7 @@
 import Select, { components, createFilter } from 'react-select'
 import { ChordType, get } from '@tonaljs/chord-type'
 import Interval from '@tonaljs/interval'
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { theme, styles, className } from '../util/react-select'
 
 const set = (bits: number, i: number) => bits | (1 << i)

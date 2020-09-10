@@ -1,3 +1,4 @@
+import React from 'react'
 import Guitar, { getRenderFingerSpn } from 'react-guitar'
 
 export default function DemoGuitar(

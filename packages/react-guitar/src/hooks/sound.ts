@@ -22,7 +22,8 @@ export default function useSound(
         synth.dispose()
       }
     }
-  }, [muted])
+    return undefined
+  }, [muted, samples])
 
   const play = useCallback(
     (string: number, when: number = 0) => {
@@ -40,7 +41,7 @@ export default function useSound(
         )
       }
     },
-    [loaded, muted, synth, fretting.toString(), tuning.toString()]
+    [loaded, muted, synth, fretting, tuning]
   )
 
   const strum = useCallback(
@@ -50,7 +51,7 @@ export default function useSound(
         play(string, 0.05 * i)
       })
     },
-    [tuning.toString(), play]
+    [tuning.length, play]
   )
 
   return { play, strum, playing }

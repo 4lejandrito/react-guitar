@@ -1,3 +1,4 @@
+import React from 'react'
 import Switch from 'react-switch'
 
 export default function Toggle(props: {

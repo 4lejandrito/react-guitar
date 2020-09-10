@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import classnames from 'classnames'
 
 export default function Label(props: {

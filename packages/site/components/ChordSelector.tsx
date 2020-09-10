@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import Modal from './Modal'
 import Label from './Label'
 import range from 'lodash.range'
@@ -64,7 +64,11 @@ function ChordSelectorModal(props: {
     [props.tuning]
   )
   const frettings = useMemo(
-    () => fretter(getFretterChord(root, notes), props),
+    () =>
+      fretter(getFretterChord(root, notes), {
+        frets: props.frets,
+        tuning: props.tuning
+      }),
     [props.tuning, props.frets, notes, root]
   )
   const [frettingIndex, setFrettingIndex] = useState(0)
@@ -87,6 +91,7 @@ function ChordSelectorModal(props: {
           className="underline"
           href="https://github.com/4lejandrito/react-guitar/issues/8"
           target="__blank"
+          rel="noopener"
         >
           <strong>this issue</strong>
         </a>

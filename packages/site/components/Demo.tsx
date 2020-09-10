@@ -1,7 +1,7 @@
 import { tunings, spanishTheme, Theme } from 'react-guitar'
 import Guitar from './Guitar'
 import useSound from '../hooks/sound'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Number from './Number'
 import Toggle from './Toggle'
 import Select from './Select'
@@ -36,7 +36,7 @@ function Demo() {
   const theme = themes[themeName] || themes.spanish
   const [chordSelectorOpen, setChordSelectorOpen] = useState(false)
   const { play, strum } = useSound(strings, tuning, chordSelectorOpen)
-  const [_, copy] = useCopyToClipboard()
+  const [, copy] = useCopyToClipboard()
   const [copied, setCopied] = useState(false)
   const [center, setCenter] = useState(true)
   const url = useURL()

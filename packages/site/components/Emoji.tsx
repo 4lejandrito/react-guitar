@@ -1,3 +1,4 @@
+import React from 'react'
 import emoji from 'react-easy-emoji'
 
 export default function Emoji(

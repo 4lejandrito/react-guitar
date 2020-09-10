@@ -1,3 +1,4 @@
+import React from 'react'
 import tunings, { toString, parse } from '../util/tunings'
 import Select from 'react-select/creatable'
 import { components } from 'react-select'
