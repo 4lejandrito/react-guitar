@@ -1,6 +1,6 @@
 # React-Guitar &middot; [![npm version](https://img.shields.io/npm/v/react-guitar.svg?style=flat)](https://www.npmjs.com/package/react-guitar)
 
-A beautiful and flexible guitar component for React.
+A beautiful and accessible guitar component for React.
 
 See https://react-guitar.com for a live demo.
 

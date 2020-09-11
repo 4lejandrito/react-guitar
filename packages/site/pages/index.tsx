@@ -12,7 +12,7 @@ const logo = `${process.env.NEXT_PUBLIC_URL}/logo.png`
 
 function Home() {
   const title = 'React Guitar'
-  const description = 'A beautiful and flexible guitar component for React.'
+  const description = 'A beautiful and accessible guitar component for React.'
   return (
     <div className="text-gray-800 font-sans min-h-screen flex flex-col items-center justify-center m-auto">
       <Head>
