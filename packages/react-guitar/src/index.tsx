@@ -166,60 +166,63 @@ export default function Guitar(props: {
             : undefined}
         </Frets>
         {strings.map((currentFret, string) => (
-          <Frets
-            key={string}
-            className="string"
-            currentFret={currentFret}
-            frets={frets}
-            onMouseEnter={() => playOnHover && props.onPlay?.(string)}
-          >
-            {fret => (
-              <label>
-                <span className="sr-only">
-                  String {string + 1}, fret {fret}.{' '}
-                  {currentFret === -1 && 'This string is muted.'}
-                </span>
-                {fret >= 0 && (
-                  <span
-                    className="actual-string"
-                    style={{
-                      opacity: currentFret === -1 ? 0.2 : 1,
-                      borderBottom: `solid 0.2em ${color(
-                        theme.string.color(string)
-                      ).darken(0.35)}`,
-                      backgroundColor: theme.string.color(string)
+          <fieldset key={string} className="string">
+            <legend className="sr-only">String {string + 1}.</legend>
+            <Frets
+              currentFret={currentFret}
+              frets={frets}
+              onMouseEnter={() => playOnHover && props.onPlay?.(string)}
+            >
+              {fret => (
+                <label>
+                  <span className="sr-only">
+                    String {string + 1}, fret {fret}.{' '}
+                    {currentFret === -1 && 'This string is muted.'}
+                  </span>
+                  {fret >= 0 && (
+                    <span
+                      className="actual-string"
+                      style={{
+                        opacity: currentFret === -1 ? 0.2 : 1,
+                        borderBottom: `solid 0.2em ${color(
+                          theme.string.color(string)
+                        ).darken(0.35)}`,
+                        backgroundColor: theme.string.color(string)
+                      }}
+                    />
+                  )}
+                  <input
+                    disabled={!props.onChange}
+                    type="radio"
+                    name={`string-${string}`}
+                    value={fret}
+                    checked={currentFret === fret}
+                    onChange={e => {
+                      props.onChange?.(set(strings, string, fret))
+                      e.target.focus()
                     }}
-                  />
-                )}
-                <input
-                  disabled={!props.onChange}
-                  type="radio"
-                  name={`string-${string}`}
-                  value={fret}
-                  checked={currentFret === fret}
-                  onChange={e => {
-                    props.onChange?.(set(strings, string, fret))
-                    e.target.focus()
-                  }}
-                  onClick={() => fret === currentFret && releaseString(string)}
-                  onKeyDown={e => {
-                    switch (e.keyCode) {
-                      case 80:
-                        props.onPlay?.(string)
-                        break
-                      case 13:
-                        releaseString(string)
-                        e.preventDefault()
+                    onClick={() =>
+                      fret === currentFret && releaseString(string)
                     }
-                  }}
-                  onFocus={() => setFocusedString(string)}
-                />
-                <span className="finger">
-                  {renderFinger?.(string, fret === -1 ? 0 : fret)}
-                </span>
-              </label>
-            )}
-          </Frets>
+                    onKeyDown={e => {
+                      switch (e.keyCode) {
+                        case 80:
+                          props.onPlay?.(string)
+                          break
+                        case 13:
+                          releaseString(string)
+                          e.preventDefault()
+                      }
+                    }}
+                    onFocus={() => setFocusedString(string)}
+                  />
+                  <span className="finger">
+                    {renderFinger?.(string, fret === -1 ? 0 : fret)}
+                  </span>
+                </label>
+              )}
+            </Frets>
+          </fieldset>
         ))}
       </div>
       <Frets className="frame" frets={frets}>

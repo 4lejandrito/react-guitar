@@ -67,6 +67,9 @@ export default (theme: Theme) =>
       minHeight: `${stringHeight * 3}em`,
 
       '.string': {
+        margin: 0,
+        padding: 0,
+        border: 'none',
         '.fret': {
           display: 'flex',
           alignItems: 'center',
