@@ -1,7 +1,7 @@
 import { tunings, spanishTheme, Theme } from 'react-guitar'
 import Guitar from './Guitar'
 import useSound from '../hooks/sound'
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import Number from './Number'
 import Toggle from './Toggle'
 import Select from './Select'
@@ -30,7 +30,11 @@ function Demo() {
   const [lefty, setLefty] = useQuery('lefty', false, boolean)
   const [frets, setFrets] = useQuery('frets', 22, number)
   const [tuning, setTuning] = useQuery('tuning', tunings.standard, numbers)
-  const [strings, setStrings] = useQuery('strings', tuning.map(zero), numbers)
+  const [strings, setStrings] = useQuery(
+    'strings',
+    useMemo(() => tuning.map(zero), [tuning]),
+    numbers
+  )
   const themes: { [K: string]: Theme } = { spanish: spanishTheme, dark, coco }
   const [themeName, setThemeName] = useQuery('theme', 'spanish', string)
   const theme = themes[themeName] || themes.spanish

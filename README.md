@@ -55,9 +55,10 @@ import D3 from 'react-guitar/resources/D3.mp3'
 import G3 from 'react-guitar/resources/G3.mp3'
 import E4 from 'react-guitar/resources/E4.mp3'
 
+const samples = { E2, D3, G3, E4 }
 ...
 
-const { play, strum } = useSound({ E2, D3, G3, E4 }, strings, tuning)
+const { play, strum } = useSound(samples, strings, tuning)
 
 <Guitar strings={strings} onPlay={play}/>
 

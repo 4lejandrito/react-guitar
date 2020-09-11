@@ -24,6 +24,7 @@ import E4 from 'react-guitar/resources/E4.mp3'
 import coco from 'react-guitar-theme-coco'
 import dark from 'react-guitar-theme-dark'
 
+const samples = { E2, D3, G3, E4 }
 const themes = { spanish: spanishTheme, dark, coco }
 
 storiesOf('Guitar', module)
@@ -46,7 +47,7 @@ storiesOf('Guitar', module)
       'Relative to Root': getRenderFingerRelative(tunings.standard, root)
     }
     const [strings, setStrings] = useState([0, 0, 0, 0, 0, 0])
-    const { play } = useSound({ E2, D3, G3, E4 }, strings)
+    const { play } = useSound(samples, strings)
     return (
       <Guitar
         lefty={boolean('Lefty', false)}
@@ -80,7 +81,7 @@ storiesOf('Guitar', module)
   ))
   .add('with fixed A minor and sound', () => {
     const fretting = [0, 1, 2, 2, 0, -1]
-    const { play } = useSound({ E2, D3, G3, E4 }, fretting)
+    const { play } = useSound(samples, fretting)
     return <Guitar strings={fretting} onPlay={play} />
   })
   .add('editable', () => {
@@ -90,7 +91,7 @@ storiesOf('Guitar', module)
   .add('without strings', () => <Guitar />)
   .add('ukelele', () => {
     const [strings, setStrings] = useState([0, 0, 0, 0])
-    const { play } = useSound({ E2, D3, G3, E4 }, strings, tunings.ukelele)
+    const { play } = useSound(samples, strings, tunings.ukelele)
     return (
       <Guitar
         strings={strings}
