@@ -1,6 +1,6 @@
 {
   "name": "react-guitar-theme-dark",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Alejandro Tardín <alejandro@tardin.com>",
@@ -26,6 +26,6 @@
     "@types/react": "^16.9.23",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-guitar": "^0.9.4"
+    "react-guitar": "^0.9.5"
   }
 }
