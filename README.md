@@ -4,7 +4,7 @@ A beautiful and flexible guitar component for React.
 
 See https://react-guitar.com for a live demo.
 
-![Screenshot of the rendered component with an A minor chord](packages/react-guitar/screenshot.png)
+![Screenshot of the rendered component with an E major chord](packages/react-guitar/screenshot.png)
 
 [![Edit quizzical-dawn-0hzuq](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/interesting-breeze-ll7zh)
 
