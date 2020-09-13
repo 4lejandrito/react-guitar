@@ -24,6 +24,7 @@
     "@tonaljs/note": "^3.6.0",
     "classnames": "^2.2.6",
     "color": "^3.1.2",
+    "keyboard-key": "^1.1.0",
     "lodash.range": "^3.2.0",
     "tone": "^14.7.39"
   },

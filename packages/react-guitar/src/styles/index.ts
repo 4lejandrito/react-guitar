@@ -20,6 +20,10 @@ export default (theme: Theme) =>
       direction: 'rtl',
       '.marker': {
         transform: 'scale(-1, 1)'
+      },
+      '.mute': {
+        left: 'auto',
+        right: 0
       }
     },
 

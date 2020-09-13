@@ -12,6 +12,7 @@ import { fromSemitones } from '@tonaljs/interval'
 import spanishTheme, { Theme } from './util/theme'
 import getStyles from './styles'
 import color from 'color'
+import { getKey } from 'keyboard-key'
 
 export { useSound, tunings, spanishTheme, Theme }
 
@@ -103,10 +104,25 @@ export default function Guitar(props: {
         `input[name="string-${string}"][value="${fret}"]`
       )
       ?.focus()
-  const releaseString = (string: number) => {
-    const newFret = strings[string] === 0 ? -1 : 0
-    focusString(string, newFret)
-    props.onChange?.(set(strings, string, newFret))
+  const releaseString = (string: number) =>
+    pressString(string, strings[string] === 0 ? -1 : 0)
+  const pressString = (string: number, fret: number) => {
+    focusString(string, fret)
+    props.onChange?.(set(strings, string, fret))
+  }
+  const getNavigationDelta = (e: KeyboardEvent) => {
+    switch (getKey(e)) {
+      case 'ArrowDown':
+        return { x: 0, y: 1 }
+      case 'ArrowUp':
+        return { x: 0, y: -1 }
+      case 'ArrowRight':
+        return { x: lefty ? -1 : 1, y: 0 }
+      case 'ArrowLeft':
+        return { x: lefty ? 1 : -1, y: 0 }
+      default:
+        return null
+    }
   }
   useLayoutEffect(() => {
     const fretsNode = ref.current
@@ -132,9 +148,17 @@ export default function Guitar(props: {
       css={styles}
       className={classNames('guitar', { lefty }, props.className)}
       onKeyDown={e => {
-        if (e.keyCode === 38 || e.keyCode === 40) {
-          focusString(
-            mod(focusedString + (e.keyCode === 38 ? -1 : 1), strings.length)
+        const delta = getNavigationDelta(e.nativeEvent)
+        if (delta) {
+          const string = mod(focusedString + delta.y, strings.length)
+          const fret = strings[string] + delta.x
+          pressString(
+            string,
+            fret >= frets.from + frets.amount
+              ? -1
+              : fret < -1
+              ? frets.from + frets.amount - 1
+              : fret
           )
           e.preventDefault()
         }
