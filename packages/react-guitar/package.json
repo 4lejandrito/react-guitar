@@ -1,6 +1,6 @@
 {
   "name": "react-guitar",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Alejandro Tardín <alejandro@tardin.com>",
