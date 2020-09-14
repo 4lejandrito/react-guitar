@@ -154,10 +154,10 @@ export default function Guitar(props: {
           const fret = strings[string] + delta.x
           pressString(
             string,
-            fret >= frets.from + frets.amount
+            fret > frets.from + frets.amount
               ? -1
               : fret < -1
-              ? frets.from + frets.amount - 1
+              ? frets.from + frets.amount
               : fret
           )
           e.preventDefault()
