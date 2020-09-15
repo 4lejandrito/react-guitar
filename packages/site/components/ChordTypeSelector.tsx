@@ -26,6 +26,8 @@ export default function ChordTypeSelector(props: {
 }) {
   return (
     <Select<{ label: string; value: number }>
+      id="chord-type-selector"
+      instanceId="chord-type-selector"
       className={className}
       theme={theme}
       styles={styles}

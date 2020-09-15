@@ -11,6 +11,8 @@ export default function TuningSelector(props: {
 }) {
   return (
     <Select<{ label: string; value: number[] }>
+      id="tuning-selector"
+      instanceId="tuning-selector"
       className={classNames(className, 'w-40')}
       theme={theme}
       styles={styles}
