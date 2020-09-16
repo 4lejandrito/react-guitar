@@ -1,5 +1,5 @@
 import { Frequency, Sampler, SamplerOptions, now } from 'tone'
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 import range from 'lodash.range'
 import { set } from '../util/arrays'
 import tunings from '../util/tunings'
@@ -13,6 +13,7 @@ export default function useSound(
   const [loaded, setLoaded] = useState(false)
   const [synth, setSynth] = useState<Sampler>()
   const [playing, setPlaying] = useState(tuning.map(() => false))
+  const playingTimeoutsRef = useRef<Partial<{ [K: number]: number }>>({})
 
   useEffect(() => {
     if (!muted) {
@@ -29,8 +30,9 @@ export default function useSound(
     (string: number, when: number = 0) => {
       const fret = fretting[string] ?? 0
       if (loaded && !muted && synth && fret >= 0) {
+        clearTimeout(playingTimeoutsRef.current[string])
         setTimeout(() => setPlaying(playing => set(playing, string, true)), 0)
-        setTimeout(
+        playingTimeoutsRef.current[string] = window.setTimeout(
           () => setPlaying(playing => set(playing, string, false)),
           3000
         )
