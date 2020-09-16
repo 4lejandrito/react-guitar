@@ -1,6 +1,6 @@
 {
   "name": "react-guitar-site",
-  "version": "0.9.7",
+  "version": "0.9.8",
   "private": true,
   "scripts": {
     "build": "run-s build:*",
@@ -28,9 +28,9 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-easy-emoji": "^1.4.0",
-    "react-guitar": "^0.9.7",
-    "react-guitar-theme-coco": "^0.9.7",
-    "react-guitar-theme-dark": "^0.9.7",
+    "react-guitar": "^0.9.8",
+    "react-guitar-theme-coco": "^0.9.8",
+    "react-guitar-theme-dark": "^0.9.8",
     "react-modal": "^3.11.2",
     "react-select": "^3.1.0",
     "react-switch": "^5.0.1",
