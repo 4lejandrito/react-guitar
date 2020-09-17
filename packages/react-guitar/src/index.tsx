@@ -191,7 +191,10 @@ export default function Guitar(props: {
         </Frets>
         {strings.map((currentFret, string) => (
           <fieldset key={string} className="string">
-            <legend className="sr-only">String {string + 1}.</legend>
+            <legend className="sr-only">
+              String {string + 1}.{' '}
+              {currentFret === -1 && 'This string is muted.'}
+            </legend>
             <Frets
               currentFret={currentFret}
               frets={frets}
@@ -200,8 +203,7 @@ export default function Guitar(props: {
               {fret => (
                 <label>
                   <span className="sr-only">
-                    String {string + 1}, fret {fret}.{' '}
-                    {currentFret === -1 && 'This string is muted.'}
+                    Fret {fret} {fret === -1 && '(Mute)'}.
                   </span>
                   {fret >= 0 && (
                     <span
