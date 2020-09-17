@@ -208,6 +208,12 @@ export const toString = (tuning: number[]) =>
     .reverse()
     .join(' ')
 
+export const toSearchString = (tuning: number[]) =>
+  tuning
+    .map(midi => midiToNoteName(midi, { pitchClass: true, sharps: true }))
+    .reverse()
+    .join(' ')
+
 export const parse = (string: string) =>
   string
     .split(' ')

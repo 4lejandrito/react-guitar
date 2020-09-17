@@ -1,7 +1,7 @@
 import React from 'react'
-import tunings, { toString, parse } from '../util/tunings'
+import tunings, { toString, toSearchString, parse } from '../util/tunings'
 import Select from 'react-select/creatable'
-import { components } from 'react-select'
+import { components, createFilter } from 'react-select'
 import { theme, styles, className } from '../util/react-select'
 import classNames from 'classnames'
 
@@ -10,7 +10,7 @@ export default function TuningSelector(props: {
   onChange: (tuning: number[]) => void
 }) {
   return (
-    <Select<{ label: string; value: number[] }>
+    <Select<{ label: string; value: number[]; instrument?: string }>
       id="tuning-selector"
       instanceId="tuning-selector"
       className={classNames(className, 'w-40')}
@@ -48,7 +48,8 @@ export default function TuningSelector(props: {
           .filter(tuning => tuning.instrument === instrument)
           .map((tuning, i) => ({
             label: tuning.name,
-            value: tuning.notes
+            value: tuning.notes,
+            tuning
           }))
       }))}
       value={{
@@ -57,6 +58,17 @@ export default function TuningSelector(props: {
       }}
       onChange={option => props.onChange((option as any).value)}
       onCreateOption={text => props.onChange(parse(text))}
+      filterOption={(option, input) => {
+        return (
+          option.data.__isNew__ ||
+          createFilter({
+            stringify: ({ data }) =>
+              `${data?.tuning?.instrument} ${data?.label} ${toSearchString(
+                data?.value
+              )}`
+          })(option, input)
+        )
+      }}
     />
   )
 }
