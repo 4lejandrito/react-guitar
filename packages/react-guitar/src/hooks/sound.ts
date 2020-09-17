@@ -1,8 +1,8 @@
-import { Frequency, Sampler, SamplerOptions, now } from 'tone'
-import { useEffect, useState, useCallback, useRef } from 'react'
+import { SamplerOptions } from 'tone'
+import { useEffect, useState, useCallback } from 'react'
 import range from 'lodash.range'
-import { set } from '../util/arrays'
 import tunings from '../util/tunings'
+import makePlayer, { Player } from '../util/player'
 
 export default function useSound(
   samples: SamplerOptions['urls'],
@@ -10,49 +10,33 @@ export default function useSound(
   tuning: number[] = tunings.standard,
   muted?: boolean
 ) {
-  const [loaded, setLoaded] = useState(false)
-  const [synth, setSynth] = useState<Sampler>()
+  const [player, setPlayer] = useState<Player>()
   const [playing, setPlaying] = useState(tuning.map(() => false))
-  const playingTimeoutsRef = useRef<Partial<{ [K: number]: number }>>({})
 
   useEffect(() => {
-    if (!muted) {
-      const synth = new Sampler(samples, () => setLoaded(true)).toDestination()
-      setSynth(synth)
-      return () => {
-        synth.dispose()
-      }
+    const promise = makePlayer(samples, tuning, setPlaying)
+    promise.then(setPlayer)
+
+    return () => {
+      promise.then(player => {
+        setPlayer(undefined)
+        player.dispose()
+      })
     }
-    return undefined
-  }, [muted, samples])
+  }, [samples, tuning])
 
   const play = useCallback(
     (string: number, when: number = 0) => {
-      const fret = fretting[string] ?? 0
-      if (loaded && !muted && synth && fret >= 0) {
-        clearTimeout(playingTimeoutsRef.current[string])
-        setTimeout(() => setPlaying(playing => set(playing, string, true)), 0)
-        playingTimeoutsRef.current[string] = window.setTimeout(
-          () => setPlaying(playing => set(playing, string, false)),
-          3000
-        )
-        synth.triggerAttackRelease(
-          Frequency(tuning[string] + fret, 'midi').toFrequency(),
-          4,
-          now() + when
-        )
-      }
+      if (!muted) player?.play(string, fretting[string] ?? 0, when)
     },
-    [loaded, muted, synth, fretting, tuning]
+    [muted, player, fretting]
   )
 
   const strum = useCallback(
-    (up?: boolean) => {
-      range(tuning.length).forEach(i => {
-        const string = !up ? tuning.length - i - 1 : i
-        play(string, 0.05 * i)
-      })
-    },
+    (up?: boolean) =>
+      range(tuning.length).forEach(i =>
+        play(!up ? tuning.length - i - 1 : i, 0.05 * i)
+      ),
     [tuning.length, play]
   )
 
