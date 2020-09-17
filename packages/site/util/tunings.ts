@@ -110,6 +110,11 @@ const tunings: Tuning[] = [
   },
   {
     instrument: 'guitar',
+    name: 'Rondeña',
+    notes: ['D2', 'A2', 'D3', 'F#3', 'B3', 'E4']
+  },
+  {
+    instrument: 'guitar',
     name: 'Irish',
     notes: ['D2', 'A2', 'D3', 'G3', 'A3', 'D4']
   },
