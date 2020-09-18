@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import Modal from './Modal'
 import Label from './Label'
 import range from 'lodash.range'
@@ -18,6 +18,7 @@ import { button } from '../css/classes'
 import classNames from 'classnames'
 import Emoji from './Emoji'
 import ChordTypeSelector from './ChordTypeSelector'
+import { useKey } from 'react-use'
 
 const getNotes = (type: { setNum: number }) => type.setNum
 const mask = (i: number) => 1 << (11 - i)
@@ -39,19 +40,31 @@ const getFretterChord = (root: string, notes: number) => ({
   root: Note.chroma(root) ?? 0,
   semitones: range(11).map(i => test(notes, i + 1))
 })
+const detectChord = (tuning: number[], strings: number[]) =>
+  Chord.get(
+    Chord.detect(
+      tuning
+        .map((midi, i) => (strings[i] === -1 ? -1 : midi + strings[i]))
+        .filter(midi => midi !== -1)
+        .reverse()
+        .map(midi => midiToNoteName(midi))
+    )[0]
+  )
+
+type TChord = ReturnType<typeof Chord['get']>
 
 function ChordSelectorModal(props: {
-  initialName: string
+  chord: TChord
   open: boolean
   tuning: number[]
   frets: number
   lefty: boolean
   theme?: Theme
-  onChange: (strings: number[]) => void
+  onChange: (chord: TChord, fretting: number[]) => void
   onRequestClose: () => void
   onAfterClose: () => void
 }) {
-  const initialChord = Chord.get(props.initialName)
+  const initialChord = props.chord
   const [root, setRoot] = useState(initialChord.tonic || 'C')
   const [notes, setNotes] = useState(() => getNotes(initialChord))
   const pressed = 0
@@ -218,7 +231,10 @@ function ChordSelectorModal(props: {
         <button
           className={classNames(button, 'mx-2')}
           onClick={() => {
-            props.onChange(fretting)
+            props.onChange(
+              Chord.getChord(ChordType.get(notes).aliases[0], root),
+              fretting
+            )
             props.onRequestClose()
           }}
         >
@@ -226,6 +242,41 @@ function ChordSelectorModal(props: {
         </button>
       </div>
     </Modal>
+  )
+}
+
+function useKeyboardChord(props: {
+  chord: TChord
+  tuning: number[]
+  frets: number
+  onChange: (chord: TChord, fretting: number[]) => void
+}) {
+  const { chord, tuning, frets, onChange } = props
+  const update = useCallback(
+    (root: string, type: number) => {
+      const chord = Chord.getChord(ChordType.get(type).aliases[0], root)
+      onChange(
+        chord,
+        fretter(getFretterChord(root, type), { frets, tuning })[0]
+      )
+    },
+    [tuning, frets, onChange]
+  )
+
+  useKey(
+    () => true,
+    e =>
+      Note.names().includes(e.key.toUpperCase()) &&
+      update(e.key, ChordType.get('M').setNum),
+    {},
+    [update]
+  )
+
+  useKey(
+    'm',
+    () => chord.tonic && update(chord.tonic, ChordType.get('m').setNum),
+    {},
+    [update, chord]
   )
 }
 
@@ -240,35 +291,47 @@ export default function ChordSelector(props: {
   onRequestOpenChange: (open: boolean) => void
 }) {
   const [closed, setClosed] = useState(true)
-  const chordName = Chord.detect(
-    props.tuning
-      .map((midi, i) =>
-        props.strings[i] === -1 ? -1 : midi + props.strings[i]
-      )
-      .filter(midi => midi !== -1)
-      .reverse()
-      .map(midi => midiToNoteName(midi))
-  )[0]
+  const [chord, setChord] = useState(detectChord(props.tuning, props.strings))
+  const stringsRef = useRef(props.strings)
+  const { onChange } = props
+  const update = useCallback(
+    (chord: TChord, fretting: number[]) => {
+      setChord(chord)
+      onChange((stringsRef.current = fretting))
+    },
+    [onChange]
+  )
+  useEffect(() => {
+    if (stringsRef.current.toString() !== props.strings.toString()) {
+      const chord = detectChord(props.tuning, props.strings)
+      if (chord.tonic) {
+        setChord(chord)
+        stringsRef.current = props.strings
+      }
+    }
+  }, [props.strings, props.tuning])
+  useKeyboardChord({ ...props, chord, onChange: update })
   const plausible = usePlausible()
   return (
     <>
       <button
         aria-live="polite"
         className={classNames(button, 'w-32 truncate')}
-        title={chordName || 'Select a chord'}
+        title={chord.symbol || 'Select a chord'}
         onClick={() => {
           plausible('chords')
           props.onRequestOpenChange(true)
           setClosed(false)
         }}
       >
-        {chordName || <Emoji text="❓" />}
+        {chord.symbol || <Emoji text="❓" />}
       </button>
       {!closed && (
         <ChordSelectorModal
           {...props}
-          initialName={chordName}
+          chord={chord}
           open={props.open}
+          onChange={update}
           onRequestClose={() => props.onRequestOpenChange(false)}
           onAfterClose={() => setClosed(true)}
         />

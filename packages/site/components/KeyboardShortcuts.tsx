@@ -4,6 +4,7 @@ import { button } from '../css/classes'
 import classNames from 'classnames'
 import Emoji from './Emoji'
 import { useKey } from 'react-use'
+import Note from '@tonaljs/note'
 
 export default function KeyboardShortcuts() {
   const [show, setShow] = useState(false)
@@ -58,6 +59,16 @@ export default function KeyboardShortcuts() {
                 keys: '1 2 3 4 5 6',
                 description: 'Play each string',
                 emojis: '🎶 🎻'
+              },
+              {
+                keys: Note.names().join(' '),
+                description: 'Fret a major chord',
+                emojis: '🎼 🎶'
+              },
+              {
+                keys: 'm',
+                description: 'Make the current chord minor',
+                emojis: '🎼 🎶'
               },
               {
                 keys: '?',
