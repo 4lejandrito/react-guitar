@@ -55,6 +55,11 @@ export default function KeyboardShortcuts() {
                 emojis: '🎶 🎻'
               },
               {
+                keys: '1 2 3 4 5 6',
+                description: 'Play each string',
+                emojis: '🎶 🎻'
+              },
+              {
                 keys: '?',
                 description: 'Open keyboard shortcut help',
                 emojis: '⌨️❓'

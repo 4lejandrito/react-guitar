@@ -12,10 +12,19 @@ export default function useClassicSound(
   tuning: number[],
   muted?: boolean
 ) {
-  const { strum, ...rest } = useSound(samples, strings, tuning, muted)
+  const { play, strum, ...rest } = useSound(samples, strings, tuning, muted)
 
+  useKey(
+    () => true,
+    e => {
+      const string = parseInt(e.key) - 1
+      string >= 0 && string < tuning.length && play(string)
+    },
+    {},
+    [tuning, play]
+  )
   useKey('w', () => strum(true), {}, [strum])
   useKey('s', () => strum(), {}, [strum])
 
-  return { strum, ...rest }
+  return { play, strum, ...rest }
 }
