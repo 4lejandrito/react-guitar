@@ -33,53 +33,43 @@ export default function KeyboardShortcuts() {
           </thead>
           <tbody>
             {[
-              { keys: 'w', description: 'Strum up', emojis: ' 🎶 👇' },
-              { keys: 's', description: 'Strum down', emojis: '🎶 👆' },
+              { keys: 'w', description: 'Strum up' },
+              { keys: 's', description: 'Strum down' },
               {
                 keys: '↑ ↓ tab',
-                description: 'Move between strings',
-                emojis: '⏫ ⏬'
+                description: 'Move between strings'
               },
               {
                 keys: '← →',
-                description: 'Select frets on the focused string',
-                emojis: '⏪ ⏩'
+                description: 'Select frets on the focused string'
               },
               {
                 keys: 'enter',
-                description: 'Release / mute the focused string',
-                emojis: '👎 👍'
+                description: 'Release / mute the focused string'
               },
               {
                 keys: 'p',
-                description: 'Play the focused string',
-                emojis: '🎶 🎻'
+                description: 'Play the focused string'
               },
               {
                 keys: '1 2 3 4 5 6',
-                description: 'Play each string',
-                emojis: '🎶 🎻'
+                description: 'Play each string'
               },
               {
                 keys: Note.names().join(' '),
-                description: 'Fret a major chord',
-                emojis: '🎼 🎶'
+                description: 'Fret a major chord'
               },
               {
                 keys: 'm',
-                description: 'Make the current chord minor',
-                emojis: '🎼 🎶'
+                description: 'Make the current chord minor'
               },
               {
                 keys: '?',
-                description: 'Open keyboard shortcut help',
-                emojis: '⌨️❓'
+                description: 'Open keyboard shortcut help'
               }
-            ].map(({ keys, description, emojis }, i) => (
+            ].map(({ keys, description }, i) => (
               <tr key={i}>
-                <td className="border px-4 py-2 text-right">
-                  {description} <Emoji aria-hidden text={emojis} />
-                </td>
+                <td className="border px-4 py-2 text-right">{description}</td>
                 <td className="border px-4 py-2 text-center">
                   {keys.split(' ').map((key, i) => (
                     <kbd
