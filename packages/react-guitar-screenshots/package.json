@@ -1,6 +1,6 @@
 {
   "name": "react-guitar-screenshots",
-  "version": "0.9.5",
+  "version": "0.10.0",
   "private": true,
   "devDependencies": {
     "@types/puppeteer": "^3.0.1",
