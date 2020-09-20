@@ -26,6 +26,7 @@
     "color": "^3.1.2",
     "keyboard-key": "^1.1.0",
     "lodash.range": "^3.2.0",
+    "lodash.uniqueid": "^4.0.1",
     "tone": "^14.7.39"
   },
   "peerDependencies": {
@@ -35,6 +36,7 @@
     "@types/classnames": "^2.2.10",
     "@types/color": "^3.0.1",
     "@types/lodash.range": "^3.2.6",
+    "@types/lodash.uniqueid": "^4.0.6",
     "@types/react": "^16.9.23",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

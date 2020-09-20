@@ -103,6 +103,7 @@ function Demo() {
       </div>
       <div className="relative flex-grow mt-4 flex items-center justify-center">
         <Guitar
+          id="demo"
           frets={{ from: 0, amount: frets }}
           strings={tuning.map((_, i) => strings[i] ?? 0)}
           tuning={tuning}

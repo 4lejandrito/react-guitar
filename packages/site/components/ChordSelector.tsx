@@ -216,6 +216,7 @@ function ChordSelectorModal(props: {
       </div>
       <div className="text-sm my-4 w-full flex items-center justify-center">
         <Guitar
+          id="chords"
           center
           frets={getFrets(fretting)}
           strings={fretting}

@@ -5,6 +5,7 @@ import tunings from './util/tunings'
 import { useRef, Fragment, useMemo, ReactElement, useState } from 'react'
 import useLayoutEffect from './hooks/layoutEffect'
 import range from 'lodash.range'
+import uniqueId from 'lodash.uniqueid'
 import { set } from './util/arrays'
 import classNames from 'classnames'
 import { get, fromMidiSharps } from '@tonaljs/note'
@@ -73,6 +74,7 @@ function Frets(props: {
 }
 
 export default function Guitar(props: {
+  id?: string
   className?: string
   strings?: number[]
   frets?: {
@@ -96,12 +98,13 @@ export default function Guitar(props: {
     theme = spanishTheme,
     playOnHover
   } = props
+  const id = useMemo(() => props.id || uniqueId('guitar-'), [props.id])
   const styles = useMemo(() => getStyles(theme), [theme])
   const ref = useRef(null as HTMLDivElement | null)
   const focusString = (string: number, fret: number = strings[string]) =>
     ref.current
       ?.querySelector?.<HTMLInputElement>(
-        `input[name="string-${string}"][value="${fret}"]`
+        `input[name="${id}-string-${string}"][value="${fret}"]`
       )
       ?.focus()
   const releaseString = (string: number) =>
@@ -144,6 +147,7 @@ export default function Guitar(props: {
   const [focusedString, setFocusedString] = useState(0)
   return (
     <div
+      id={id}
       ref={ref}
       css={styles}
       className={classNames('guitar', { lefty }, props.className)}
@@ -220,7 +224,7 @@ export default function Guitar(props: {
                   <input
                     disabled={!props.onChange}
                     type="radio"
-                    name={`string-${string}`}
+                    name={`${id}-string-${string}`}
                     value={fret}
                     checked={currentFret === fret}
                     onChange={e => {
