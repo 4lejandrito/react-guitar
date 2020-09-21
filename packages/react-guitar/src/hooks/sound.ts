@@ -18,8 +18,8 @@ export default function useSound(
     promise.then(setPlayer)
 
     return () => {
+      setPlayer(undefined)
       promise.then(player => {
-        setPlayer(undefined)
         player.dispose()
       })
     }
