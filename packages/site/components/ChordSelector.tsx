@@ -20,7 +20,7 @@ import Emoji from './Emoji'
 import ChordTypeSelector from './ChordTypeSelector'
 import { useKey } from 'react-use'
 
-const getNotes = (type: { setNum: number }) => type.setNum
+const getNotes = (type?: { setNum: number }) => type?.setNum ?? 0
 const mask = (i: number) => 1 << (11 - i)
 const set = (bits: number, i: number) => bits | mask(i)
 const clear = (bits: number, i: number) => bits & ~mask(i)
@@ -40,21 +40,25 @@ const getFretterChord = (root: string, notes: number) => ({
   root: Note.chroma(root) ?? 0,
   semitones: range(11).map(i => test(notes, i + 1))
 })
-const detectChord = (tuning: number[], strings: number[]) =>
-  Chord.get(
-    Chord.detect(
-      tuning
-        .map((midi, i) => (strings[i] === -1 ? -1 : midi + strings[i]))
-        .filter(midi => midi !== -1)
-        .reverse()
-        .map(midi => midiToNoteName(midi))
-    )[0]
-  )
+const detectChord = (
+  tuning: number[],
+  strings: number[]
+): TChord | undefined => {
+  const name = Chord.detect(
+    tuning
+      .map((midi, i) => (strings[i] === -1 ? -1 : midi + strings[i]))
+      .filter(midi => midi !== -1)
+      .reverse()
+      .map(midi => midiToNoteName(midi))
+  )[0]
+  const chord = Chord.get(name)
+  return { ...chord, symbol: chord.symbol || name }
+}
 
 type TChord = ReturnType<typeof Chord['get']>
 
 function ChordSelectorModal(props: {
-  chord: TChord
+  chord?: TChord
   open: boolean
   tuning: number[]
   frets: number
@@ -65,7 +69,7 @@ function ChordSelectorModal(props: {
   onAfterClose: () => void
 }) {
   const initialChord = props.chord
-  const [root, setRoot] = useState(initialChord.tonic || 'C')
+  const [root, setRoot] = useState(initialChord?.tonic || 'C')
   const [notes, setNotes] = useState(() => getNotes(initialChord))
   const pressed = 0
   const types = useMemo(
@@ -247,7 +251,7 @@ function ChordSelectorModal(props: {
 }
 
 function useKeyboardChord(props: {
-  chord: TChord
+  chord?: TChord
   tuning: number[]
   frets: number
   onChange: (chord: TChord, fretting: number[]) => void
@@ -275,7 +279,7 @@ function useKeyboardChord(props: {
 
   useKey(
     'm',
-    () => chord.tonic && update(chord.tonic, ChordType.get('m').setNum),
+    () => chord?.tonic && update(chord.tonic, ChordType.get('m').setNum),
     {},
     [update, chord]
   )
@@ -305,10 +309,8 @@ export default function ChordSelector(props: {
   useEffect(() => {
     if (stringsRef.current.toString() !== props.strings.toString()) {
       const chord = detectChord(props.tuning, props.strings)
-      if (chord.tonic) {
-        setChord(chord)
-        stringsRef.current = props.strings
-      }
+      setChord(chord)
+      stringsRef.current = props.strings
     }
   }, [props.strings, props.tuning])
   useKeyboardChord({ ...props, chord, onChange: update })
@@ -318,14 +320,14 @@ export default function ChordSelector(props: {
       <button
         aria-live="polite"
         className={classNames(button, 'w-32 truncate')}
-        title={chord.symbol || 'Select a chord'}
+        title={chord?.symbol || 'Select a chord'}
         onClick={() => {
           plausible('chords')
           props.onRequestOpenChange(true)
           setClosed(false)
         }}
       >
-        {chord.symbol || <Emoji text="❓" />}
+        {chord?.symbol || <Emoji text="❓" />}
       </button>
       {!closed && (
         <ChordSelectorModal
