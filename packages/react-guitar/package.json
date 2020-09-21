@@ -27,7 +27,7 @@
     "keyboard-key": "^1.1.0",
     "lodash.range": "^3.2.0",
     "lodash.uniqueid": "^4.0.1",
-    "tone": "^14.7.39"
+    "tone": "^14.7.56"
   },
   "peerDependencies": {
     "react": "^16.8"
