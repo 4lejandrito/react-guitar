@@ -15,7 +15,6 @@
   "scripts": {
     "start": "tsdx watch --noClean",
     "build": "tsdx build",
-    "test": "tsdx test",
     "prepublishOnly": "tsdx build"
   },
   "dependencies": {

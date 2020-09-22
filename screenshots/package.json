@@ -4,10 +4,11 @@
   "private": true,
   "devDependencies": {
     "@types/puppeteer": "^3.0.1",
+    "guitar-tunings": "^0.10.3",
     "puppeteer": "^5.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "ts-node": "^8.10.2"
+    "ts-node": "^8.10.2"  
   },
   "scripts": {
     "shoot": "ts-node index.tsx"

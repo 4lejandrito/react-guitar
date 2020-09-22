@@ -17,7 +17,8 @@ npm i react-guitar react-guitar-sound
 ```jsx
 import React from 'react'
 import { render } from 'react-dom'
-import Guitar, { tunings } from 'react-guitar'
+import Guitar from 'react-guitar'
+import { standard } from 'guitar-tunings'
 import useSound from 'react-guitar-sound'
 import E2 from 'react-guitar-sound/resources/E2.mp3'
 import D3 from 'react-guitar-sound/resources/D3.mp3'
@@ -28,7 +29,7 @@ const samples = { E2, D3, G3, E4 }
 
 function SampleGuitarWithSound() {
   const strings = [0, 1, 2, 2, 0, -1]
-  const { play, strum } = useSound(samples, strings, tunings.standard)
+  const { play, strum } = useSound(samples, strings, standard)
 
   return <Guitar strings={strings} onPlay={play} />
 }

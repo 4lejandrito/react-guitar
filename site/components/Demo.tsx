@@ -1,4 +1,5 @@
-import { tunings, spanishTheme, Theme } from 'react-guitar'
+import { spanishTheme, Theme } from 'react-guitar'
+import { standard } from 'guitar-tunings'
 import Guitar from './Guitar'
 import useSound from '../hooks/sound'
 import React, { useMemo, useState } from 'react'
@@ -29,7 +30,7 @@ function Demo() {
   const [playOnHover, setPlayOnHover] = useQuery('playOnHover', false, boolean)
   const [lefty, setLefty] = useQuery('lefty', false, boolean)
   const [frets, setFrets] = useQuery('frets', 22, number)
-  const [tuning, setTuning] = useQuery('tuning', tunings.standard, numbers)
+  const [tuning, setTuning] = useQuery('tuning', standard, numbers)
   const [strings, setStrings] = useQuery(
     'strings',
     useMemo(() => tuning.map(zero), [tuning]),

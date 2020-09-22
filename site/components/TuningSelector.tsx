@@ -1,5 +1,5 @@
 import React from 'react'
-import tunings, { toString, toSearchString, parse } from '../util/tunings'
+import tunings, { toString, parse } from 'guitar-tunings'
 import Select from 'react-select/creatable'
 import { components, createFilter } from 'react-select'
 import { theme, styles, className } from '../util/react-select'
@@ -26,7 +26,7 @@ export default function TuningSelector(props: {
               <div className="flex items-center text-sm">
                 <span className="font-normal">{props.data.label}</span>{' '}
                 <pre className="flex-grow text-right font-mono text-xs">
-                  {toString(props.data.value)}
+                  {toString(props.data.value, { pad: 2 })}
                 </pre>
               </div>
             </components.Option>
@@ -63,7 +63,7 @@ export default function TuningSelector(props: {
           option.data.__isNew__ ||
           createFilter({
             stringify: ({ data }) =>
-              `${data?.tuning?.instrument} ${data?.label} ${toSearchString(
+              `${data?.tuning?.instrument} ${data?.label} ${toString(
                 data?.value
               )}`
           })(option, input)

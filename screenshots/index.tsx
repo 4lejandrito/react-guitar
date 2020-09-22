@@ -1,7 +1,8 @@
 import React from 'react'
-import Guitar, { Theme, getRenderFingerSpn, tunings } from 'react-guitar'
+import Guitar, { Theme, getRenderFingerSpn } from 'react-guitar'
 import dark from 'react-guitar-theme-dark'
 import coco from 'react-guitar-theme-coco'
+import { standard } from 'guitar-tunings'
 import path from 'path'
 import shoot from './shoot'
 
@@ -9,7 +10,7 @@ const SampleGuitar = (props: { theme?: Theme }) => (
   <Guitar
     strings={[0, 0, 1, 2, 2, 0]}
     frets={{ from: 0, amount: 5 }}
-    renderFinger={getRenderFingerSpn(tunings.standard)}
+    renderFinger={getRenderFingerSpn(standard)}
     theme={props.theme}
   />
 )

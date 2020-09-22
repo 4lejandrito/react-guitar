@@ -20,6 +20,7 @@
     "@types/react-modal": "^3.10.6",
     "@types/react-select": "^3.0.16",
     "guitar-fretter": "^0.10.0",
+    "guitar-tunings": "^0.10.3",
     "lodash.range": "^3.2.0",
     "next": "9.5.0",
     "next-plausible": "^1.0.2",

@@ -1,10 +1,10 @@
 import React from 'react'
 import Guitar, {
-  tunings,
   getRenderFingerRelative,
   getRenderFingerSpn,
   spanishTheme
 } from 'react-guitar'
+import { standard } from 'guitar-tunings'
 import useSound from 'react-guitar-sound'
 import { storiesOf } from '@storybook/react'
 import {
@@ -43,11 +43,11 @@ storiesOf('Guitar', module)
       )
     const root = select('Root', notes, notes['C'])
     const renderFingerFunctions = {
-      'Scientific Pitch Notation': getRenderFingerSpn(tunings.standard),
-      'Relative to Root': getRenderFingerRelative(tunings.standard, root)
+      'Scientific Pitch Notation': getRenderFingerSpn(standard),
+      'Relative to Root': getRenderFingerRelative(standard, root)
     }
     const [strings, setStrings] = useState([0, 0, 0, 0, 0, 0])
-    const { play } = useSound(samples, strings, tunings.standard)
+    const { play } = useSound(samples, strings, standard)
     return (
       <Guitar
         lefty={boolean('Lefty', false)}
@@ -81,7 +81,7 @@ storiesOf('Guitar', module)
   ))
   .add('with fixed A minor and sound', () => {
     const fretting = [0, 1, 2, 2, 0, -1]
-    const { play } = useSound(samples, fretting, tunings.standard)
+    const { play } = useSound(samples, fretting, standard)
     return <Guitar strings={fretting} onPlay={play} />
   })
   .add('editable', () => {
@@ -91,12 +91,12 @@ storiesOf('Guitar', module)
   .add('without strings', () => <Guitar />)
   .add('ukelele', () => {
     const [strings, setStrings] = useState([0, 0, 0, 0])
-    const { play } = useSound(samples, strings, tunings.ukelele)
+    const { play } = useSound(samples, strings, standard)
     return (
       <Guitar
         strings={strings}
         onPlay={play}
-        renderFinger={getRenderFingerSpn(tunings.ukelele)}
+        renderFinger={getRenderFingerSpn(standard)}
         onChange={setStrings}
       />
     )
@@ -139,7 +139,7 @@ storiesOf('Guitar', module)
           color: color('Finger color', spanishTheme.finger.color)
         }
       }}
-      renderFinger={getRenderFingerSpn(tunings.standard)}
+      renderFinger={getRenderFingerSpn(standard)}
       strings={[0, 0, 0, 0, 0, 0]}
     />
   ))

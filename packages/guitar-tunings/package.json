@@ -1,0 +1,24 @@
+{
+  "name": "guitar-tunings",
+  "version": "0.10.3",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Alejandro Tardín <alejandro@tardin.com>",
+  "homepage": "https://react-guitar.com",
+  "license": "MIT",
+  "repository": "https://github.com/4lejandrito/react-guitar/tree/master/packages/guitar-tunings",
+  "funding": "https://github.com/4lejandrito/react-guitar?sponsor=1",
+  "keywords": [
+    "guitar",
+    "tunings"
+  ],
+  "scripts": {
+    "start": "tsdx watch --noClean",
+    "build": "tsdx build",
+    "prepublishOnly": "tsdx build"
+  },
+  "dependencies": {
+    "@tonaljs/midi": "^3.5.4",
+    "@tonaljs/note": "^3.6.0"
+  }
+}
