@@ -307,11 +307,9 @@ export default function ChordSelector(props: {
     [onChange]
   )
   useEffect(() => {
-    if (stringsRef.current.toString() !== props.strings.toString()) {
-      const chord = detectChord(props.tuning, props.strings)
-      setChord(chord)
-      stringsRef.current = props.strings
-    }
+    const chord = detectChord(props.tuning, props.strings)
+    setChord(chord)
+    stringsRef.current = props.strings
   }, [props.strings, props.tuning])
   useKeyboardChord({ ...props, chord, onChange: update })
   const plausible = usePlausible()
