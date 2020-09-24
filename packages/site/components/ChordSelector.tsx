@@ -279,7 +279,12 @@ function useKeyboardChord(props: {
 
   useKey(
     'm',
-    () => chord?.tonic && update(chord.tonic, ChordType.get('m').setNum),
+    () =>
+      chord?.tonic &&
+      update(
+        chord.tonic,
+        ChordType.get(chord?.quality === 'Major' ? 'm' : 'M').setNum
+      ),
     {},
     [update, chord]
   )

@@ -61,7 +61,7 @@ export default function KeyboardShortcuts() {
               },
               {
                 keys: 'm',
-                description: 'Make the current chord minor'
+                description: "Toggle chord's major/minor mode"
               },
               {
                 keys: '?',
@@ -76,7 +76,7 @@ export default function KeyboardShortcuts() {
                       key={i}
                       className="font-mono text-sm h-6 px-2 mx-1 bg-gray-800 shadow inline-flex items-center justify-center rounded text-white border-b-4 border-gray-900"
                     >
-                      {key}
+                      {key.toUpperCase()}
                     </kbd>
                   ))}
                 </td>
