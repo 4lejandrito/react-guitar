@@ -11,7 +11,7 @@ export default function Select<T extends string>(props: {
     <select
       className={classNames(
         clickable,
-        'appearance-none placeholder-gray-500 placeholder-opacity-100'
+        'appearance-none placeholder-gray-500 placeholder-opacity-100 text-center'
       )}
       value={props.value}
       onChange={e => {
