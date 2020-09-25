@@ -3,7 +3,7 @@ import E2 from 'react-guitar/resources/E2.mp3'
 import D3 from 'react-guitar/resources/D3.mp3'
 import G3 from 'react-guitar/resources/G3.mp3'
 import E4 from 'react-guitar/resources/E4.mp3'
-import { useKey } from 'react-use'
+import useKey from './key'
 
 const samples = { E2, D3, G3, E4 }
 
@@ -20,11 +20,10 @@ export default function useClassicSound(
       const string = parseInt(e.key) - 1
       string >= 0 && string < tuning.length && play(string)
     },
-    {},
     [tuning, play]
   )
-  useKey('w', () => strum(true), {}, [strum])
-  useKey('s', () => strum(), {}, [strum])
+  useKey('w', () => strum(true), [strum])
+  useKey('s', () => strum(), [strum])
 
   return { play, strum, ...rest }
 }

@@ -18,7 +18,7 @@ import { button } from '../css/classes'
 import classNames from 'classnames'
 import Emoji from './Emoji'
 import ChordTypeSelector from './ChordTypeSelector'
-import { useKey } from 'react-use'
+import useKey from '../hooks/key'
 
 const getNotes = (type?: { setNum: number }) => type?.setNum ?? 0
 const mask = (i: number) => 1 << (11 - i)
@@ -273,7 +273,6 @@ function useKeyboardChord(props: {
     e =>
       Note.names().includes(e.key.toUpperCase()) &&
       update(e.key, ChordType.get('M').setNum),
-    {},
     [update]
   )
 
@@ -285,7 +284,6 @@ function useKeyboardChord(props: {
         chord.tonic,
         ChordType.get(chord?.quality === 'Major' ? 'm' : 'M').setNum
       ),
-    {},
     [update, chord]
   )
 }
