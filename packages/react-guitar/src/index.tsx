@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import useSound from './hooks/sound'
 import tunings from './util/tunings'
 import { useRef, Fragment, useMemo, ReactElement, useState } from 'react'
 import useLayoutEffect from './hooks/layoutEffect'
@@ -15,7 +14,7 @@ import getStyles from './styles'
 import color from 'color'
 import { getKey } from 'keyboard-key'
 
-export { useSound, tunings, spanishTheme, Theme }
+export { tunings, spanishTheme, Theme }
 
 export function getRenderFingerSpn(tuning: number[]) {
   return (string: number, fret: number) => {

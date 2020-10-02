@@ -29,6 +29,7 @@
     "react-dom": "16.13.1",
     "react-easy-emoji": "^1.4.0",
     "react-guitar": "^0.10.3",
+    "react-guitar-sound": "^0.10.3",
     "react-guitar-theme-coco": "^0.10.3",
     "react-guitar-theme-dark": "^0.10.3",
     "react-modal": "^3.11.2",

@@ -1,12 +1,11 @@
 import { SamplerOptions } from 'tone'
 import { useEffect, useState, useCallback } from 'react'
-import tunings from '../util/tunings'
-import makePlayer, { Player } from '../util/player'
+import makePlayer, { Player } from './util/player'
 
 export default function useSound(
   samples: SamplerOptions['urls'],
   fretting: number[],
-  tuning: number[] = tunings.standard,
+  tuning: number[],
   muted?: boolean
 ) {
   const [player, setPlayer] = useState<Player>()

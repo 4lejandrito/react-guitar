@@ -1,0 +1,31 @@
+{
+  "name": "react-guitar-sound",
+  "version": "0.10.3",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Alejandro Tardín <alejandro@tardin.com>",
+  "homepage": "https://react-guitar.com",
+  "license": "MIT",
+  "repository": "https://github.com/4lejandrito/react-guitar/tree/master/packages/react-guitar-sound",
+  "funding": "https://github.com/4lejandrito/react-guitar?sponsor=1",
+  "keywords": [
+    "react",
+    "guitar",
+    "sound"
+  ],
+  "scripts": {
+    "start": "tsdx watch --noClean",
+    "build": "tsdx build",
+    "prepublishOnly": "tsdx build"
+  },
+  "dependencies": {
+    "tone": "^14.7.56"
+  },
+  "peerDependencies": {
+    "react": "^16.8"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.23",
+    "react": "^16.13.1"
+  }
+}

@@ -1,8 +1,8 @@
-import { useSound } from 'react-guitar'
-import E2 from 'react-guitar/resources/E2.mp3'
-import D3 from 'react-guitar/resources/D3.mp3'
-import G3 from 'react-guitar/resources/G3.mp3'
-import E4 from 'react-guitar/resources/E4.mp3'
+import useSound from 'react-guitar-sound'
+import E2 from 'react-guitar-sound/resources/E2.mp3'
+import D3 from 'react-guitar-sound/resources/D3.mp3'
+import G3 from 'react-guitar-sound/resources/G3.mp3'
+import E4 from 'react-guitar-sound/resources/E4.mp3'
 import useKey from './key'
 
 const samples = { E2, D3, G3, E4 }

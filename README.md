@@ -47,23 +47,32 @@ Check out [the storybook](https://react-guitar.com/storybook) for more advanced 
 
 #### useSound
 
-In order to enable sound playing `react-guitar` offers the [useSound](packages/react-guitar/src/hooks/sound.ts) hook:
+In order to enable sound playing `react-guitar` offers the [useSound](packages/react-guitar-sound) hook:
+
+```
+npm i react-guitar react-guitar-sound
+```
 
 ```jsx
-import Guitar, { useSound } from 'react-guitar'
-import E2 from 'react-guitar/resources/E2.mp3'
-import D3 from 'react-guitar/resources/D3.mp3'
-import G3 from 'react-guitar/resources/G3.mp3'
-import E4 from 'react-guitar/resources/E4.mp3'
+import React from 'react'
+import { render } from 'react-dom'
+import Guitar, { tunings } from 'react-guitar'
+import useSound from 'react-guitar-sound'
+import E2 from 'react-guitar-sound/resources/E2.mp3'
+import D3 from 'react-guitar-sound/resources/D3.mp3'
+import G3 from 'react-guitar-sound/resources/G3.mp3'
+import E4 from 'react-guitar-sound/resources/E4.mp3'
 
 const samples = { E2, D3, G3, E4 }
-...
 
-const { play, strum } = useSound(samples, strings, tuning)
+function SampleGuitarWithSound() {
+  const strings = [0, 1, 2, 2, 0, -1]
+  const { play, strum } = useSound(samples, strings, tunings.standard)
 
-<Guitar strings={strings} onPlay={play}/>
+  return <Guitar strings={strings} onPlay={play} />
+}
 
-...
+render(<SampleGuitarWithSound />, document.getElementById('root'))
 ```
 
 It receives:

@@ -1,11 +1,11 @@
 import React from 'react'
 import Guitar, {
-  useSound,
   tunings,
   getRenderFingerRelative,
   getRenderFingerSpn,
   spanishTheme
 } from 'react-guitar'
+import useSound from 'react-guitar-sound'
 import { storiesOf } from '@storybook/react'
 import {
   withKnobs,
@@ -17,10 +17,10 @@ import {
 import { midiToNoteName } from '@tonaljs/midi'
 import { range } from 'lodash'
 import { useState } from '@storybook/addons'
-import E2 from 'react-guitar/resources/E2.mp3'
-import D3 from 'react-guitar/resources/D3.mp3'
-import G3 from 'react-guitar/resources/G3.mp3'
-import E4 from 'react-guitar/resources/E4.mp3'
+import E2 from 'react-guitar-sound/resources/E2.mp3'
+import D3 from 'react-guitar-sound/resources/D3.mp3'
+import G3 from 'react-guitar-sound/resources/G3.mp3'
+import E4 from 'react-guitar-sound/resources/E4.mp3'
 import coco from 'react-guitar-theme-coco'
 import dark from 'react-guitar-theme-dark'
 
@@ -47,7 +47,7 @@ storiesOf('Guitar', module)
       'Relative to Root': getRenderFingerRelative(tunings.standard, root)
     }
     const [strings, setStrings] = useState([0, 0, 0, 0, 0, 0])
-    const { play } = useSound(samples, strings)
+    const { play } = useSound(samples, strings, tunings.standard)
     return (
       <Guitar
         lefty={boolean('Lefty', false)}
@@ -81,7 +81,7 @@ storiesOf('Guitar', module)
   ))
   .add('with fixed A minor and sound', () => {
     const fretting = [0, 1, 2, 2, 0, -1]
-    const { play } = useSound(samples, fretting)
+    const { play } = useSound(samples, fretting, tunings.standard)
     return <Guitar strings={fretting} onPlay={play} />
   })
   .add('editable', () => {
