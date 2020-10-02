@@ -1,6 +1,5 @@
 import { SamplerOptions } from 'tone'
 import { useEffect, useState, useCallback } from 'react'
-import range from 'lodash.range'
 import tunings from '../util/tunings'
 import makePlayer, { Player } from '../util/player'
 
@@ -34,10 +33,8 @@ export default function useSound(
 
   const strum = useCallback(
     (up?: boolean) =>
-      range(tuning.length).forEach(i =>
-        play(!up ? tuning.length - i - 1 : i, 0.05 * i)
-      ),
-    [tuning.length, play]
+      tuning.forEach((_, i) => play(!up ? tuning.length - i - 1 : i, 0.05 * i)),
+    [tuning, play]
   )
 
   return { play, strum, playing }
