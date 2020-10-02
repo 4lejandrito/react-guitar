@@ -15,7 +15,7 @@ const SampleGuitar = (props: { theme?: Theme }) => (
 )
 
 const screenshot = (name: string) =>
-  path.join(__dirname, '..', name, 'screenshot.png')
+  path.join(__dirname, '..', 'packages', name, 'screenshot.png')
 
 shoot(screenshot('react-guitar'), <SampleGuitar />)
 shoot(screenshot('react-guitar-theme-dark'), <SampleGuitar theme={dark} />)

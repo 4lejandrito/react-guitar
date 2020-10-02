@@ -9,7 +9,10 @@
     "url": "https://github.com/4lejandrito/react-guitar.git"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "screenshots",
+    "site",
+    "storybook"
   ],
   "devDependencies": {
     "husky": ">=4",
