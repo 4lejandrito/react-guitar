@@ -1,5 +1,5 @@
 import { spanishTheme, Theme } from 'react-guitar'
-import { standard } from 'guitar-tunings'
+import { standard } from 'react-guitar-tunings'
 import Guitar from './Guitar'
 import useSound from '../hooks/sound'
 import React, { useMemo, useState } from 'react'

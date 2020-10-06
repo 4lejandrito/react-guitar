@@ -2,7 +2,7 @@ import React from 'react'
 import Guitar, { Theme, getRenderFingerSpn } from 'react-guitar'
 import dark from 'react-guitar-theme-dark'
 import coco from 'react-guitar-theme-coco'
-import { standard } from 'guitar-tunings'
+import { standard } from 'react-guitar-tunings'
 import path from 'path'
 import shoot from './shoot'
 

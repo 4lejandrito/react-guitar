@@ -1,4 +1,4 @@
-# Guitar-Tunings &middot; [![npm version](https://img.shields.io/npm/v/react-guitar.svg?style=flat)](https://www.npmjs.com/package/guitar-tunings)
+# React-Guitar-Tunings &middot; [![npm version](https://img.shields.io/npm/v/react-guitar.svg?style=flat)](https://www.npmjs.com/package/react-guitar-tunings)
 
 A cromprehensive string tunings dictionary.
 
@@ -7,11 +7,11 @@ See https://react-guitar.com for a live demo.
 ## Usage
 
 ```
-npm i guitar-tunings
+npm i react-guitar-tunings
 ```
 
 ```jsx
-import tunings from 'guitar-tunings'
+import tunings from 'react-guitar-tunings'
 ```
 
 Tunings exports an array of objects with the following shape:

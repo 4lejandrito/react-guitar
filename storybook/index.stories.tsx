@@ -4,7 +4,7 @@ import Guitar, {
   getRenderFingerSpn,
   spanishTheme
 } from 'react-guitar'
-import { standard } from 'guitar-tunings'
+import { standard } from 'react-guitar-tunings'
 import useSound from 'react-guitar-sound'
 import { storiesOf } from '@storybook/react'
 import {
