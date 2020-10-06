@@ -7,6 +7,9 @@
     "puppeteer": "^5.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-guitar": "^0.10.3",
+    "react-guitar-theme-coco": "^0.10.3",
+    "react-guitar-theme-dark": "^0.10.3",
     "react-guitar-tunings": "^0.10.3",
     "ts-node": "^8.10.2"
   },
