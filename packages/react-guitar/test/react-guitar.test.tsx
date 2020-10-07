@@ -15,5 +15,8 @@ it('renders the right HTML', () => {
 
 it('has no visual regressions', async () => {
   render(<Guitar strings={[0, 0, 1, 2, 2, 0]} />)
-  expect(await generateImage()).toMatchImageSnapshot()
+  expect(await generateImage()).toMatchImageSnapshot({
+    failureThreshold: 0.03,
+    failureThresholdType: 'percent'
+  })
 })
