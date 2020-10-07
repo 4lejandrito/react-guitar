@@ -15,7 +15,7 @@ npm i react-guitar react-guitar-sound react-guitar-tunings
 ```
 
 ```jsx
-import React from 'react'
+import React, { useMemo } from 'react'
 import { render } from 'react-dom'
 import Guitar from 'react-guitar'
 import { standard } from 'react-guitar-tunings'
@@ -28,7 +28,7 @@ import E4 from 'react-guitar-sound/resources/E4.mp3'
 const samples = { E2, D3, G3, E4 }
 
 function SampleGuitarWithSound() {
-  const strings = [0, 1, 2, 2, 0, -1]
+  const strings = useMemo(() => [0, 1, 2, 2, 0, -1], [])
   const { play, strum } = useSound(samples, strings, standard)
 
   return <Guitar strings={strings} onPlay={play} />
