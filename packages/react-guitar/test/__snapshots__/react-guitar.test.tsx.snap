@@ -1,0 +1,5864 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the right HTML 1`] = `
+<div
+  className="guitar css-110auom-Guitar"
+  id="guitar-1"
+  onKeyDown={[Function]}
+>
+  <div
+    className="sr-only"
+  >
+    This is a guitar with 
+    6
+     strings and 
+    22
+     frets, starting from 
+    0
+    . Its theme describes it as:
+     
+    A typical Spanish guitar with a brown fretboard and golden details
+    .
+  </div>
+  <div
+    className="sr-only"
+    role="status"
+  >
+    Current fretting: 
+    0, 0, 1, 2, 2, 0
+    .
+  </div>
+  <div
+    className="strings"
+  >
+    <div
+      className="fretboard frets"
+    >
+      <div
+        className="fret nut"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+      <div
+        className="fret"
+      />
+    </div>
+    <fieldset
+      className="string"
+    >
+      <legend
+        className="sr-only"
+      >
+        String 
+        1
+        .
+         
+      </legend>
+      <div
+        className="frets"
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="fret mute"
+          style={
+            Object {
+              "zIndex": undefined,
+            }
+          }
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              -1
+               
+              (Mute)
+              .
+            </span>
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={-1}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret nut"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              0
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={true}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={0}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              1
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={1}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              2
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={2}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              3
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={3}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              4
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={4}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              5
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={5}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              6
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={6}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              7
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={7}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              8
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={8}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              9
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={9}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              10
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={10}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              11
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={11}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              12
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={12}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              13
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={13}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              14
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={14}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              15
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={15}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              16
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={16}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              17
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={17}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              18
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={18}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              19
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={19}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              20
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={20}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              21
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={21}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              22
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-0"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={22}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      className="string"
+    >
+      <legend
+        className="sr-only"
+      >
+        String 
+        2
+        .
+         
+      </legend>
+      <div
+        className="frets"
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="fret mute"
+          style={
+            Object {
+              "zIndex": undefined,
+            }
+          }
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              -1
+               
+              (Mute)
+              .
+            </span>
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={-1}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret nut"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              0
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={true}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={0}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              1
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={1}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              2
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={2}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              3
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={3}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              4
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={4}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              5
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={5}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              6
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={6}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              7
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={7}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              8
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={8}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              9
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={9}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              10
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={10}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              11
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={11}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              12
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={12}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              13
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={13}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              14
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={14}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              15
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={15}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              16
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={16}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              17
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={17}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              18
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={18}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              19
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={19}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              20
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={20}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              21
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={21}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              22
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-1"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={22}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      className="string"
+    >
+      <legend
+        className="sr-only"
+      >
+        String 
+        3
+        .
+         
+      </legend>
+      <div
+        className="frets"
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="fret mute"
+          style={
+            Object {
+              "zIndex": undefined,
+            }
+          }
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              -1
+               
+              (Mute)
+              .
+            </span>
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={-1}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret nut"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              0
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={0}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              1
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={true}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={1}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              2
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={2}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              3
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={3}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              4
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={4}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              5
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={5}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              6
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={6}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              7
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={7}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              8
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={8}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              9
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={9}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              10
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={10}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              11
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={11}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              12
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={12}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              13
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={13}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              14
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={14}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              15
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={15}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              16
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={16}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              17
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={17}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              18
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={18}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              19
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={19}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              20
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={20}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              21
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={21}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              22
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-2"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={22}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      className="string"
+    >
+      <legend
+        className="sr-only"
+      >
+        String 
+        4
+        .
+         
+      </legend>
+      <div
+        className="frets"
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="fret mute"
+          style={
+            Object {
+              "zIndex": undefined,
+            }
+          }
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              -1
+               
+              (Mute)
+              .
+            </span>
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={-1}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret nut"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              0
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={0}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              1
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={1}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              2
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={true}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={2}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              3
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={3}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              4
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={4}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              5
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={5}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              6
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={6}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              7
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={7}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              8
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={8}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              9
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={9}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              10
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={10}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              11
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={11}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              12
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={12}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              13
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={13}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              14
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={14}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              15
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={15}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              16
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={16}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              17
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={17}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              18
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={18}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              19
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={19}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              20
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={20}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              21
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={21}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              22
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-3"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={22}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      className="string"
+    >
+      <legend
+        className="sr-only"
+      >
+        String 
+        5
+        .
+         
+      </legend>
+      <div
+        className="frets"
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="fret mute"
+          style={
+            Object {
+              "zIndex": undefined,
+            }
+          }
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              -1
+               
+              (Mute)
+              .
+            </span>
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={-1}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret nut"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              0
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={0}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              1
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={1}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              2
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={true}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={2}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              3
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={3}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              4
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={4}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              5
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={5}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              6
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={6}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              7
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={7}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              8
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={8}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              9
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={9}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              10
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={10}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              11
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={11}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              12
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={12}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              13
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={13}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              14
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={14}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              15
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={15}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              16
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={16}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              17
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={17}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              18
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={18}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              19
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={19}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              20
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={20}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              21
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={21}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              22
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-4"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={22}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      className="string"
+    >
+      <legend
+        className="sr-only"
+      >
+        String 
+        6
+        .
+         
+      </legend>
+      <div
+        className="frets"
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="fret mute"
+          style={
+            Object {
+              "zIndex": undefined,
+            }
+          }
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              -1
+               
+              (Mute)
+              .
+            </span>
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={-1}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret nut"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              0
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={true}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={0}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              1
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={1}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              2
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={2}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              3
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={3}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              4
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={4}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              5
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={5}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              6
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={6}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              7
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={7}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              8
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={8}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              9
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={9}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              10
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={10}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              11
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={11}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              12
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={12}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              13
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={13}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              14
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={14}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              15
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={15}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              16
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={16}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              17
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={17}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              18
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={18}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              19
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={19}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              20
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={20}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              21
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={21}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+        <div
+          className="fret"
+        >
+          <label>
+            <span
+              className="sr-only"
+            >
+              Fret 
+              22
+               
+              .
+            </span>
+            <span
+              className="actual-string"
+              style={
+                Object {
+                  "backgroundColor": "#eeeeee",
+                  "borderBottom": "solid 0.2em hsl(0, 0%, 60.7%)",
+                  "opacity": 1,
+                }
+              }
+            />
+            <input
+              checked={false}
+              disabled={true}
+              name="guitar-1-string-5"
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              type="radio"
+              value={22}
+            />
+            <span
+              className="finger"
+            />
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div
+    className="frame frets"
+  >
+    <div
+      className="fret nut"
+    />
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        1
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        2
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        3
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        4
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        5
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        6
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        7
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        8
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        9
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        10
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        11
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        12
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        13
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        14
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        15
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        16
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        17
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        18
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        19
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        20
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        21
+      </span>
+    </div>
+    <div
+      className="fret"
+    >
+      <span
+        className="counter"
+      >
+        22
+      </span>
+    </div>
+  </div>
+</div>
+`;
