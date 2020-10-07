@@ -11,7 +11,7 @@ See https://react-guitar.com for a live demo.
 ## Usage
 
 ```
-npm i react-guitar react-guitar-sound
+npm i react-guitar react-guitar-sound react-guitar-tunings
 ```
 
 ```jsx

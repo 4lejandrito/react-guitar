@@ -50,7 +50,7 @@ Check out [the storybook](https://react-guitar.com/storybook) for more advanced 
 In order to enable sound playing `react-guitar` offers the [useSound](packages/react-guitar-sound) hook:
 
 ```
-npm i react-guitar react-guitar-sound
+npm i react-guitar react-guitar-sound react-guitar-tunings
 ```
 
 ```jsx
