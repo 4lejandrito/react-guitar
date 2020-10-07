@@ -1,6 +1,6 @@
 {
   "name": "react-guitar-site",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "private": true,
   "scripts": {
     "build": "run-s build:*",
@@ -29,7 +29,7 @@
     "react-easy-emoji": "^1.4.0",
     "react-guitar": "^0.11.0",
     "react-guitar-fretter": "^0.11.0",
-    "react-guitar-sound": "^0.11.0",
+    "react-guitar-sound": "^0.11.1",
     "react-guitar-theme-coco": "^0.11.0",
     "react-guitar-theme-dark": "^0.11.0",
     "react-guitar-tunings": "^0.11.0",
