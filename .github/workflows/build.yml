@@ -28,6 +28,9 @@ jobs:
           yarn
           yarn build
 
+      - name: Test
+        run: yarn test
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.5.8
         with:
