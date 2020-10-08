@@ -3,6 +3,7 @@
   "version": "0.11.1",
   "private": true,
   "scripts": {
+    "analyze": "ANALYZE=true next build",
     "build": "run-s build:*",
     "build:next": "next build && next export",
     "build:storybook": "build-storybook -c ../storybook/.storybook -o out/storybook",
@@ -10,6 +11,7 @@
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@next/bundle-analyzer": "^9.5.3",
     "@tonaljs/chord": "^3.7.0",
     "@tonaljs/chord-type": "^3.6.0",
     "@tonaljs/interval": "^3.5.4",

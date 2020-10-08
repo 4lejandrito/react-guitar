@@ -1,4 +1,6 @@
-module.exports = {
+module.exports = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
+})({
   webpack(config, options) {
     const { isServer } = options
     config.module.rules.push({
@@ -21,4 +23,4 @@ module.exports = {
 
     return config
   }
-}
+})
