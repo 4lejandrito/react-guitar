@@ -10,9 +10,9 @@ module.exports = require('@next/bundle-analyzer')({
         {
           loader: require.resolve('url-loader'),
           options: {
-            limit: config.inlineImageLimit,
+            limit: 0,
             fallback: require.resolve('file-loader'),
-            publicPath: `${config.assetPrefix}/_next/static/files/`,
+            publicPath: `${config.assetPrefix || ''}/_next/static/files/`,
             outputPath: `${isServer ? '../' : ''}static/files/`,
             name: '[name]-[hash].[ext]',
             esModule: config.esModule || false
