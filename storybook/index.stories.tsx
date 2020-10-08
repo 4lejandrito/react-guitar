@@ -15,7 +15,7 @@ import {
   color
 } from '@storybook/addon-knobs'
 import { midiToNoteName } from '@tonaljs/midi'
-import { range } from 'lodash'
+import range from 'lodash.range'
 import { useState } from '@storybook/addons'
 import E2 from 'react-guitar-sound/resources/E2.mp3'
 import D3 from 'react-guitar-sound/resources/D3.mp3'

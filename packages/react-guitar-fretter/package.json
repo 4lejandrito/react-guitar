@@ -22,6 +22,17 @@
     "prepublishOnly": "tsdx build"
   },
   "dependencies": {
-    "lodash": "^4.17.20"
+    "lodash.flatmap": "^4.5.0",
+    "lodash.flatten": "^4.4.0",
+    "lodash.max": "^4.0.1",
+    "lodash.min": "^4.0.1",
+    "lodash.range": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/lodash.flatmap": "^4.5.6",
+    "@types/lodash.flatten": "^4.4.6",
+    "@types/lodash.max": "^4.0.6",
+    "@types/lodash.min": "^4.0.6",
+    "@types/lodash.range": "^3.2.6"
   }
 }

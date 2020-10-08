@@ -1,4 +1,4 @@
-import { flatMap } from 'lodash'
+import flatMap from 'lodash.flatmap'
 
 type Expand<T> = (node: T) => T[]
 type IsFinal<T> = (node: T) => boolean

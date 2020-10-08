@@ -1,4 +1,8 @@
-import { range, flatten, flatMap, max, min } from 'lodash'
+import range from 'lodash.range'
+import flatten from 'lodash.flatten'
+import flatMap from 'lodash.flatmap'
+import max from 'lodash.max'
+import min from 'lodash.min'
 import mod from './util/mod'
 import search from './util/search'
 
