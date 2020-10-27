@@ -82,7 +82,7 @@ function Home() {
         <Emoji text="Made with ❤️ and 🎶 by" />{' '}
         <a
           className="hover:underline text-blue-500"
-          href="https://github.com/4lejandrito"
+          href="https://4lejandrito.dev"
         >
           4lejandrito
         </a>
