@@ -16,6 +16,15 @@ module.exports = {
       ],
       enforce: 'pre'
     })
+    config.module.rules.push({
+      test: /\.(ogg)$/i,
+      exclude: config.exclude,
+      use: [
+        {
+          loader: require.resolve('url-loader')
+        }
+      ]
+    })
 
     return config
   }

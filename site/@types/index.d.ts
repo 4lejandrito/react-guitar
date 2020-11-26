@@ -1,4 +1,4 @@
-declare module '*.mp3' {
+declare module '*.ogg' {
   const content: string
   export default content
 }

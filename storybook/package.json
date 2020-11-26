@@ -29,6 +29,7 @@
     "react-guitar-tunings": "^0.11.0",
     "regenerator-runtime": "^0.13.7",
     "ts-loader": "^8.0.2",
+    "url-loader": "^4.1.1",
     "webpack": "^4.44.1"
   }
 }

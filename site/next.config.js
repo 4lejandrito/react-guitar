@@ -4,7 +4,7 @@ module.exports = require('@next/bundle-analyzer')({
   webpack(config, options) {
     const { isServer } = options
     config.module.rules.push({
-      test: /\.(mp3)$/i,
+      test: /\.(ogg)$/i,
       exclude: config.exclude,
       use: [
         {

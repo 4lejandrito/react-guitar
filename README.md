@@ -59,10 +59,10 @@ import { render } from 'react-dom'
 import Guitar from 'react-guitar'
 import { standard } from 'react-guitar-tunings'
 import useSound from 'react-guitar-sound'
-import E2 from 'react-guitar-sound/resources/E2.mp3'
-import D3 from 'react-guitar-sound/resources/D3.mp3'
-import G3 from 'react-guitar-sound/resources/G3.mp3'
-import E4 from 'react-guitar-sound/resources/E4.mp3'
+import E2 from 'react-guitar-sound/resources/E2.ogg'
+import D3 from 'react-guitar-sound/resources/D3.ogg'
+import G3 from 'react-guitar-sound/resources/G3.ogg'
+import E4 from 'react-guitar-sound/resources/E4.ogg'
 
 const samples = { E2, D3, G3, E4 }
 
@@ -79,7 +79,7 @@ render(<SampleGuitarWithSound />, document.getElementById('root'))
 It receives:
 | Name | Description |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `samples` | A map from note names to mp3 files representing the samples. `react-guitar` offers 4 samples out of the box recorded from a Spanish guitar. |
+| `samples` | A map from note names to audio files representing the samples. `react-guitar` offers 4 samples out of the box recorded from a Spanish guitar. |
 | `strings` | The same value passed as the `strings` prop to the `<Guitar />` component with the current fretting. |
 | `tuning` | An array of midi values for each string. `react-guitar` offers 4 tunings out of the box (`standard`, `ukelele`, `rondeña` and `dadgad`). |
 
