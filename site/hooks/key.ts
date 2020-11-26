@@ -8,13 +8,7 @@ export default function useKey(
   useReactUseKey(
     filter,
     e => {
-      if (
-        e.ctrlKey ||
-        e.shiftKey ||
-        e.altKey ||
-        e.metaKey ||
-        (e.target instanceof HTMLInputElement && e.target.type === 'text')
-      ) {
+      if (e.target instanceof HTMLInputElement && e.target.type === 'text') {
         return
       }
       fn(e)
