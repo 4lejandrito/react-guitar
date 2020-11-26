@@ -1,4 +1,4 @@
-import { Frequency, Sampler, SamplerOptions, now } from 'tone'
+import { Frequency, Sampler, SamplerOptions, immediate } from 'tone'
 
 export type Player = {
   play: (string: number, fret: number, when: number) => Promise<void>
@@ -66,7 +66,7 @@ export default async (
         synths[string].triggerAttackRelease(
           Frequency(tuning[string] + fret, 'midi').toFrequency(),
           4,
-          now() + when
+          immediate() + when
         )
       }),
     dispose: () => synths.map(synth => synth.dispose())
