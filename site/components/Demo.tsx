@@ -51,7 +51,7 @@ function Demo() {
   )
   const theme = themes[themeName] || themes.spanish
   const [chordSelectorOpen, setChordSelectorOpen] = useState(false)
-  const { play, strum } = useSound({
+  const { play, strum, loading } = useSound({
     instrument,
     fretting: strings,
     tuning,
@@ -72,6 +72,7 @@ function Demo() {
           <Select
             value={instrumentName}
             values={instruments.map(({ name }) => name)}
+            loading={loading}
             onChange={setInstrumentName}
           />
         </Label>

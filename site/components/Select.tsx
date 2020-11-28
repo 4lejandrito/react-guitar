@@ -5,14 +5,16 @@ import { clickable } from '../css/classes'
 export default function Select<T extends string>(props: {
   value: T
   values: readonly T[]
+  loading?: boolean
   onChange: (value: T) => void
 }) {
   return (
     <select
       className={classNames(
         clickable,
-        'appearance-none placeholder-gray-500 placeholder-opacity-100 text-center'
+        'appearance-none placeholder-gray-500 placeholder-opacity-100 text-center bg-white'
       )}
+      disabled={props.loading}
       value={props.value}
       onChange={e => {
         const value = props.values.find(value => value === e.target.value)
@@ -25,7 +27,7 @@ export default function Select<T extends string>(props: {
           value={value}
           onSelect={() => props.onChange(value)}
         >
-          {value}
+          {value === props.value && props.loading ? 'Loading...' : value}
         </option>
       ))}
     </select>
