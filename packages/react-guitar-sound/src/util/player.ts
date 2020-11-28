@@ -1,40 +1,21 @@
-import { Frequency, Sampler, SamplerOptions, immediate } from 'tone'
+export type StringInstrument = (
+  tuning: number[]
+) => Promise<{
+  play: (string: number, fret: number, when: number) => void
+  dispose: () => void
+}>
 
 export type Player = {
   play: (string: number, fret: number, when: number) => Promise<void>
   dispose: () => void
 }
 
-const toMidi = (note: string | number) => {
-  if (typeof note === 'string') return Frequency(note).toMidi()
-  return note
-}
-
-const closest = (midi: number, samples: SamplerOptions['urls']) => {
-  let min = Object.keys(samples)[0]
-  Object.keys(samples).forEach(key => {
-    if (Math.abs(midi - toMidi(key)) < Math.abs(midi - toMidi(min))) {
-      min = key
-    }
-  })
-  return { [min]: samples[min] }
-}
-
 export default async (
-  samples: SamplerOptions['urls'],
+  instrument: StringInstrument,
   tuning: number[],
   onChange: (playing: boolean[]) => void
 ): Promise<Player> => {
-  const synths = await Promise.all(
-    tuning.map(
-      midi =>
-        new Promise<Sampler>(resolve => {
-          const synth: Sampler = new Sampler(closest(midi, samples), () =>
-            resolve(synth)
-          ).toDestination()
-        })
-    )
-  )
+  const { play, dispose } = await instrument(tuning)
   const resolvers: Partial<{ [K: number]: (change?: boolean) => void }> = {}
   const playing = tuning.map(() => false)
   const setPlaying = (string: number, value: boolean) => {
@@ -63,12 +44,8 @@ export default async (
           }),
           3000 + when * 1000
         )
-        synths[string].triggerAttackRelease(
-          Frequency(tuning[string] + fret, 'midi').toFrequency(),
-          4,
-          immediate() + when
-        )
+        play(string, fret, when)
       }),
-    dispose: () => synths.map(synth => synth.dispose())
+    dispose
   }
 }

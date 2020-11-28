@@ -1,7 +1,7 @@
 import { spanishTheme, Theme } from 'react-guitar'
 import { standard } from 'react-guitar-tunings'
 import Guitar from './Guitar'
-import useSound from '../hooks/sound'
+import useSound, { instruments } from '../hooks/sound'
 import React, { useMemo, useState } from 'react'
 import Number from './Number'
 import Toggle from './Toggle'
@@ -38,9 +38,25 @@ function Demo() {
   )
   const themes: { [K: string]: Theme } = { spanish: spanishTheme, dark, coco }
   const [themeName, setThemeName] = useQuery('theme', 'spanish', string)
+  const [instrumentName, setInstrumentName] = useQuery(
+    'instrument',
+    instruments[0].name,
+    string
+  )
+  const instrument = useMemo(
+    () =>
+      instruments.find(({ name, instrument }) => name === instrumentName)
+        ?.instrument,
+    [instrumentName]
+  )
   const theme = themes[themeName] || themes.spanish
   const [chordSelectorOpen, setChordSelectorOpen] = useState(false)
-  const { play, strum } = useSound(strings, tuning, chordSelectorOpen)
+  const { play, strum } = useSound({
+    instrument,
+    fretting: strings,
+    tuning,
+    muted: chordSelectorOpen
+  })
   const [, copy] = useCopyToClipboard()
   const [copied, setCopied] = useState(false)
   const [center, setCenter] = useState(true)
@@ -48,9 +64,16 @@ function Demo() {
 
   return (
     <div className="slide-up animation-delay w-full py-4 flex-grow flex flex-col">
-      <div className="flex flex-wrap items-stretch justify-center px-4">
+      <div className="flex flex-wrap items-stretch justify-center px-4 sm:px-0">
         <Label name="Tuning">
           <TuningSelector tuning={tuning} onChange={setTuning} />
+        </Label>
+        <Label name="Sound">
+          <Select
+            value={instrumentName}
+            values={instruments.map(({ name }) => name)}
+            onChange={setInstrumentName}
+          />
         </Label>
         <Label name="Theme">
           <Select
@@ -76,6 +99,7 @@ function Demo() {
             frets={frets}
             lefty={lefty}
             theme={theme}
+            instrument={instrument}
             onRequestOpenChange={setChordSelectorOpen}
             onChange={setStrings}
           />

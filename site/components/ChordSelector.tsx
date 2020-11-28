@@ -19,6 +19,7 @@ import classNames from 'classnames'
 import Emoji from './Emoji'
 import ChordTypeSelector from './ChordTypeSelector'
 import useKey from '../hooks/key'
+import { StringInstrument } from 'react-guitar-sound'
 
 const getNotes = (type?: { setNum: number }) => type?.setNum ?? 0
 const mask = (i: number) => 1 << (11 - i)
@@ -64,6 +65,7 @@ function ChordSelectorModal(props: {
   frets: number
   lefty: boolean
   theme?: Theme
+  instrument?: StringInstrument
   onChange: (chord: TChord, fretting: number[]) => void
   onRequestClose: () => void
   onAfterClose: () => void
@@ -91,7 +93,7 @@ function ChordSelectorModal(props: {
   const [frettingIndex, setFrettingIndex] = useState(0)
   const fretting = frettings[frettingIndex] ?? props.tuning.map(() => 0)
   useEffect(() => setFrettingIndex(0), [notes, root])
-  const { strum } = useSound(fretting, props.tuning)
+  const { strum } = useSound({ ...props, fretting })
   return (
     <Modal
       isOpen={props.open}
@@ -295,6 +297,7 @@ export default function ChordSelector(props: {
   frets: number
   lefty: boolean
   theme?: Theme
+  instrument?: StringInstrument
   onChange: (strings: number[]) => void
   onRequestOpenChange: (open: boolean) => void
 }) {
