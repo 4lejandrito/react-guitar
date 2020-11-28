@@ -8,7 +8,11 @@ export default function useKey(
   useReactUseKey(
     filter,
     e => {
-      if (e.target instanceof HTMLInputElement && e.target.type === 'text') {
+      if (
+        (e.target instanceof HTMLInputElement &&
+          (e.target.type === 'text' || e.target.type === 'number')) ||
+        e.target instanceof HTMLSelectElement
+      ) {
         return
       }
       fn(e)
