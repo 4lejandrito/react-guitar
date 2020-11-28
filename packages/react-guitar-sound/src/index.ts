@@ -42,5 +42,5 @@ export default function useSound(props: {
     [tuning, play]
   )
 
-  return { play, strum, playing }
+  return { play, strum, playing, loading: !player }
 }
