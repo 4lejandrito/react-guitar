@@ -1,18 +1,24 @@
-import { SamplerOptions } from 'tone'
 import { useEffect, useState, useCallback } from 'react'
-import makePlayer, { Player } from './util/player'
+import makePlayer, { Player, StringInstrument } from './util/player'
+import withSoundFont from './instruments/sound-font'
+import withSamples from './instruments/samples'
 
-export default function useSound(
-  samples: SamplerOptions['urls'],
-  fretting: number[],
-  tuning: number[],
+export { StringInstrument, withSoundFont, withSamples }
+
+const defaultInstrument = withSoundFont('acoustic_guitar_nylon')
+
+export default function useSound(props: {
+  instrument?: StringInstrument
+  fretting: number[]
+  tuning: number[]
   muted?: boolean
-) {
+}) {
+  const { fretting, tuning, muted, instrument = defaultInstrument } = props
   const [player, setPlayer] = useState<Player>()
   const [playing, setPlaying] = useState(tuning.map(() => false))
 
   useEffect(() => {
-    const promise = makePlayer(samples, tuning, setPlaying)
+    const promise = makePlayer(instrument, tuning, setPlaying)
     promise.then(setPlayer)
 
     return () => {
@@ -21,7 +27,7 @@ export default function useSound(
         player.dispose()
       })
     }
-  }, [samples, tuning])
+  }, [instrument, tuning])
 
   const play = useCallback(
     (string: number, when: number = 0) => {

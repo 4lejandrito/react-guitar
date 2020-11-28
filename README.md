@@ -59,16 +59,10 @@ import { render } from 'react-dom'
 import Guitar from 'react-guitar'
 import { standard } from 'react-guitar-tunings'
 import useSound from 'react-guitar-sound'
-import E2 from 'react-guitar-sound/resources/E2.ogg'
-import D3 from 'react-guitar-sound/resources/D3.ogg'
-import G3 from 'react-guitar-sound/resources/G3.ogg'
-import E4 from 'react-guitar-sound/resources/E4.ogg'
-
-const samples = { E2, D3, G3, E4 }
 
 function SampleGuitarWithSound() {
   const strings = useMemo(() => [0, 1, 2, 2, 0, -1], [])
-  const { play, strum } = useSound(samples, strings, standard)
+  const { play, strum } = useSound({ fretting: strings, tuning: standard })
 
   return <Guitar strings={strings} onPlay={play} />
 }
@@ -76,12 +70,12 @@ function SampleGuitarWithSound() {
 render(<SampleGuitarWithSound />, document.getElementById('root'))
 ```
 
-It receives:
+It receives an object with the following properties:
 | Name | Description |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `samples` | A map from note names to audio files representing the samples. `react-guitar` offers 4 samples out of the box recorded from a Spanish guitar. |
-| `strings` | The same value passed as the `strings` prop to the `<Guitar />` component with the current fretting. |
-| `tuning` | An array of midi values for each string. `react-guitar` offers 4 tunings out of the box (`standard`, `ukelele`, `rondeña` and `dadgad`). |
+| `fretting` | The same value passed as the `strings` prop to the `<Guitar />` component with the current fretting. |
+| `tuning` | An array of midi values for each string. See [react-guitar-tunings](packages/react-guitar-tunings) for a list of the most common ones.|
+| `instrument` | Optionally the instrument to use, an acousting nylon guitar by default.
 
 And will return an object containing:
 
@@ -89,6 +83,65 @@ And will return an object containing:
 | ------- | --------------------------------------------------------------------- |
 | `play`  | A function that receives a string number and plays its current sound. |
 | `strum` | A function that will strum all the strings of the guitar.             |
+
+There are 2 ways to create a custom instrument:
+
+1. Using `withSoundFont`:
+
+   ```jsx
+   import React, { useMemo } from 'react'
+   import { render } from 'react-dom'
+   import Guitar from 'react-guitar'
+   import { standard } from 'react-guitar-tunings'
+   import useSound, { withSoundFont } from 'react-guitar-sound'
+
+   const electricGuitar = withSoundFont('electric_guitar_clean')
+
+   function SampleGuitarWithSound() {
+     const strings = useMemo(() => [0, 1, 2, 2, 0, -1], [])
+     const { play, strum } = useSound({
+       instrument: electricGuitar,
+       fretting: strings,
+       tuning: standard
+     })
+
+     return <Guitar strings={strings} onPlay={play} />
+   }
+
+   render(<SampleGuitarWithSound />, document.getElementById('root'))
+   ```
+
+   It uses [danigb/soundfont-player](https://github.com/danigb/soundfont-player) under the hood so [all these instrument names](https://github.com/danigb/soundfont-player/blob/master/names/musyngkite.json) are available.
+
+2. Using `withSamples`:
+
+   ```jsx
+   import React, { useMemo } from 'react'
+   import { render } from 'react-dom'
+   import Guitar from 'react-guitar'
+   import { standard } from 'react-guitar-tunings'
+   import useSound, { withSamples } from 'react-guitar-sound'
+
+   const flamencoGuitar = withSamples({
+     E2: 'https://react-guitar.com/samples/E2.ogg',
+     D3: 'https://react-guitar.com/samples/D3.ogg',
+     G3: 'https://react-guitar.com/samples/G3.ogg',
+     E4: 'https://react-guitar.com/samples/E4.ogg'
+   })
+
+   function SampleGuitarWithSound() {
+     const strings = useMemo(() => [0, 1, 2, 2, 0, -1], [])
+     const { play, strum } = useSound({
+       instrument: flamencoGuitar,
+       fretting: strings,
+       tuning: standard
+     })
+
+     return <Guitar strings={strings} onPlay={play} />
+   }
+
+   render(<SampleGuitarWithSound />, document.getElementById('root'))
+   ```
 
 ### Theming
 
@@ -121,6 +174,44 @@ By default the guitar is styled as a Spanish guitar but some other themes are av
 
 - [react-guitar-theme-dark](packages/react-guitar-theme-dark): A dark theme.
 - [react-guitar-theme-coco](packages/react-guitar-theme-coco): A theme for the guitar from the [Coco](<https://en.wikipedia.org/wiki/Coco_(2017_film)>) film.
+
+## Upgrading from 0.x
+
+If you were using `useSound` like this:
+
+```jsx
+useSound(
+  {
+    E2: '...E2.mp3',
+    D3: '...D3.mp3',
+    G3: '...G3.mp3',
+    E4: '...E4.mp3'
+  },
+  strings,
+  tuning
+)
+```
+
+You need to change it to:
+
+```jsx
+import useSound, { withSamples } from 'react-guitar-sound'
+
+// outside the render function
+const instrument = withSamples({
+  E2: 'https://react-guitar.com/samples/E2.ogg',
+  D3: 'https://react-guitar.com/samples/D3.ogg',
+  G3: 'https://react-guitar.com/samples/G3.ogg',
+  E4: 'https://react-guitar.com/samples/E4.ogg'
+})
+
+// inside the render function
+useSound({
+  instrument,
+  fretting: strings,
+  tuning
+})
+```
 
 ## Developing
 

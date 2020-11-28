@@ -4,7 +4,7 @@ import { clickable } from '../css/classes'
 
 export default function Select<T extends string>(props: {
   value: T
-  values: T[]
+  values: readonly T[]
   onChange: (value: T) => void
 }) {
   return (
