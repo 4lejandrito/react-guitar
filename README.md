@@ -70,6 +70,8 @@ function SampleGuitarWithSound() {
 render(<SampleGuitarWithSound />, document.getElementById('root'))
 ```
 
+[![Edit quizzical-dawn-0hzuq](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/trusting-monad-hfbbh?file=/src/index.js)
+
 It receives an object with the following properties:
 | Name | Description |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
