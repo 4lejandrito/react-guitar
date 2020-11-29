@@ -1,7 +1,7 @@
 {
   "name": "react-guitar-storybook",
   "private": true,
-  "version": "0.12.0",
+  "version": "1.0.0",
   "scripts": {
     "start": "start-storybook"
   },
@@ -22,11 +22,11 @@
     "lodash.range": "^3.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-guitar": "^0.12.0",
-    "react-guitar-sound": "^0.12.0",
-    "react-guitar-theme-coco": "^0.12.0",
-    "react-guitar-theme-dark": "^0.12.0",
-    "react-guitar-tunings": "^0.12.0",
+    "react-guitar": "^1.0.0",
+    "react-guitar-sound": "^1.0.0",
+    "react-guitar-theme-coco": "^1.0.0",
+    "react-guitar-theme-dark": "^1.0.0",
+    "react-guitar-tunings": "^1.0.0",
     "regenerator-runtime": "^0.13.7",
     "ts-loader": "^8.0.2",
     "webpack": "^4.44.1"
