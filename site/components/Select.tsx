@@ -12,7 +12,7 @@ export default function Select<T extends string>(props: {
     <select
       className={classNames(
         clickable,
-        'appearance-none placeholder-gray-500 placeholder-opacity-100 text-center bg-white'
+        'truncate w-full appearance-none placeholder-gray-500 placeholder-opacity-100 text-center bg-white'
       )}
       disabled={props.loading}
       value={props.value}
@@ -27,7 +27,7 @@ export default function Select<T extends string>(props: {
           value={value}
           onSelect={() => props.onChange(value)}
         >
-          {value === props.value && props.loading ? 'Loading...' : value}
+          {props.loading ? 'Loading...' : value}
         </option>
       ))}
     </select>

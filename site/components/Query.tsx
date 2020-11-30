@@ -18,7 +18,8 @@ type Serializer<T> = {
 export function useQuery<T>(
   name: string,
   defaultValue: T,
-  serializer: Serializer<T>
+  serializer: Serializer<T>,
+  inmediate?: boolean
 ) {
   const { params, state, setState } = useContext(QueryContext)
   const setValue = useCallback(
@@ -33,8 +34,11 @@ export function useQuery<T>(
     const param = params.get(name)
     setValue(param ? serializer.deserialize(param) : defaultValue)
   }, [name, params, defaultValue, serializer, setValue])
+
+  const param = params.get(name)
   return [
-    (state[name]?.value as T) ?? defaultValue,
+    (state[name]?.value as T) ??
+      (inmediate && param ? serializer.deserialize(param) : defaultValue),
     useCallback(
       (value: T) => {
         window.history.replaceState(

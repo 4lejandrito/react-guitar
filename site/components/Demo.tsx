@@ -41,7 +41,8 @@ function Demo() {
   const [instrumentName, setInstrumentName] = useQuery(
     'instrument',
     instruments[0].name,
-    string
+    string,
+    true
   )
   const instrument = useMemo(
     () =>
@@ -68,7 +69,7 @@ function Demo() {
         <Label name="Tuning">
           <TuningSelector tuning={tuning} onChange={setTuning} />
         </Label>
-        <Label name="Sound">
+        <Label className="w-48" name="Sound">
           <Select
             value={instrumentName}
             values={instruments.map(({ name }) => name)}
