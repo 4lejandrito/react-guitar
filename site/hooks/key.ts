@@ -9,6 +9,9 @@ export default function useKey(
     filter,
     e => {
       if (
+        e.ctrlKey ||
+        e.altKey ||
+        e.metaKey ||
         (e.target instanceof HTMLInputElement &&
           (e.target.type === 'text' || e.target.type === 'number')) ||
         e.target instanceof HTMLSelectElement
