@@ -10,6 +10,9 @@ export default function Select<T extends string>(props: {
 }) {
   return (
     <select
+      style={{
+        textAlignLast: 'center'
+      }}
       className={classNames(
         clickable,
         'truncate w-full appearance-none placeholder-gray-500 placeholder-opacity-100 text-center bg-white'
