@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import classNames from 'classnames'
 import { clickable } from '../css/classes'
 
@@ -9,19 +9,6 @@ export default function Number(props: {
   max: number
   onChange: (value: number) => void
 }) {
-  const [value, setValue] = useState(props.value)
-  useEffect(() => {
-    setValue(props.value)
-  }, [props.value])
-  useEffect(() => {
-    if (!isNaN(value) && value !== props.value) {
-      if (value < props.min || value > props.max) {
-        setValue(props.value)
-      } else {
-        props.onChange(value)
-      }
-    }
-  }, [value, props])
   return (
     <input
       className={classNames(
@@ -32,8 +19,8 @@ export default function Number(props: {
       type="number"
       min={props.min}
       max={props.max}
-      value={isNaN(value) ? '' : value}
-      onChange={e => setValue(e.target.valueAsNumber)}
+      value={`${props.value}`}
+      onChange={e => props.onChange(e.target.valueAsNumber)}
     />
   )
 }

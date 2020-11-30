@@ -97,7 +97,7 @@ function Demo() {
             open={chordSelectorOpen}
             strings={strings}
             tuning={tuning}
-            frets={frets}
+            frets={isNaN(frets) ? 0 : frets}
             lefty={lefty}
             theme={theme}
             instrument={instrument}
@@ -130,7 +130,7 @@ function Demo() {
       <div className="relative flex-grow mt-4 flex items-center justify-center">
         <Guitar
           id="demo"
-          frets={{ from: 0, amount: frets }}
+          frets={{ from: 0, amount: isNaN(frets) ? 0 : frets }}
           strings={tuning.map((_, i) => strings[i] ?? 0)}
           tuning={tuning}
           lefty={lefty}
