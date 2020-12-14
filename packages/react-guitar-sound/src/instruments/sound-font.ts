@@ -9,7 +9,8 @@ export default function withSoundFont(
   }
 ): StringInstrument {
   return async tuning => {
-    const audioContext = new AudioContext()
+    const audioContext = new (window.AudioContext ||
+      ((window as any).webkitAudioContext as typeof AudioContext))()
     const player = await Soundfont.instrument(audioContext, instrumentName, {
       ...options
     })
