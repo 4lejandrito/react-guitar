@@ -125,10 +125,10 @@ There are 2 ways to create a custom instrument:
    import useSound, { withSamples } from 'react-guitar-sound'
 
    const flamencoGuitar = withSamples({
-     E2: 'https://react-guitar.com/samples/E2.ogg',
-     D3: 'https://react-guitar.com/samples/D3.ogg',
-     G3: 'https://react-guitar.com/samples/G3.ogg',
-     E4: 'https://react-guitar.com/samples/E4.ogg'
+     E2: 'https://react-guitar.com/samples/E2.mp3',
+     D3: 'https://react-guitar.com/samples/D3.mp3',
+     G3: 'https://react-guitar.com/samples/G3.mp3',
+     E4: 'https://react-guitar.com/samples/E4.mp3'
    })
 
    function SampleGuitarWithSound() {
@@ -201,10 +201,10 @@ import useSound, { withSamples } from 'react-guitar-sound'
 
 // outside the render function
 const instrument = withSamples({
-  E2: 'https://react-guitar.com/samples/E2.ogg',
-  D3: 'https://react-guitar.com/samples/D3.ogg',
-  G3: 'https://react-guitar.com/samples/G3.ogg',
-  E4: 'https://react-guitar.com/samples/E4.ogg'
+  E2: 'https://react-guitar.com/samples/E2.mp3',
+  D3: 'https://react-guitar.com/samples/D3.mp3',
+  G3: 'https://react-guitar.com/samples/G3.mp3',
+  E4: 'https://react-guitar.com/samples/E4.mp3'
 })
 
 // inside the render function

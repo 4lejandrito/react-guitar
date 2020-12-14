@@ -15,7 +15,7 @@ export const instruments = [
     'Flamenco Guitar',
     withSamples(
       Object.fromEntries(
-        ['E2', 'D3', 'G3', 'E4'].map(n => [n, `/samples/${n}.ogg`])
+        ['E2', 'D3', 'G3', 'E4'].map(n => [n, `/samples/${n}.mp3`])
       )
     )
   ),

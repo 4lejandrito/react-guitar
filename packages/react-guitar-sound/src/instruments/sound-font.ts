@@ -11,7 +11,6 @@ export default function withSoundFont(
   return async tuning => {
     const audioContext = new AudioContext()
     const player = await Soundfont.instrument(audioContext, instrumentName, {
-      format: 'ogg',
       ...options
     })
 
