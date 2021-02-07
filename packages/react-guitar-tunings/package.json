@@ -18,7 +18,7 @@
     "prepublishOnly": "tsdx build"
   },
   "dependencies": {
-    "@tonaljs/midi": "^3.5.4",
-    "@tonaljs/note": "^3.6.0"
+    "@tonaljs/midi": "^4.5.1",
+    "@tonaljs/note": "^4.6.0"
   }
 }
