@@ -16,7 +16,7 @@ import QueryProvider, {
   numbers,
   string,
   useQuery,
-  useURL
+  useURL,
 } from './Query'
 import { useCopyToClipboard } from 'react-use'
 import ChordSelector from './ChordSelector'
@@ -56,7 +56,7 @@ function Demo() {
     instrument,
     fretting: strings,
     tuning,
-    muted: chordSelectorOpen
+    muted: chordSelectorOpen,
   })
   const [, copy] = useCopyToClipboard()
   const [copied, setCopied] = useState(false)
@@ -137,7 +137,7 @@ function Demo() {
           lefty={lefty}
           center={center}
           theme={theme}
-          onChange={strings => {
+          onChange={(strings) => {
             setStrings(strings)
             setCenter(false)
           }}

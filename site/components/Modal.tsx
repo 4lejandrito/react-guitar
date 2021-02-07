@@ -10,7 +10,7 @@ export default function Modal({
   title,
   small,
   onRequestClose = () => {},
-  onAfterClose = () => {}
+  onAfterClose = () => {},
 }: {
   children: ReactNode | ReactNode[]
   isOpen: boolean
@@ -28,7 +28,7 @@ export default function Modal({
         'inline-flex mt-auto md:m-auto max-w-full outline-none',
         {
           'm-auto': small,
-          'w-full max-w-screen-md': !small
+          'w-full max-w-screen-md': !small,
         }
       )}
       closeTimeoutMS={200}

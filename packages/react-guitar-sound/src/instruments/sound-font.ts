@@ -8,11 +8,11 @@ export default function withSoundFont(
     soundfont?: 'FluidR3_GM' | 'MusyngKite'
   }
 ): StringInstrument {
-  return async tuning => {
+  return async (tuning) => {
     const audioContext = new (window.AudioContext ||
       ((window as any).webkitAudioContext as typeof AudioContext))()
     const player = await Soundfont.instrument(audioContext, instrumentName, {
-      ...options
+      ...options,
     })
 
     return {
@@ -22,14 +22,14 @@ export default function withSoundFont(
           audioContext.currentTime + when,
           {
             duration: 4,
-            gain: 4
+            gain: 4,
           }
         )
       },
       dispose: () => {
         player.stop()
         audioContext.close()
-      }
+      },
     }
   }
 }

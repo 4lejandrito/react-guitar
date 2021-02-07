@@ -20,7 +20,7 @@ export default function Number(props: {
       min={props.min}
       max={props.max}
       value={`${props.value}`}
-      onChange={e => props.onChange(e.target.valueAsNumber)}
+      onChange={(e) => props.onChange(e.target.valueAsNumber)}
     />
   )
 }

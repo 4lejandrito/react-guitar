@@ -33,7 +33,7 @@ export default function ChordTypeSelector(props: {
       styles={styles}
       components={{
         DropdownIndicator: null,
-        Option: props => {
+        Option: (props) => {
           const { aliases = [], intervals = [], name = '❓' } = get(
             props.data.value
           )
@@ -57,33 +57,33 @@ export default function ChordTypeSelector(props: {
               </div>
             </components.Option>
           )
-        }
+        },
       }}
       options={useMemo(
         () => [
-          ...['Major', 'Minor', 'Augmented', 'Diminished'].map(quality => ({
+          ...['Major', 'Minor', 'Augmented', 'Diminished'].map((quality) => ({
             label: quality,
             options: props.types
-              .filter(type => type.quality === quality)
+              .filter((type) => type.quality === quality)
               .sort((a, b) => compare(a.intervals, b.intervals))
-              .map(type => ({
+              .map((type) => ({
                 label: name(type),
-                value: type.setNum
-              }))
-          }))
+                value: type.setNum,
+              })),
+          })),
         ],
         [props.types]
       )}
       value={{ label: name(get(props.notes)), value: props.notes }}
       filterOption={createFilter({
-        stringify: type => {
+        stringify: (type) => {
           const { name, aliases, intervals, quality } = get(type.value)
           return `${name} ${aliases.join(' ')} ${quality} ${intervals.join(
             ' '
           )}`
-        }
+        },
       })}
-      onChange={option => props.onChange((option as any).value)}
+      onChange={(option) => props.onChange((option as any).value)}
     />
   )
 }

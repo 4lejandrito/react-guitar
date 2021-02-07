@@ -18,7 +18,7 @@ export default function TuningSelector(props: {
       styles={styles}
       components={{
         DropdownIndicator: null,
-        Option: props =>
+        Option: (props) =>
           props.data.__isNew__ ? (
             <components.Option {...props} />
           ) : (
@@ -30,9 +30,9 @@ export default function TuningSelector(props: {
                 </pre>
               </div>
             </components.Option>
-          )
+          ),
       }}
-      formatCreateLabel={name => (
+      formatCreateLabel={(name) => (
         <div className="flex items-center text-sm">
           <span className="font-normal">Custom</span>{' '}
           <pre className="flex-grow text-right font-mono text-xs">
@@ -41,23 +41,23 @@ export default function TuningSelector(props: {
         </div>
       )}
       options={Array.from(
-        new Set(tunings.map(tuning => tuning.instrument))
-      ).map(instrument => ({
+        new Set(tunings.map((tuning) => tuning.instrument))
+      ).map((instrument) => ({
         label: instrument,
         options: tunings
-          .filter(tuning => tuning.instrument === instrument)
+          .filter((tuning) => tuning.instrument === instrument)
           .map((tuning, i) => ({
             label: tuning.name,
             value: tuning.notes,
-            tuning
-          }))
+            tuning,
+          })),
       }))}
       value={{
         label: `${toString(props.tuning)}`,
-        value: props.tuning
+        value: props.tuning,
       }}
-      onChange={option => props.onChange((option as any).value)}
-      onCreateOption={text => props.onChange(parse(text))}
+      onChange={(option) => props.onChange((option as any).value)}
+      onCreateOption={(text) => props.onChange(parse(text))}
       filterOption={(option, input) => {
         return (
           option.data.__isNew__ ||
@@ -65,7 +65,7 @@ export default function TuningSelector(props: {
             stringify: ({ data }) =>
               `${data?.tuning?.instrument} ${data?.label} ${toString(
                 data?.value
-              )}`
+              )}`,
           })(option, input)
         )
       }}

@@ -23,7 +23,7 @@ export default function useSound(props: {
 
     return () => {
       setPlayer(undefined)
-      promise.then(player => {
+      promise.then((player) => {
         player.dispose()
       })
     }

@@ -1,6 +1,6 @@
 import fretter from '../'
 
-const toSemitones = (text: string) => text.split('').map(c => c === '1')
+const toSemitones = (text: string) => text.split('').map((c) => c === '1')
 
 describe('fretter()', () => {
   it(`frets C major`, () =>

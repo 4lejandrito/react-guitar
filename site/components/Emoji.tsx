@@ -17,8 +17,8 @@ export default function Emoji(
         ext: '.svg',
         size: '',
         props: {
-          className: 'emoji inline-block'
-        }
+          className: 'emoji inline-block',
+        },
       })}
     </span>
   )

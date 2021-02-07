@@ -29,17 +29,17 @@ const test = (bits: number, i: number) => !!(bits & mask(i))
 const getFrets = (strings: number[]) => {
   const minFret = Math.min.apply(
     Math,
-    strings.filter(s => s > 0)
+    strings.filter((s) => s > 0)
   )
   const maxFret = Math.max.apply(Math, strings)
   return {
     from: maxFret < 4 ? 0 : minFret - 1,
-    amount: Math.max(maxFret - minFret, 4)
+    amount: Math.max(maxFret - minFret, 4),
   }
 }
 const getFretterChord = (root: string, notes: number) => ({
   root: Note.chroma(root) ?? 0,
-  semitones: range(11).map(i => test(notes, i + 1))
+  semitones: range(11).map((i) => test(notes, i + 1)),
 })
 const detectChord = (
   tuning: number[],
@@ -48,9 +48,9 @@ const detectChord = (
   const name = Chord.detect(
     tuning
       .map((midi, i) => (strings[i] === -1 ? -1 : midi + strings[i]))
-      .filter(midi => midi !== -1)
+      .filter((midi) => midi !== -1)
       .reverse()
-      .map(midi => midiToNoteName(midi))
+      .map((midi) => midiToNoteName(midi))
   )[0]
   const chord = Chord.get(name)
   return { ...chord, symbol: chord.symbol || name }
@@ -77,8 +77,8 @@ function ChordSelectorModal(props: {
   const types = useMemo(
     () =>
       ChordType.all()
-        .filter(type => type.intervals.length <= props.tuning.length)
-        .filter(type => type.aliases.length > 0)
+        .filter((type) => type.intervals.length <= props.tuning.length)
+        .filter((type) => type.aliases.length > 0)
         .sort((t1, t2) => t2.aliases[0].localeCompare(t1.aliases[0])),
     [props.tuning]
   )
@@ -86,7 +86,7 @@ function ChordSelectorModal(props: {
     () =>
       fretter(getFretterChord(root, notes), {
         frets: props.frets,
-        tuning: props.tuning
+        tuning: props.tuning,
       }),
     [props.tuning, props.frets, notes, root]
   )
@@ -151,14 +151,14 @@ function ChordSelectorModal(props: {
         >
           <Select
             value={root}
-            values={range(12).map(i =>
+            values={range(12).map((i) =>
               midiToNoteName(i, { pitchClass: true, sharps: true })
             )}
             onChange={setRoot}
           />
         </Label>
         <div className="inline-flex overflow-auto">
-          {range(1, 12).map(i => (
+          {range(1, 12).map((i) => (
             <Label
               key={i}
               lowercase
@@ -169,7 +169,7 @@ function ChordSelectorModal(props: {
                     <strong>
                       {midiToNoteName((Note.get(root + '0').midi ?? 0) + i, {
                         pitchClass: true,
-                        sharps: true
+                        sharps: true,
                       })}
                     </strong>
                   </div>
@@ -183,7 +183,7 @@ function ChordSelectorModal(props: {
                   !test(notes, i) &&
                   (pressed >= props.tuning.length ||
                     !types.some(
-                      type =>
+                      (type) =>
                         type.setNum === set(notes, i) ||
                         pcset.isSubsetOf(pcset.get(type.setNum))(
                           pcset.get(set(notes, i))
@@ -191,7 +191,7 @@ function ChordSelectorModal(props: {
                     ))
                 }
                 checked={test(notes, i)}
-                onChange={e =>
+                onChange={(e) =>
                   setNotes((e.target.checked ? set : clear)(notes, i))
                 }
               />
@@ -272,7 +272,7 @@ function useKeyboardChord(props: {
 
   useKey(
     () => true,
-    e =>
+    (e) =>
       Note.names().includes(e.key.toUpperCase()) &&
       update(e.key, ChordType.get('M').setNum),
     [update]

@@ -37,36 +37,36 @@ export default function KeyboardShortcuts() {
               { keys: 's', description: 'Strum down' },
               {
                 keys: '↑ ↓ tab',
-                description: 'Move between strings'
+                description: 'Move between strings',
               },
               {
                 keys: '← →',
-                description: 'Select frets on the focused string'
+                description: 'Select frets on the focused string',
               },
               {
                 keys: 'enter',
-                description: 'Release / mute the focused string'
+                description: 'Release / mute the focused string',
               },
               {
                 keys: 'p',
-                description: 'Play the focused string'
+                description: 'Play the focused string',
               },
               {
                 keys: '1 2 3 4 5 6',
-                description: 'Play each string'
+                description: 'Play each string',
               },
               {
                 keys: Note.names().join(' '),
-                description: 'Fret a major chord'
+                description: 'Fret a major chord',
               },
               {
                 keys: 'm',
-                description: "Toggle chord's major/minor mode"
+                description: "Toggle chord's major/minor mode",
               },
               {
                 keys: '?',
-                description: 'Open keyboard shortcut help'
-              }
+                description: 'Open keyboard shortcut help',
+              },
             ].map(({ keys, description }, i) => (
               <tr key={i}>
                 <td className="border px-4 py-2 text-right">{description}</td>

@@ -26,8 +26,8 @@ export default makeTheme({
   fret: {
     color: '#9e6429',
     separator: { color: '#daa520', shadow: true },
-    counter: { color: '#606c76' }
+    counter: { color: '#606c76' },
   },
   string: { color: () => '#eeeeee' },
-  finger: { text: { color: '#606c76' }, color: 'white' }
+  finger: { text: { color: '#606c76' }, color: 'white' },
 })

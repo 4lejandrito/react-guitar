@@ -29,14 +29,14 @@ function Home() {
           images: [
             {
               url: `${process.env.NEXT_PUBLIC_URL}/social.png`,
-              alt: `Screenshot of the rendered component with an E major chord`
-            }
+              alt: `Screenshot of the rendered component with an E major chord`,
+            },
           ],
-          site_name: 'react-guitar.com'
+          site_name: 'react-guitar.com',
         }}
         twitter={{
           handle: '@4lejandrito',
-          cardType: 'summary_large_image'
+          cardType: 'summary_large_image',
         }}
       />
 

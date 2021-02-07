@@ -11,12 +11,12 @@ const coco: Theme = {
     color: '#fefaf2',
     separator: { color: '#FEB756', radius: true, shadow: true, width: 'md' },
     counter: { color: '#606c76' },
-    marker: fret =>
+    marker: (fret) =>
       fret === 3 ? (
         <div
           style={{
             width: '7em',
-            transform: 'rotate(-90deg)'
+            transform: 'rotate(-90deg)',
           }}
         >
           <Skull />
@@ -30,13 +30,13 @@ const coco: Theme = {
             transform: [7, 12].includes(fret)
               ? 'rotate(45deg) skew(15deg, 15deg)'
               : undefined,
-            borderRadius: ![3, 7, 12].includes(fret) ? '100%' : undefined
+            borderRadius: ![3, 7, 12].includes(fret) ? '100%' : undefined,
           }}
         />
-      ) : null
+      ) : null,
   },
   string: { color: () => '#f3f3f3' },
-  finger: { color: 'white', text: { color: '#606c76' } }
+  finger: { color: 'white', text: { color: '#606c76' } },
 }
 
 export default coco

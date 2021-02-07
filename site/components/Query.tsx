@@ -7,7 +7,7 @@ import React, {
   useCallback,
   useEffect,
   Dispatch,
-  SetStateAction
+  SetStateAction,
 } from 'react'
 
 type Serializer<T> = {
@@ -24,9 +24,9 @@ export function useQuery<T>(
   const { params, state, setState } = useContext(QueryContext)
   const setValue = useCallback(
     (value: T) =>
-      setState(state => ({
+      setState((state) => ({
         ...state,
-        [name]: { serializer, value, defaultValue }
+        [name]: { serializer, value, defaultValue },
       })),
     [name, serializer, defaultValue, setState]
   )
@@ -49,28 +49,28 @@ export function useQuery<T>(
         setValue(value)
       },
       [setValue]
-    )
+    ),
   ] as const
 }
 
 export const boolean: Serializer<boolean> = {
-  deserialize: value => value === 'true',
-  serialize: value => `${value}`
+  deserialize: (value) => value === 'true',
+  serialize: (value) => `${value}`,
 }
 
 export const number: Serializer<number> = {
-  deserialize: value => parseInt(value),
-  serialize: value => `${value}`
+  deserialize: (value) => parseInt(value),
+  serialize: (value) => `${value}`,
 }
 
 export const numbers: Serializer<number[]> = {
-  deserialize: value => value.split('|').map(n => parseInt(n)),
-  serialize: values => values.join('|')
+  deserialize: (value) => value.split('|').map((n) => parseInt(n)),
+  serialize: (values) => values.join('|'),
 }
 
 export const string: Serializer<string> = {
-  deserialize: value => value,
-  serialize: value => value
+  deserialize: (value) => value,
+  serialize: (value) => value,
 }
 
 type QueryState = {
@@ -85,19 +85,19 @@ const QueryContext = createContext<{
 }>({
   params: new URLSearchParams(),
   state: {},
-  setState: () => {}
+  setState: () => {},
 })
 
 export function useURL() {
   const { state } = useContext(QueryContext)
   const params = new URLSearchParams()
-  Object.keys(state).forEach(key => {
+  Object.keys(state).forEach((key) => {
     const entry = state[key]
     if (entry) {
       const {
         serializer: { serialize },
         defaultValue,
-        value
+        value,
       } = entry
       if (serialize(defaultValue) !== serialize(value)) {
         params.append(key, serialize(value))

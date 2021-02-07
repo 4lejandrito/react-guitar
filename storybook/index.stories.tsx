@@ -2,7 +2,7 @@ import React from 'react'
 import Guitar, {
   getRenderFingerRelative,
   getRenderFingerSpn,
-  spanishTheme
+  spanishTheme,
 } from 'react-guitar'
 import { standard } from 'react-guitar-tunings'
 import useSound from 'react-guitar-sound'
@@ -12,7 +12,7 @@ import {
   number,
   boolean,
   select,
-  color
+  color,
 } from '@storybook/addon-knobs'
 import { midiToNoteName } from '@tonaljs/midi'
 import range from 'lodash.range'
@@ -26,11 +26,11 @@ storiesOf('Guitar', module)
   .addDecorator(withKnobs)
   .add('advanced', () => {
     const notes = range(12)
-      .map(note => note + 12)
+      .map((note) => note + 12)
       .reduce(
         (acc, note) => ({
           ...acc,
-          [midiToNoteName(note, { pitchClass: true, sharps: true })]: note
+          [midiToNoteName(note, { pitchClass: true, sharps: true })]: note,
         }),
         {} as {
           [K: string]: number
@@ -39,7 +39,7 @@ storiesOf('Guitar', module)
     const root = select('Root', notes, notes['C'])
     const renderFingerFunctions = {
       'Scientific Pitch Notation': getRenderFingerSpn(standard),
-      'Relative to Root': getRenderFingerRelative(standard, root)
+      'Relative to Root': getRenderFingerRelative(standard, root),
     }
     const [strings, setStrings] = useState([0, 0, 0, 0, 0, 0])
     const { play } = useSound({ fretting: strings, tuning: standard })
@@ -48,7 +48,7 @@ storiesOf('Guitar', module)
         lefty={boolean('Lefty', false)}
         frets={{
           from: number('From fret', 0),
-          amount: number('Frets', 22)
+          amount: number('Frets', 22),
         }}
         strings={strings}
         renderFinger={
@@ -117,22 +117,22 @@ storiesOf('Guitar', module)
             ),
             radius: boolean('Fret separator radius', false),
             shadow: boolean('Fret separator shadow', true),
-            width: select('Fret separator width', ['sm', 'md'], 'sm')
+            width: select('Fret separator width', ['sm', 'md'], 'sm'),
           },
           counter: {
-            color: color('Counter color', spanishTheme.fret.counter.color)
-          }
+            color: color('Counter color', spanishTheme.fret.counter.color),
+          },
         },
         string: {
-          color: string =>
-            color(`String color ${string}`, spanishTheme.string.color(string))
+          color: (string) =>
+            color(`String color ${string}`, spanishTheme.string.color(string)),
         },
         finger: {
           text: {
-            color: color('Finger text color', spanishTheme.finger.text.color)
+            color: color('Finger text color', spanishTheme.finger.text.color),
           },
-          color: color('Finger color', spanishTheme.finger.color)
-        }
+          color: color('Finger color', spanishTheme.finger.color),
+        },
       }}
       renderFinger={getRenderFingerSpn(standard)}
       strings={[0, 0, 0, 0, 0, 0]}

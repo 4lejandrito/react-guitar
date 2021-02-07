@@ -19,16 +19,16 @@ export default (theme: Theme) =>
     '&.lefty': {
       direction: 'rtl',
       '.marker': {
-        transform: 'scale(-1, 1)'
+        transform: 'scale(-1, 1)',
       },
       '.mute': {
         left: 'auto',
-        right: 0
-      }
+        right: 0,
+      },
     },
 
     '*, *::before, *::after': {
-      boxSizing: 'border-box'
+      boxSizing: 'border-box',
     },
 
     '.frets': {
@@ -39,28 +39,28 @@ export default (theme: Theme) =>
         flexShrink: 0,
         position: 'relative',
         '&.nut,&.mute': {
-          width: '7em'
+          width: '7em',
         },
         '&.mute': {
           position: 'absolute',
           top: 0,
-          left: 0
-        }
-      }
+          left: 0,
+        },
+      },
     },
 
     '.frame': {
       height: '2em',
       '.counter': {
         fontWeight: 'bold',
-        color: theme.fret.counter.color
+        color: theme.fret.counter.color,
       },
       '.fret': {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: theme.color
-      }
+        background: theme.color,
+      },
     },
 
     '.strings': {
@@ -84,7 +84,7 @@ export default (theme: Theme) =>
             width: '100%',
             height: '0.65em',
             position: 'absolute',
-            left: '0'
+            left: '0',
           },
 
           label: {
@@ -94,20 +94,20 @@ export default (theme: Theme) =>
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            margin: 0
+            margin: 0,
           },
 
           '&:hover input:not(:disabled):not(:checked) ~ .finger': {
-            opacity: 0.5
+            opacity: 0.5,
           },
 
           'input:not(:disabled)': {
             height: '100%',
-            width: '100%'
+            width: '100%',
           },
 
           'input:not(:disabled),input:not(:disabled) ~ .finger': {
-            cursor: 'pointer'
+            cursor: 'pointer',
           },
 
           input: {
@@ -115,22 +115,22 @@ export default (theme: Theme) =>
             margin: 0,
             opacity: 0,
             '&:checked ~ .finger': {
-              opacity: 1
+              opacity: 1,
             },
             '&:focus:not(:disabled) ~ .finger': {
-              boxShadow: '0 0 0 0.2em rgba(66, 153, 225, 0.5)'
-            }
+              boxShadow: '0 0 0 0.2em rgba(66, 153, 225, 0.5)',
+            },
           },
           '&.mute': {
             'input:checked ~ .finger': {
-              opacity: 0
+              opacity: 0,
             },
             'input:focus ~ .finger,&:hover input:checked ~ .finger': {
-              opacity: 0.5
-            }
-          }
-        }
-      }
+              opacity: 0.5,
+            },
+          },
+        },
+      },
     },
 
     '.fretboard': {
@@ -146,7 +146,7 @@ export default (theme: Theme) =>
         justifyContent: 'end',
         backgroundColor: theme.fret.color,
         '&.nut': {
-          backgroundColor: theme.nut.color
+          backgroundColor: theme.nut.color,
         },
         '&:not(.nut)::before': {
           content: '""',
@@ -161,7 +161,7 @@ export default (theme: Theme) =>
               ).darken(0.1)}`
             : 0,
           borderRadius: theme.fret.separator.radius ? '3px' : 0,
-          display: 'inline-block'
+          display: 'inline-block',
         },
         '.marker': {
           position: 'absolute',
@@ -171,9 +171,9 @@ export default (theme: Theme) =>
           bottom: '0',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
-        }
-      }
+          justifyContent: 'center',
+        },
+      },
     },
 
     '.finger': {
@@ -191,7 +191,7 @@ export default (theme: Theme) =>
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'center',
-      position: 'relative'
+      position: 'relative',
     },
 
     '.sr-only': {
@@ -203,6 +203,6 @@ export default (theme: Theme) =>
       overflow: 'hidden',
       clip: 'rect(0, 0, 0, 0)',
       whiteSpace: 'nowrap',
-      borderWidth: 0
-    }
+      borderWidth: 0,
+    },
   })

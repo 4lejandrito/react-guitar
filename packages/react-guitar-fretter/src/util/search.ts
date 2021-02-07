@@ -7,7 +7,7 @@ function doSearch<T>(node: T, expand: Expand<T>, isFinal: IsFinal<T>): T[] {
   if (isFinal(node)) {
     return [node]
   }
-  return flatMap(expand(node), node => doSearch(node, expand, isFinal))
+  return flatMap(expand(node), (node) => doSearch(node, expand, isFinal))
 }
 
 export default function search<T>(

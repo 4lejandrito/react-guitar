@@ -62,7 +62,7 @@ function Frets(props: {
           {props.children?.(-1)}
         </div>
       )}
-      {range(from, from + amount + 1).map(fret => (
+      {range(from, from + amount + 1).map((fret) => (
         <div className={classNames('fret', { nut: fret === 0 })} key={fret}>
           {props.children?.(fret)}
         </div>
@@ -94,7 +94,7 @@ export default function Guitar(props: {
     center = false,
     renderFinger,
     theme = spanishTheme,
-    playOnHover
+    playOnHover,
   } = props
   const id = useMemo(() => props.id || uniqueId('guitar-'), [props.id])
   const styles = useMemo(() => getStyles(theme), [theme])
@@ -129,7 +129,7 @@ export default function Guitar(props: {
     const fretsNode = ref.current
     if (center && fretsNode) {
       const children = fretsNode.querySelectorAll('.fret')
-      const pressedFrets = strings.filter(fret => fret > 0)
+      const pressedFrets = strings.filter((fret) => fret > 0)
       const minFret = Math.min.apply(Math, pressedFrets)
       const maxFret = Math.max.apply(Math, pressedFrets)
       const toFret = minFret + Math.floor((maxFret - minFret) / 2)
@@ -149,7 +149,7 @@ export default function Guitar(props: {
       ref={ref}
       css={styles}
       className={classNames('guitar', { lefty }, props.className)}
-      onKeyDown={e => {
+      onKeyDown={(e) => {
         const delta = getNavigationDelta(e.nativeEvent)
         if (delta) {
           const string = mod(focusedString + delta.y, strings.length)
@@ -188,7 +188,9 @@ export default function Guitar(props: {
       <div className="strings">
         <Frets className="fretboard" frets={frets}>
           {theme.fret.marker
-            ? fret => <div className="marker">{theme.fret.marker?.(fret)}</div>
+            ? (fret) => (
+                <div className="marker">{theme.fret.marker?.(fret)}</div>
+              )
             : undefined}
         </Frets>
         {strings.map((currentFret, string) => (
@@ -202,7 +204,7 @@ export default function Guitar(props: {
               frets={frets}
               onMouseEnter={() => playOnHover && props.onPlay?.(string)}
             >
-              {fret => (
+              {(fret) => (
                 <label>
                   <span className="sr-only">
                     Fret {fret} {fret === -1 && '(Mute)'}.
@@ -215,7 +217,7 @@ export default function Guitar(props: {
                         borderBottom: `solid 0.2em ${color(
                           theme.string.color(string)
                         ).darken(0.35)}`,
-                        backgroundColor: theme.string.color(string)
+                        backgroundColor: theme.string.color(string),
                       }}
                     />
                   )}
@@ -225,14 +227,14 @@ export default function Guitar(props: {
                     name={`${id}-string-${string}`}
                     value={fret}
                     checked={currentFret === fret}
-                    onChange={e => {
+                    onChange={(e) => {
                       props.onChange?.(set(strings, string, fret))
                       e.target.focus()
                     }}
                     onClick={() =>
                       fret === currentFret && releaseString(string)
                     }
-                    onKeyDown={e => {
+                    onKeyDown={(e) => {
                       switch (e.keyCode) {
                         case 80:
                           props.onPlay?.(string)
@@ -254,7 +256,9 @@ export default function Guitar(props: {
         ))}
       </div>
       <Frets className="frame" frets={frets}>
-        {fret => (fret !== 0 ? <span className="counter">{fret}</span> : null)}
+        {(fret) =>
+          fret !== 0 ? <span className="counter">{fret}</span> : null
+        }
       </Frets>
     </div>
   )

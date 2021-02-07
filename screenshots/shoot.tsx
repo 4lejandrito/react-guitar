@@ -16,13 +16,13 @@ export default async function shoot(path: string, element: ReactElement) {
     await page.evaluate(() => ({
       width: document.querySelector('body > :not(style)')?.scrollWidth ?? 0,
       height: document.querySelector('body > :not(style)')?.scrollHeight ?? 0,
-      deviceScaleFactor: 2
+      deviceScaleFactor: 2,
     }))
   )
   await page.screenshot({
     path,
     fullPage: true,
-    omitBackground: true
+    omitBackground: true,
   })
   await browser.close()
 }

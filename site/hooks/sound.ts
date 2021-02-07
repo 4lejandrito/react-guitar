@@ -1,13 +1,13 @@
 import useReactGuitarSound, {
   StringInstrument,
   withSamples,
-  withSoundFont
+  withSoundFont,
 } from 'react-guitar-sound'
 import useKey from './key'
 
 const named = (name: string, instrument: StringInstrument) => ({
   name,
-  instrument
+  instrument,
 })
 
 export const instruments = [
@@ -15,7 +15,7 @@ export const instruments = [
     'Flamenco Guitar',
     withSamples(
       Object.fromEntries(
-        ['E2', 'D3', 'G3', 'E4'].map(n => [n, `/samples/${n}.mp3`])
+        ['E2', 'D3', 'G3', 'E4'].map((n) => [n, `/samples/${n}.mp3`])
       )
     )
   ),
@@ -26,7 +26,7 @@ export const instruments = [
   named('Acoustic Bass', withSoundFont('acoustic_bass')),
   named('Electric Bass', withSoundFont('electric_bass_pick')),
   named('Banjo', withSoundFont('banjo')),
-  named('Sitar', withSoundFont('sitar'))
+  named('Sitar', withSoundFont('sitar')),
 ]
 
 export default function useSound(props: {
@@ -39,7 +39,7 @@ export default function useSound(props: {
 
   useKey(
     () => true,
-    e => {
+    (e) => {
       const string = parseInt(e.key) - 1
       string >= 0 && string < props.tuning.length && play(string)
     },

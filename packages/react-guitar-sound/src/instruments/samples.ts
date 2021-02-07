@@ -8,7 +8,7 @@ const toMidi = (note: string | number) => {
 
 const closest = (midi: number, samples: SamplerOptions['urls']) => {
   let min = Object.keys(samples)[0]
-  Object.keys(samples).forEach(key => {
+  Object.keys(samples).forEach((key) => {
     if (Math.abs(midi - toMidi(key)) < Math.abs(midi - toMidi(min))) {
       min = key
     }
@@ -19,11 +19,11 @@ const closest = (midi: number, samples: SamplerOptions['urls']) => {
 export default function withSamples(
   samples: SamplerOptions['urls']
 ): StringInstrument {
-  return async tuning => {
+  return async (tuning) => {
     const synths = await Promise.all(
       tuning.map(
-        midi =>
-          new Promise<Sampler>(resolve => {
+        (midi) =>
+          new Promise<Sampler>((resolve) => {
             const synth: Sampler = new Sampler(closest(midi, samples), () =>
               resolve(synth)
             ).toDestination()
@@ -38,7 +38,7 @@ export default function withSamples(
           immediate() + when
         )
       },
-      dispose: () => synths.map(synth => synth.dispose())
+      dispose: () => synths.map((synth) => synth.dispose()),
     }
   }
 }

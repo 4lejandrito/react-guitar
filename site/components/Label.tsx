@@ -11,7 +11,7 @@ export default function Label(props: {
     <label className={classnames('p-2 flex flex-col', props.className)}>
       <small
         className={classnames('text-center font-bold text-gray-600 mb-2', {
-          uppercase: !props.lowercase
+          uppercase: !props.lowercase,
         })}
       >
         {props.name}

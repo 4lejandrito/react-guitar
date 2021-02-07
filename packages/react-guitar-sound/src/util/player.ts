@@ -27,7 +27,7 @@ export default async (
 
   return {
     play: (string, fret, when = 0) =>
-      new Promise(resolve => {
+      new Promise((resolve) => {
         resolvers[string]?.(when === 0)
         if (fret < 0) return resolve()
         const startTimeout = setTimeout(
@@ -35,7 +35,7 @@ export default async (
           when * 1000
         )
         const endTimeout = setTimeout(
-          (resolvers[string] = change => {
+          (resolvers[string] = (change) => {
             delete resolvers[string]
             clearTimeout(startTimeout)
             clearTimeout(endTimeout)
@@ -46,6 +46,6 @@ export default async (
         )
         play(string, fret, when)
       }),
-    dispose
+    dispose,
   }
 }

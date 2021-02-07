@@ -11,7 +11,7 @@ export default function Select<T extends string>(props: {
   return (
     <select
       style={{
-        textAlignLast: 'center'
+        textAlignLast: 'center',
       }}
       className={classNames(
         clickable,
@@ -19,12 +19,12 @@ export default function Select<T extends string>(props: {
       )}
       disabled={props.loading}
       value={props.value}
-      onChange={e => {
-        const value = props.values.find(value => value === e.target.value)
+      onChange={(e) => {
+        const value = props.values.find((value) => value === e.target.value)
         value && props.onChange(value)
       }}
     >
-      {props.values.map(value => (
+      {props.values.map((value) => (
         <option
           key={value}
           value={value}

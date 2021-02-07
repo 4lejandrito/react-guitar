@@ -104,7 +104,7 @@ There are 2 ways to create a custom instrument:
      const { play, strum } = useSound({
        instrument: electricGuitar,
        fretting: strings,
-       tuning: standard
+       tuning: standard,
      })
 
      return <Guitar strings={strings} onPlay={play} />
@@ -128,7 +128,7 @@ There are 2 ways to create a custom instrument:
      E2: 'https://react-guitar.com/samples/E2.mp3',
      D3: 'https://react-guitar.com/samples/D3.mp3',
      G3: 'https://react-guitar.com/samples/G3.mp3',
-     E4: 'https://react-guitar.com/samples/E4.mp3'
+     E4: 'https://react-guitar.com/samples/E4.mp3',
    })
 
    function SampleGuitarWithSound() {
@@ -136,7 +136,7 @@ There are 2 ways to create a custom instrument:
      const { play, strum } = useSound({
        instrument: flamencoGuitar,
        fretting: strings,
-       tuning: standard
+       tuning: standard,
      })
 
      return <Guitar strings={strings} onPlay={play} />
@@ -187,7 +187,7 @@ useSound(
     E2: '...E2.mp3',
     D3: '...D3.mp3',
     G3: '...G3.mp3',
-    E4: '...E4.mp3'
+    E4: '...E4.mp3',
   },
   strings,
   tuning
@@ -204,14 +204,14 @@ const instrument = withSamples({
   E2: 'https://react-guitar.com/samples/E2.mp3',
   D3: 'https://react-guitar.com/samples/D3.mp3',
   G3: 'https://react-guitar.com/samples/G3.mp3',
-  E4: 'https://react-guitar.com/samples/E4.mp3'
+  E4: 'https://react-guitar.com/samples/E4.mp3',
 })
 
 // inside the render function
 useSound({
   instrument,
   fretting: strings,
-  tuning
+  tuning,
 })
 ```
 

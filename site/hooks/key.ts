@@ -7,7 +7,7 @@ export default function useKey(
 ) {
   useReactUseKey(
     filter,
-    e => {
+    (e) => {
       if (
         e.ctrlKey ||
         e.altKey ||
