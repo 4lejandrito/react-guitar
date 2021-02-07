@@ -38,7 +38,7 @@
     "react-guitar-theme-dark": "^1.0.1",
     "react-guitar-tunings": "^1.0.1",
     "react-modal": "^3.12.1",
-    "react-select": "^4.0.2",
+    "react-select": "^4.1.0",
     "react-switch": "^6.0.0",
     "react-use": "^17.1.0",
     "tailwindcss": "^2.0.2"

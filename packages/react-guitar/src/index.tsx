@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 import { useRef, Fragment, useMemo, ReactElement, useState } from 'react'
 import useLayoutEffect from './hooks/layoutEffect'
 import range from 'lodash.range'

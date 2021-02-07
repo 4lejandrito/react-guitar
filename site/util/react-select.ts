@@ -1,4 +1,4 @@
-import { Styles, Theme } from 'react-select'
+import { StylesConfig, Theme } from 'react-select'
 
 export const className = 'font-semibold text-gray-700 hover:shadow rounded'
 
@@ -12,7 +12,7 @@ export const theme = (theme: Theme) => ({
   },
 })
 
-export const styles: Partial<Styles> = {
+export const styles: StylesConfig<any, false> = {
   singleValue: (provided) => ({ ...provided, color: 'inherit' }),
   menu: (provided) => ({ ...provided, width: '18em', zIndex: 3 }),
   control: (provided, state) => ({
@@ -23,6 +23,8 @@ export const styles: Partial<Styles> = {
       borderColor: state.theme.colors.neutral40,
     },
     height: '2.5rem',
-    boxShadow: state.isFocused && `0 0 0 3px rgba(66, 153, 225, 0.5)`,
+    boxShadow: state.isFocused
+      ? `0 0 0 3px rgba(66, 153, 225, 0.5)`
+      : undefined,
   }),
 }
