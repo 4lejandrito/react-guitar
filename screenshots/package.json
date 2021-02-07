@@ -5,7 +5,7 @@
   "devDependencies": {
     "@types/puppeteer": "^5.4.3",
     "puppeteer": "^7.0.1",
-    "react": "^17.0.1",
+    "react": "16.13.1",
     "react-dom": "^17.0.1",
     "react-guitar": "^1.0.1",
     "react-guitar-theme-coco": "^1.0.1",
