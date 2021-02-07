@@ -1,7 +1,7 @@
 {
   "name": "react-guitar-storybook",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scripts": {
     "start": "start-storybook"
   },
@@ -20,10 +20,10 @@
     "postcss": "^8.2.5",
     "react": "16.13.1",
     "react-dom": "^17.0.1",
-    "react-guitar": "^1.0.1",
-    "react-guitar-sound": "^1.0.2",
-    "react-guitar-theme-coco": "^1.0.1",
-    "react-guitar-theme-dark": "^1.0.1",
-    "react-guitar-tunings": "^1.0.1"
+    "react-guitar": "^1.0.3",
+    "react-guitar-sound": "^1.0.3",
+    "react-guitar-theme-coco": "^1.0.3",
+    "react-guitar-theme-dark": "^1.0.3",
+    "react-guitar-tunings": "^1.0.3"
   }
 }
