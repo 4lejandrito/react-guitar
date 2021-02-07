@@ -1,20 +1,15 @@
 module.exports = {
   stories: ['../**/*.stories.tsx'],
   addons: [
-    '@storybook/addon-knobs/register',
-    '@storybook/addon-storysource/register',
-  ],
-  webpackFinal: (config) => {
-    config.module.rules.push({
-      test: /\.stories\.tsx?$/,
-      loaders: [
-        {
-          loader: require.resolve('@storybook/source-loader'),
-          options: { parser: 'typescript' },
+    '@storybook/addon-knobs',
+    '@storybook/addon-storysource',
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss'),
         },
-      ],
-      enforce: 'pre',
-    })
-    return config
-  },
+      },
+    },
+  ],
 }
