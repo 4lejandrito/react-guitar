@@ -23,7 +23,7 @@
     "tone": "^14.7.77"
   },
   "peerDependencies": {
-    "react": "^16.8"
+    "react": "^16.8 || ^17.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.1",
