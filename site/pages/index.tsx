@@ -56,14 +56,14 @@ function Home() {
           </span>
         </p>
         <div className="slide-up flex items-center justify-center mt-4 sm:mt-6">
-          <a
+          <a // eslint-disable-line react/jsx-no-target-blank
             className={headerButton}
             href="https://github.com/4lejandrito/react-guitar"
             children="GitHub"
-            target="_blank" // eslint-disable-line react/jsx-no-target-blank
+            target="_blank"
             rel="noopener"
           />
-          <a
+          <a // eslint-disable-line react/jsx-no-target-blank
             className={classNames(headerButton, 'hidden sm:inline-block')}
             href="storybook"
             children="Storybook"
