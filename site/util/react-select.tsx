@@ -1,4 +1,11 @@
-import { StylesConfig, Theme } from 'react-select'
+import React from 'react'
+import {
+  SelectComponentsConfig,
+  StylesConfig,
+  Theme,
+  components,
+} from 'react-select'
+import classNames from 'classnames'
 
 export const className = 'font-semibold text-gray-700 hover:shadow rounded'
 
@@ -7,8 +14,8 @@ export const theme = (theme: Theme) => ({
   borderRadius: 4,
   colors: {
     ...theme.colors,
-    neutral20: '#e2e8f0',
-    neutral40: 'rgba(203, 213, 224)',
+    neutral20: 'rgb(229, 231, 235)',
+    neutral40: '#d4d4d8',
   },
 })
 
@@ -23,8 +30,18 @@ export const styles: StylesConfig<any, false> = {
       borderColor: state.theme.colors.neutral40,
     },
     height: '2.5rem',
-    boxShadow: state.isFocused
-      ? `0 0 0 3px rgba(66, 153, 225, 0.5)`
-      : undefined,
+    boxShadow: undefined,
   }),
+}
+
+export const customComponents: SelectComponentsConfig<any, any> = {
+  DropdownIndicator: null,
+  Control: (props) => (
+    <components.Control
+      {...props}
+      className={classNames(props.className, {
+        'outline-none ring': props.isFocused,
+      })}
+    />
+  ),
 }

@@ -2,7 +2,12 @@ import Select, { components, createFilter } from 'react-select'
 import { ChordType, get } from '@tonaljs/chord-type'
 import Interval from '@tonaljs/interval'
 import React, { useMemo } from 'react'
-import { theme, styles, className } from '../util/react-select'
+import {
+  theme,
+  styles,
+  className,
+  customComponents,
+} from '../util/react-select'
 
 const set = (bits: number, i: number) => bits | (1 << i)
 
@@ -32,7 +37,7 @@ export default function ChordTypeSelector(props: {
       theme={theme}
       styles={styles}
       components={{
-        DropdownIndicator: null,
+        ...customComponents,
         Option: (props) => {
           const { aliases = [], intervals = [], name = '❓' } = get(
             props.data.value

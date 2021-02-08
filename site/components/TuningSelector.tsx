@@ -2,7 +2,12 @@ import React from 'react'
 import tunings, { toString, parse } from 'react-guitar-tunings'
 import Select from 'react-select/creatable'
 import { components, createFilter } from 'react-select'
-import { theme, styles, className } from '../util/react-select'
+import {
+  theme,
+  styles,
+  className,
+  customComponents,
+} from '../util/react-select'
 import classNames from 'classnames'
 
 export default function TuningSelector(props: {
@@ -17,7 +22,7 @@ export default function TuningSelector(props: {
       theme={theme}
       styles={styles}
       components={{
-        DropdownIndicator: null,
+        ...customComponents,
         Option: (props) =>
           props.data.__isNew__ ? (
             <components.Option {...props} />

@@ -5,7 +5,7 @@ export const bordered = 'border-2 rounded'
 export const clickable = classNames(
   transitioned,
   bordered,
-  'font-semibold leading-tight h-10 px-2 text-gray-700 hover:border-gray-400 focus:border-gray-400 hover:shadow focus:outline-none focus:shadow-outline'
+  'font-semibold leading-tight h-10 px-2 text-gray-700 hover:border-gray-300 focus:border-gray-300 hover:shadow focus:outline-none focus:ring'
 )
 export const unpaddedHeaderButton = classNames(
   transitioned,
