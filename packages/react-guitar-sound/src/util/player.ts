@@ -1,6 +1,4 @@
-export type StringInstrument = (
-  tuning: number[]
-) => Promise<{
+export type StringInstrument = (tuning: number[]) => Promise<{
   play: (string: number, fret: number, when: number) => void
   dispose: () => void
 }>

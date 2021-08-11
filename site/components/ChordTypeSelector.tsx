@@ -39,9 +39,11 @@ export default function ChordTypeSelector(props: {
       components={{
         ...customComponents,
         Option: (props) => {
-          const { aliases = [], intervals = [], name = '❓' } = get(
-            props.data.value
-          )
+          const {
+            aliases = [],
+            intervals = [],
+            name = '❓',
+          } = get(props.data.value)
           const subTitle =
             ((!name && aliases.length > 1) || name) && aliases.join(', ')
           return (
