@@ -8,6 +8,10 @@ See https://react-guitar.com for a live demo.
 
 [![Edit quizzical-dawn-0hzuq](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/interesting-breeze-ll7zh)
 
+### Projects using React-Guitar
+
+- [Workland](https://github.com/cgm42/WorkLand) ([GIF](https://github.com/cgm42/WorkLand#guitar---thanks-to-react-guitar)) - A metaverse for tech teams.
+
 ## Usage
 
 ```
