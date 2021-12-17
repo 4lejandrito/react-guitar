@@ -1,6 +1,6 @@
 {
   "name": "react-guitar-site",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "scripts": {
     "analyze": "ANALYZE=true next build",
@@ -31,11 +31,11 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-easy-emoji": "^1.5.0",
-    "react-guitar": "^1.1.0",
+    "react-guitar": "^1.1.1",
     "react-guitar-fretter": "^1.0.3",
     "react-guitar-sound": "^1.1.0",
-    "react-guitar-theme-coco": "^1.1.0",
-    "react-guitar-theme-dark": "^1.1.0",
+    "react-guitar-theme-coco": "^1.1.1",
+    "react-guitar-theme-dark": "^1.1.1",
     "react-guitar-tunings": "^1.1.0",
     "react-modal": "^3.14.3",
     "react-select": "^4.3.1",
