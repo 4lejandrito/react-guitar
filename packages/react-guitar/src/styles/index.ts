@@ -17,6 +17,7 @@ export default (theme: Theme) =>
     borderTopWidth: '0.5em',
     overscrollBehaviorX: 'none',
     background: theme.color,
+    WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
 
     '&.lefty': {
       direction: 'rtl',
