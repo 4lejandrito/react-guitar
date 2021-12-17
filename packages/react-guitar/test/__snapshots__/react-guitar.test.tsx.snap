@@ -2,7 +2,7 @@
 
 exports[`renders the right HTML 1`] = `
 <div
-  className="guitar css-1x9360z-Guitar"
+  className="guitar css-117xsup-Guitar"
   id="guitar-1"
   onKeyDown={[Function]}
 >
