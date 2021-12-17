@@ -16,6 +16,7 @@ export default (theme: Theme) =>
     borderTopStyle: 'solid',
     borderTopWidth: '0.5em',
     overscrollBehaviorX: 'none',
+    background: theme.color,
 
     '&.lefty': {
       direction: 'rtl',
