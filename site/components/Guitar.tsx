@@ -7,7 +7,7 @@ export default function DemoGuitar(
   }
 ) {
   return (
-    <div className="max-w-full inline-block sm:rounded overflow-hidden shadow">
+    <div className="max-w-full inline-block sm:rounded overflow-hidden shadow transform-gpu">
       <Guitar {...props} renderFinger={getRenderFingerSpn(props.tuning)} />
     </div>
   )
