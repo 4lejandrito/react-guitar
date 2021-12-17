@@ -1,15 +1,15 @@
 {
   "name": "react-guitar-screenshots",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "devDependencies": {
     "@types/puppeteer": "^5.4.4",
     "puppeteer": "^10.2.0",
     "react": "17.0.2",
     "react-dom": "^17.0.2",
-    "react-guitar": "^1.1.0",
-    "react-guitar-theme-coco": "^1.1.0",
-    "react-guitar-theme-dark": "^1.1.0",
+    "react-guitar": "^1.1.1",
+    "react-guitar-theme-coco": "^1.1.1",
+    "react-guitar-theme-dark": "^1.1.1",
     "react-guitar-tunings": "^1.1.0",
     "ts-node": "^10.2.0"
   },
