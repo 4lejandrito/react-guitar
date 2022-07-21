@@ -1,3 +1,5 @@
+/** @jsxRuntime classic /
+/* @jsx jsx */
 import { css } from '@emotion/react'
 import { Theme } from '..'
 import color from 'color'
