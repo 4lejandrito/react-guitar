@@ -221,6 +221,5 @@ useSound({
 
 ## Developing
 
-- `yarn add --dev eslint -W` will add eslint to workspace
 - `yarn build` will build the component and the site, this is mandatory the first time you clone the repo.
 - `yarn start` will spin up the storybook and the site and all the packages in watch mode.
