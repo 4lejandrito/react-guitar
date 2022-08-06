@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ['./**/*.ts{,x}'],
+  content: ['./**/*.ts{,x}'],
   theme: {
     extend: {
       boxShadow: {
