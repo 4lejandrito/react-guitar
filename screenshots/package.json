@@ -3,8 +3,8 @@
   "version": "1.1.1",
   "private": true,
   "devDependencies": {
-    "@types/puppeteer": "^5.4.4",
-    "puppeteer": "^10.2.0",
+    "@types/puppeteer": "^5.4.6",
+    "puppeteer": "^16.0.0",
     "react": "17.0.2",
     "react-dom": "^17.0.2",
     "react-guitar": "^1.1.1",
