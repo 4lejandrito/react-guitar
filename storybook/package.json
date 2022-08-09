@@ -21,6 +21,7 @@
     "react-guitar-sound": "^1.1.0",
     "react-guitar-theme-coco": "^1.1.1",
     "react-guitar-theme-dark": "^1.1.1",
-    "react-guitar-tunings": "^1.1.0"
+    "react-guitar-tunings": "^1.1.0",
+    "react-guitar-fretter": "^1.0.3"
   }
 }
