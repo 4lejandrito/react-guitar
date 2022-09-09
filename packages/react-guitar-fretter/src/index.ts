@@ -37,14 +37,16 @@ import findDuplicates from './util/find-duplicates'
     }
  * ```
  * @param options
- * Optional configuration of `tuning`, `frets`, and `restrictChordTypeTo`.
+ * Optional configuration of `tuning`, `frets`, and `frettingType`.
+ * 
+ * `frettingType` accepts either `open` or `barre` as input
  */
 export default function fretter(
   chord: { root: number; semitones: boolean[] },
   options?: {
     tuning?: number[]
     frets?: number
-    restrictChordTypeTo?: 'open' | 'barre' | 'all'
+    frettingType?: string
   }
 ): number[][] {
   const { root, semitones } = chord
@@ -127,9 +129,9 @@ export default function fretter(
         (min(f2.filter((n) => n > 0)) ?? 0)
     )
 
-  if (options?.restrictChordTypeTo === 'open')
+  if (options?.frettingType?.toLowerCase() === 'open')
     return frettings.filter(isOpenChord)
-  if (options?.restrictChordTypeTo === 'barre')
+  if (options?.frettingType?.toLowerCase() === 'barre')
     return frettings.filter(isBarreChord)
   return frettings
 }
