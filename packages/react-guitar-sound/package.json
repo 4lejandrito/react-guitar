@@ -1,6 +1,6 @@
 {
   "name": "react-guitar-sound",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Alejandro Tardín <alejandro@tardin.com>",
@@ -23,7 +23,7 @@
     "tone": "^14.7.77"
   },
   "peerDependencies": {
-    "react": "^16.8 || ^17.0"
+    "react": "^16.8 || ^17.0 || ^18.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",
