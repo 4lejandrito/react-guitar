@@ -81,7 +81,7 @@ export default function Guitar(props: {
   }
   lefty?: boolean
   center?: boolean
-  renderFinger?: (string: number, fret: number) => JSX.Element
+  renderFinger?: (string: number, fret: number) => JSX.Element | null
   theme?: Theme
   playOnHover?: boolean
   onChange?: (strings: number[]) => void
@@ -204,53 +204,59 @@ export default function Guitar(props: {
               frets={frets}
               onMouseEnter={() => playOnHover && props.onPlay?.(string)}
             >
-              {(fret) => (
-                <label>
-                  <span className="sr-only">
-                    Fret {fret} {fret === -1 && '(Mute)'}.
-                  </span>
-                  {fret >= 0 && (
-                    <span
-                      className="actual-string"
-                      style={{
-                        opacity: currentFret === -1 ? 0.2 : 1,
-                        borderBottom: `solid 0.2em ${color(
-                          theme.string.color(string)
-                        ).darken(0.35)}`,
-                        backgroundColor: theme.string.color(string),
+              {(fret) => {
+                const fingerContent = renderFinger?.(
+                  string,
+                  fret === -1 ? 0 : fret
+                )
+                return (
+                  <label>
+                    <span className="sr-only">
+                      Fret {fret} {fret === -1 && '(Mute)'}.
+                    </span>
+                    {fret >= 0 && (
+                      <span
+                        className="actual-string"
+                        style={{
+                          opacity: currentFret === -1 ? 0.2 : 1,
+                          borderBottom: `solid 0.2em ${color(
+                            theme.string.color(string)
+                          ).darken(0.35)}`,
+                          backgroundColor: theme.string.color(string),
+                        }}
+                      />
+                    )}
+                    <input
+                      disabled={!props.onChange || fingerContent === null}
+                      type="radio"
+                      name={`${id}-string-${string}`}
+                      value={fret}
+                      checked={currentFret === fret}
+                      onChange={(e) => {
+                        props.onChange?.(set(strings, string, fret))
+                        e.target.focus()
                       }}
-                    />
-                  )}
-                  <input
-                    disabled={!props.onChange}
-                    type="radio"
-                    name={`${id}-string-${string}`}
-                    value={fret}
-                    checked={currentFret === fret}
-                    onChange={(e) => {
-                      props.onChange?.(set(strings, string, fret))
-                      e.target.focus()
-                    }}
-                    onClick={() =>
-                      fret === currentFret && releaseString(string)
-                    }
-                    onKeyDown={(e) => {
-                      switch (e.keyCode) {
-                        case 80:
-                          props.onPlay?.(string)
-                          break
-                        case 13:
-                          releaseString(string)
-                          e.preventDefault()
+                      onClick={() =>
+                        fret === currentFret && releaseString(string)
                       }
-                    }}
-                    onFocus={() => setFocusedString(string)}
-                  />
-                  <span className="finger">
-                    {renderFinger?.(string, fret === -1 ? 0 : fret)}
-                  </span>
-                </label>
-              )}
+                      onKeyDown={(e) => {
+                        switch (e.keyCode) {
+                          case 80:
+                            props.onPlay?.(string)
+                            break
+                          case 13:
+                            releaseString(string)
+                            e.preventDefault()
+                        }
+                      }}
+                      onFocus={() => setFocusedString(string)}
+                    />
+                    {fingerContent !== null && (
+                      <span className="finger">{fingerContent}</span>
+                    )}
+                  </label>
+                )
+              }}
             </Frets>
           </fieldset>
         ))}

@@ -143,3 +143,6 @@ storiesOf('Guitar', module)
       <Guitar strings={[0, 1, 2, 2, 0, -1]} />
     </div>
   ))
+  .add('without fingers', () => (
+    <Guitar strings={[0, 1, 2, 2, 0, 0]} renderFinger={() => null} />
+  ))

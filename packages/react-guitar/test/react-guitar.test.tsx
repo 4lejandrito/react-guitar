@@ -13,6 +13,18 @@ it('renders the right HTML', () => {
   ).toMatchSnapshot()
 })
 
+it('hides fingers when renderFinger returns null', async () => {
+  const guitar = (
+    <Guitar strings={[0, 0, 1, 2, 2, 0]} renderFinger={() => null} />
+  )
+  expect(renderer.create(guitar).toJSON()).toMatchSnapshot()
+  render(guitar)
+  expect(await generateImage()).toMatchImageSnapshot({
+    failureThreshold: 0.03,
+    failureThresholdType: 'percent',
+  })
+})
+
 it('has no visual regressions', async () => {
   render(<Guitar strings={[0, 0, 1, 2, 2, 0]} />)
   expect(await generateImage()).toMatchImageSnapshot({
