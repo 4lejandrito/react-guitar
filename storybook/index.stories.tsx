@@ -19,23 +19,28 @@ import range from 'lodash.range'
 import { useState } from '@storybook/addons'
 import coco from 'react-guitar-theme-coco'
 import dark from 'react-guitar-theme-dark'
+import fretter, { getChordSemitones } from 'react-guitar-fretter'
 
 const themes = { spanish: spanishTheme, dark, coco }
+
+const getNotes = () => {
+  return range(12)
+    .map((note) => note + 12)
+    .reduce(
+      (acc, note) => ({
+        ...acc,
+        [midiToNoteName(note, { pitchClass: true, sharps: true })]: note,
+      }),
+      {} as {
+        [K: string]: number
+      }
+    )
+}
 
 storiesOf('Guitar', module)
   .addDecorator(withKnobs)
   .add('advanced', () => {
-    const notes = range(12)
-      .map((note) => note + 12)
-      .reduce(
-        (acc, note) => ({
-          ...acc,
-          [midiToNoteName(note, { pitchClass: true, sharps: true })]: note,
-        }),
-        {} as {
-          [K: string]: number
-        }
-      )
+    const notes = getNotes()
     const root = select('Root', notes, notes['C'])
     const renderFingerFunctions = {
       'Scientific Pitch Notation': getRenderFingerSpn(standard),
@@ -143,3 +148,35 @@ storiesOf('Guitar', module)
       <Guitar strings={[0, 1, 2, 2, 0, -1]} />
     </div>
   ))
+  .add('fretter', () => {
+    const notes = getNotes()
+    const chords = fretter(
+      {
+        root: select('Root', notes, notes['C']),
+        semitones: getChordSemitones(
+          select('Type', ['major', 'minor', 'diminished triad'], 'major')
+        ),
+      },
+      {
+        restrictChordTypeTo: select(
+          'Fretting type',
+          ['all', 'open', 'barre'],
+          'all'
+        ),
+      }
+    )
+    return (
+      <div style={{ fontSize: '.5em' }}>
+        {chords.map((chord) => (
+          <Guitar
+            strings={chord}
+            renderFinger={getRenderFingerSpn(standard)}
+            center={true}
+          />
+        ))}
+        {chords.length === 0 && (
+          <div style={{ fontSize: '3em' }}>No chords found!</div>
+        )}
+      </div>
+    )
+  })

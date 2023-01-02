@@ -64,6 +64,7 @@ function ChordSelectorModal(props: {
   tuning: number[]
   frets: number
   lefty: boolean
+  frettingType: string
   theme?: Theme
   instrument?: StringInstrument
   onChange: (chord: TChord, fretting: number[]) => void
@@ -73,6 +74,7 @@ function ChordSelectorModal(props: {
   const initialChord = props.chord
   const [root, setRoot] = useState(initialChord?.tonic || 'C')
   const [notes, setNotes] = useState(() => getNotes(initialChord))
+  const [frettingType, setFrettingType] = useState(props.frettingType)
   const pressed = 0
   const types = useMemo(
     () =>
@@ -87,8 +89,9 @@ function ChordSelectorModal(props: {
       fretter(getFretterChord(root, notes), {
         frets: props.frets,
         tuning: props.tuning,
+        frettingType: frettingType,
       }),
-    [props.tuning, props.frets, notes, root]
+    [props.tuning, props.frets, notes, root, frettingType]
   )
   const [frettingIndex, setFrettingIndex] = useState(0)
   const fretting = frettings[frettingIndex] ?? props.tuning.map(() => 0)
@@ -155,6 +158,23 @@ function ChordSelectorModal(props: {
               midiToNoteName(i, { pitchClass: true, sharps: true })
             )}
             onChange={setRoot}
+          />
+        </Label>
+        <Label
+          name={
+            <div>
+              Fretting
+              <div className="mt-1">
+                <strong>{frettingType}</strong>
+              </div>
+            </div>
+          }
+          lowercase
+        >
+          <Select
+            value={frettingType}
+            values={['All', 'Open', 'Barre']}
+            onChange={setFrettingType}
           />
         </Label>
         <div className="inline-flex overflow-auto">
@@ -297,6 +317,7 @@ export default function ChordSelector(props: {
   frets: number
   lefty: boolean
   theme?: Theme
+  frettingType: string
   instrument?: StringInstrument
   onChange: (strings: number[]) => void
   onRequestOpenChange: (open: boolean) => void
