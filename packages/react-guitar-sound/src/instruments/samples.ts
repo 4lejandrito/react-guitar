@@ -20,33 +20,25 @@ export default function withSamples(
   samples: SamplerOptions['urls']
 ): StringInstrument {
   return async (tuning) => {
-    const context: { synths?: Sampler[] } = {}
-    const synths = async () =>
-      (context.synths =
-        context.synths ??
-        (await Promise.all(
-          tuning.map(
-            (midi) =>
-              new Promise<Sampler>((resolve) => {
-                const synth: Sampler = new Sampler(closest(midi, samples), () =>
-                  resolve(synth)
-                ).toDestination()
-              })
-          )
-        )))
+    const synths = await Promise.all(
+      tuning.map(
+        (midi) =>
+          new Promise<Sampler>((resolve) => {
+            const synth: Sampler = new Sampler(closest(midi, samples), () =>
+              resolve(synth)
+            ).toDestination()
+          })
+      )
+    )
     return {
       play: (string, fret, when = 0) => {
-        synths().then((synths) =>
-          synths[string].triggerAttackRelease(
-            Frequency(tuning[string] + fret, 'midi').toFrequency(),
-            4,
-            immediate() + when
-          )
+        synths[string].triggerAttackRelease(
+          Frequency(tuning[string] + fret, 'midi').toFrequency(),
+          4,
+          immediate() + when
         )
       },
-      dispose: () => {
-        synths().then((synths) => synths.map((synth) => synth.dispose()))
-      },
+      dispose: () => synths.map((synth) => synth.dispose()),
     }
   }
 }
