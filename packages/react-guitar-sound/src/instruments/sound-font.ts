@@ -9,26 +9,37 @@ export default function withSoundFont(
   }
 ): StringInstrument {
   return async (tuning) => {
-    const audioContext = new (window.AudioContext ||
-      ((window as any).webkitAudioContext as typeof AudioContext))()
-    const player = await Soundfont.instrument(audioContext, instrumentName, {
-      ...options,
-    })
-
+    const context: { audioContext?: AudioContext; player?: Soundfont.Player } =
+      {}
+    const audioContext = () =>
+      (context.audioContext =
+        context.audioContext ??
+        new (window.AudioContext ||
+          ((window as any).webkitAudioContext as typeof AudioContext))())
+    const player = async () =>
+      (context.player =
+        context.player ??
+        (await Soundfont.instrument(audioContext(), instrumentName, {
+          ...options,
+        })))
     return {
       play: (string, fret, when = 0) => {
-        player.play(
-          (tuning[string] + fret) as any,
-          audioContext.currentTime + when,
-          {
-            duration: 4,
-            gain: 4,
-          }
+        player().then((player) =>
+          player.play(
+            (tuning[string] + fret) as any,
+            audioContext().currentTime + when,
+            {
+              duration: 4,
+              gain: 4,
+            }
+          )
         )
       },
       dispose: () => {
-        player.stop()
-        audioContext.close()
+        player().then((player) => {
+          player.stop()
+          audioContext().close()
+        })
       },
     }
   }
