@@ -1,7 +1,7 @@
 {
   "name": "react-guitar-storybook",
   "private": true,
-  "version": "1.1.4",
+  "version": "1.1.5",
   "scripts": {
     "start": "start-storybook"
   },
@@ -18,7 +18,7 @@
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-guitar": "^1.1.3",
-    "react-guitar-sound": "^1.1.4",
+    "react-guitar-sound": "^1.1.5",
     "react-guitar-theme-coco": "^1.1.3",
     "react-guitar-theme-dark": "^1.1.3",
     "react-guitar-tunings": "^1.1.2"
