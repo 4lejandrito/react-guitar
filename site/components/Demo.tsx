@@ -101,6 +101,7 @@ function Demo() {
             frets={isNaN(frets) ? 0 : frets}
             lefty={lefty}
             theme={theme}
+            frettingType={'all'}
             instrument={instrument}
             onRequestOpenChange={setChordSelectorOpen}
             onChange={setStrings}
